@@ -89,12 +89,13 @@
         <div class="full-name1">City</div>
         <input class="full-name-child" type="text" />
       </div>
-      <input class="register-item" type="file" />
+      <input class="register-item" type="file" id="imageInput" accept="image/*" onchange="previewImage(event)"/>
 
-      <div class="upload-your-picture">Upload your picture here</div>
+      <div class="upload-your-picture"><img id="preview-image" alt="Preview" /></div>
       <img class="register-inner" alt="" src="assets/arrow-1.svg" />
 
       <img class="polygon-icon" alt="" src="assets/polygon-1@2x.png" />
+      <script src="script/script.js"></script>
     </div>
   </body>
 </html>
