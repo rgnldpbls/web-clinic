@@ -1,3 +1,6 @@
+body {
+  zoom: 0.72;
+}
 .base3 {
   position: absolute;
   top: 0;
@@ -44,7 +47,7 @@
 .register3 {
   position: absolute;
   top: 44px;
-  right: 250px;
+  left: 1477px;
   font-family: var(--font-karla);
   color: var(--color-maroon-100);
   text-align: center;
@@ -56,7 +59,7 @@
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .register3 {
-  right: 100px;
+  left: 1630px;
   width: 160px;
 }
 .search1 {
@@ -98,12 +101,12 @@
 }
 .homelanding-page-child {
   border: 1px solid var(--color-maroon-100);
-  left: 1539px;
+  left: 1470px;
   width: 130px;
 }
 .homelanding-page-item {
   border: 1px solid #720000;
-  left: 1693px;
+  left: 1624px;
   width: 173px;
 }
 .bg-child,
@@ -253,7 +256,7 @@
 }
 .contact-us-at {
   top: 1006px;
-  left: 800px;
+  left: 1325px;
   text-align: right;
   width: 886px;
   height: 76px;

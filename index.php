@@ -34,8 +34,8 @@
       </div>
       <a href="login.php" class="login3">Login</a>
       <a href="register.php" class="register3">Register</a>
-      <button class="homelanding-page-child"></button>
-      <button class="homelanding-page-item"></button>
+      <a href="login.php" class="homelanding-page-child"></a>
+      <a href="register.php" class="homelanding-page-item"></a>
       <div class="bg">
         <img class="pup2-1-icon" alt="" src="assets/pup2-1@2x.png" />
 

@@ -86,8 +86,12 @@
         <input class="sex-item" type="radio" />
       </div>
       <div class="city">
-        <div class="full-name1">City</div>
-        <input class="full-name-child" type="text" />
+        <div class="city1">City</div>
+        <input class="city-child" type="text" />
+      </div>
+      <div class="birthdate">
+        <div class="birthdate-mmddyyyy">Birthdate (MM/DD/YYYY)</div>
+        <input class="birthdate-child" type="date" />
       </div>
       <input class="register-item" type="file" id="imageInput" accept="image/*" onchange="previewImage(event)"/>
 

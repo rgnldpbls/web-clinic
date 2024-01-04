@@ -1,5 +1,5 @@
 body {
-  zoom: 0.75;
+  zoom: 0.72;
 }
 .bg-pic-icon {
   position: absolute;
@@ -132,6 +132,8 @@ body {
   box-shadow: 0 1px 4px #000;
   box-sizing: border-box;
   height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 18px;
 }
 .full-name {
   top: 333px;
@@ -324,6 +326,9 @@ body {
   box-shadow: 0 1px 4px #000;
   box-sizing: border-box;
   height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 18px;
+  text-align: center;
 }
 .age,
 .male,
@@ -381,7 +386,7 @@ body {
   width: 17px;
   height: 17px;
 }
-.city,
+.city1,
 .sex {
   position: absolute;
   top: 658px;
@@ -389,10 +394,63 @@ body {
   width: 240px;
   height: 72px;
 }
+.city1 {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 104px;
+  height: 27px;
+}
+.city,
+.city-child {
+  position: absolute;
+  width: 227px;
+}
+.city-child {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  top: 35px;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  height: 53px;
+}
 .city {
   top: 553px;
   left: 356px;
-  width: 533px;
+  height: 88px;
+}
+.birthdate-mmddyyyy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 265px;
+  height: 27px;
+}
+.birthdate,
+.birthdate-child {
+  position: absolute;
+  width: 274px;
+}
+.birthdate-child {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  top: 35px;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  height: 53px;
+}
+.birthdate {
+  top: 553px;
+  left: 615px;
   height: 88px;
 }
 .register-item,
