@@ -1,0 +1,255 @@
+body {
+  zoom: 0.72;
+}
+.bg-pic-icon1 {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 1920px;
+  height: 1440px;
+  object-fit: cover;
+}
+.base1 {
+  position: absolute;
+  top: 120px;
+  left: 217px;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 100px #141414;
+  width: 1485px;
+  height: 840px;
+}
+.logo-icon1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 86px;
+  height: 86px;
+  object-fit: cover;
+}
+.pup-clinic-appointment1,
+.sta-mesa-manila1 {
+  position: absolute;
+  top: 14px;
+  left: 110px;
+  display: inline-block;
+  width: 520px;
+  height: 50px;
+}
+.sta-mesa-manila1 {
+  top: 50px;
+  font-size: var(--font-size-mini);
+  font-family: var(--font-karla);
+  color: var(--color-gray-200);
+  width: 200px;
+  height: 20px;
+}
+.logo-group {
+  position: absolute;
+  top: 149px;
+  left: 318px;
+  width: 630px;
+  height: 86px;
+  font-size: var(--font-size-5xl);
+  color: var(--color-maroon-100);
+}
+.medical-history {
+  position: absolute;
+  top: 264px;
+  left: 311px;
+  font-size: var(--font-size-21xl);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 301px;
+  height: 49px;
+}
+.register2-child {
+  position: absolute;
+  top: 314.5px;
+  left: 323.5px;
+  border-top: 3px solid var(--color-deepskyblue);
+  box-sizing: border-box;
+  width: 46px;
+  height: 3px;
+}
+.group-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-deepskyblue);
+  width: 169px;
+  height: 60px;
+}
+.register1 {
+  position: absolute;
+  top: 17px;
+  left: 22px;
+  font-size: var(--font-size-6xl);
+  font-family: var(--font-kanit);
+  color: var(--color-white);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  height: 25px;
+}
+.rectangle-group {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 870px;
+  left: 689px;
+  width: 169px;
+  height: 60px;
+}
+.medical-illness1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 244.2px;
+  height: 27px;
+}
+.medical-illness-child {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  width: 533px;
+  height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 18px;
+}
+.medical-illness,
+.yes {
+  position: absolute;
+  top: 443px;
+  left: 325px;
+  width: 533px;
+  height: 88px;
+}
+.yes {
+  top: 43px;
+  left: 32px;
+  display: flex;
+  align-items: center;
+  width: 65px;
+  height: 27px;
+}
+.needs-medical-attention-child {
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  border-radius: 50%;
+  border: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 17px;
+  height: 17px;
+}
+.no {
+  position: absolute;
+  top: 43px;
+  left: 154px;
+  display: flex;
+  align-items: center;
+  width: 86px;
+  height: 27px;
+}
+.needs-medical-attention-item {
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: 48px;
+  left: 122px;
+  border-radius: 50%;
+  border: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 17px;
+  height: 17px;
+}
+.any-history-of,
+.needs-medical-attention {
+  position: absolute;
+  top: 347px;
+  left: 323px;
+  width: 274px;
+  height: 70px;
+}
+.any-history-of {
+  top: 0;
+  left: 2px;
+  display: flex;
+  align-items: center;
+  width: 272px;
+  height: 27px;
+}
+.needs-medical-attention2,
+.needs-medical-attention3 {
+  position: absolute;
+  top: 769px;
+  left: 325px;
+  width: 274px;
+  height: 70px;
+}
+.needs-medical-attention3 {
+  left: 667px;
+}
+.allergies-in-food,
+.allergies-in-medicine,
+.register2-item {
+  position: absolute;
+  top: 548px;
+  left: 325px;
+  width: 533px;
+  height: 88px;
+}
+.allergies-in-medicine,
+.register2-item {
+  top: 653px;
+}
+.register2-item {
+  top: 482px;
+  left: 810px;
+  width: 30.1px;
+  height: 30.1px;
+  object-fit: contain;
+  display: none;
+}
+.bg-pic-icon2,
+.register2-inner {
+  position: absolute;
+  top: 120px;
+  left: 959px;
+  width: 743px;
+  height: 840px;
+}
+.bg-pic-icon2 {
+  object-fit: cover;
+}
+.register2-inner {
+  background-color: rgba(118, 0, 1, 0.3);
+}
+.register2 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1080px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-3xl);
+  color: var(--color-gray-100);
+  font-family: var(--font-kanit);
+}
