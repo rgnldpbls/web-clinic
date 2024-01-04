@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Karla:wght@400&display=swap"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
   <body>
     <div class="register">
@@ -33,8 +34,8 @@
         <div class="next">Next</div>
       </a>
       <div class="full-name">
-        <div class="full-name1">Full Name</div>
-        <input class="full-name-child" type="text" />
+        <div class="full-name1">Full Name<span style="color:red">*</span></div>
+        <input class="full-name-child" type="text"/>
       </div>
       <div class="emergency-contact-number">
         <div class="emergency-contact-number1">Emergency Contact Number</div>
@@ -50,13 +51,18 @@
       </div>
       <div class="patient-password">
         <div class="patient-email1">Patient Password</div>
-        <input class="full-name-child" type="password" />
+        <input class="full-name-child" type="password" name="password"
+          id="password"/>
+        <i class="fas fa-eye password-toggle" id="togglePassword"></i>
       </div>
       <div class="patient-type">
         <div class="patient-type1">Patient Type</div>
         <div class="patient-type-child"></div>
       </div>
-      <select class="patient-type2"></select>
+      <select class="patient-type2" id="patientType" name="patientType">
+        <option value="Student">Student</option>
+        <option value="Faculty">Faculty</option>
+      </select>
       <div class="department">
         <div class="patient-type1">Department</div>
         <input class="department-child" type="text" />
@@ -80,17 +86,17 @@
       <div class="sex">
         <div class="sex1">Sex</div>
         <div class="male">Male</div>
-        <input class="sex-child" type="radio" />
+        <input class="sex-child" type="radio" id="male" name="sex" value="male" checked/>
 
         <div class="female">Female</div>
-        <input class="sex-item" type="radio" />
+        <input class="sex-item" type="radio" id="female" name="sex" value="female"/>
       </div>
       <div class="city">
         <div class="city1">City</div>
         <input class="city-child" type="text" />
       </div>
       <div class="birthdate">
-        <div class="birthdate-mmddyyyy">Birthdate (MM/DD/YYYY)</div>
+        <div class="birthdate-mmddyyyy">Birthdate</div>
         <input class="birthdate-child" type="date" />
       </div>
       <input class="register-item" type="file" id="imageInput" accept="image/*" onchange="previewImage(event)"/>

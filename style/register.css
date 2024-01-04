@@ -228,14 +228,16 @@ body {
   width: 249px;
 }
 .patient-type2 {
-  top: 333px;
+  top: 353px;
   left: 1014px;
   border: 0;
   height: 88px;
-  padding: 0 0 61px;
+  color: var(--color-gray-100);
+}
+select {
+  padding: 8px;
   font-family: var(--font-kanit);
   font-size: var(--font-size-3xl);
-  color: var(--color-gray-100);
 }
 .department-child {
   border: 1px solid var(--color-darkgray);
@@ -245,6 +247,8 @@ body {
   border-radius: var(--br-6xs);
   box-shadow: 0 1px 4px #000;
   height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 18px;
 }
 .department {
   position: absolute;
@@ -265,6 +269,8 @@ body {
   box-sizing: border-box;
   width: 305px;
   height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 18px;
 }
 .contact-number {
   position: absolute;
@@ -285,6 +291,9 @@ body {
   box-sizing: border-box;
   width: 192px;
   height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 18px;
+  text-align: center;
 }
 .address,
 .age1,
@@ -358,7 +367,6 @@ body {
   top: 50px;
   left: 0;
   border-radius: 50%;
-  box-shadow: 0 1px 4px #000;
   border: 1px solid var(--color-darkgray);
   box-sizing: border-box;
   width: 17px;
@@ -380,7 +388,6 @@ body {
   top: 50px;
   left: 122px;
   border-radius: 50%;
-  box-shadow: 0 1px 4px #000;
   border: 1px solid var(--color-darkgray);
   box-sizing: border-box;
   width: 17px;
@@ -417,6 +424,8 @@ body {
   box-shadow: 0 1px 4px #000;
   box-sizing: border-box;
   height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 18px;
 }
 .city {
   top: 553px;
@@ -447,6 +456,8 @@ body {
   box-shadow: 0 1px 4px #000;
   box-sizing: border-box;
   height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 18px;
 }
 .birthdate {
   top: 553px;
@@ -510,4 +521,13 @@ body {
   max-width: 100%;
   max-height: 100px;
   margin-top: 10px;
+}
+
+.password-toggle {
+  color: black;
+  position: absolute;
+  top: 70%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
