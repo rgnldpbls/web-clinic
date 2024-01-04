@@ -40,36 +40,37 @@
       </div>
       <div class="login-item"></div>
       <div class="login1">Login</div>
-      <div class="email">
-        <img class="icons-1" alt="" src="assets/icons-1@2x.png" />
-        <div class="email-child"></div>
-        <input
-          class="enter-your-email"
-          type="email"
-          placeholder="Enter your email"
-        />
-      </div>
-      <div class="password">
-        <div class="password-child"></div>
-        <input
-          class="enter-your-password"
-          type="password"
-          placeholder="Enter your password"
-          name="password"
-          id="password"
-        />
-        <img class="icons-1-1" alt="" src="assets/icons-1-1@2x.png" />
-        <i class="fas fa-eye password-toggle" id="togglePassword"></i>
-      </div>
-      <a href="fp.html" class="forgot-password">Forgot password?</a>
-      <div class="login-inner"></div>
-      <a href="dashboard.html" class="rectangle-button"></a>
-      <div class="login2">Login</div>
+      <form>
+        <div class="email">
+          <img class="icons-1" alt="" src="assets/icons-1@2x.png" />
+          <div class="email-child"></div>
+          <input
+            class="enter-your-email"
+            type="email"
+            placeholder="Enter your email"
+          />
+        </div>
+        <div class="password">
+          <div class="password-child"></div>
+          <input
+            class="enter-your-password"
+            type="password"
+            placeholder="Enter your password"
+            name="password"
+            id="password"
+          />
+          <img class="icons-1-1" alt="" src="assets/icons-1-1@2x.png" />
+          <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+        </div>
+        <a href="fp.html" class="forgot-password">Forgot password?</a>
+        <div class="login-inner"></div>
+        <a href="dashboard.html" class="rectangle-button"></a>
+        <div class="login2">Login</div>
+        <div class="dont-have-an">Don’t have an account?</div>
+          <a href="register.php" class="register-here">Register here.</a>
+        </div>
+      </form>
       <img class="bg-pic-icon1" alt="" src="assets/bg-pic@2x.png" />
-
-      <div class="dont-have-an">Don’t have an account?</div>
-      <a href="register.php" class="register-here">Register here.</a>
-    </div>
     <script src="script/script.js"></script>
   </body>
 </html>

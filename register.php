@@ -35,38 +35,38 @@
           <input class="full-name-child" type="text"/>
         </div>
         <div class="address">
-          <div class="full-name1">Address</div>
+          <div class="full-name1">Address<span style="color:red">*</span></div>
           <input class="full-name-child" type="text" />
         </div>
         <div class="city">
-          <div class="city1">City</div>
+          <div class="city1">City<span style="color:red">*</span></div>
           <input class="city-child" type="text" />
         </div>
         <div class="birthdate">
-          <div class="birthdate-mmddyyyy">Birthdate</div>
+          <div class="birthdate-mmddyyyy">Birthdate<span style="color:red">*</span></div>
           <input class="birthdate-child" type="date" />
         </div>
         <div class="age">
-          <div class="age1">Age</div>
+          <div class="age1">Age<span style="color:red">*</span></div>
           <input class="age-child" type="number" />
         </div>
         <div class="sex">
-          <div class="sex1">Sex</div>
+          <div class="sex1">Sex<span style="color:red">*</span></div>
           <div class="male">Male</div>
           <input class="sex-child" type="radio" id="male" name="sex" value="male" checked/>
           <div class="female">Female</div>
           <input class="sex-item" type="radio" id="female" name="sex" value="female"/>
         </div>
         <div class="contact-number">
-          <div class="patient-email1">Contact Number</div>
+          <div class="patient-email1">Contact Number<span style="color:red">*</span></div>
           <input class="contact-number-child" type="number" />
         </div>
         <div class="blood-type">
-          <div class="patient-email1">Blood Type</div>
+          <div class="patient-email1">Blood Type<span style="color:red">*</span></div>
           <input class="blood-type-child" type="text" />
         </div>
         <div class="patient-type">
-          <div class="patient-type1">Patient Type</div>
+          <div class="patient-type1">Patient Type<span style="color:red">*</span></div>
           <div class="patient-type-child"></div>
         </div>
         <select class="patient-type2" id="patientType" name="patientType">
@@ -74,23 +74,23 @@
           <option value="Faculty">Faculty</option>
         </select>
         <div class="department">
-          <div class="patient-type1">Department</div>
+          <div class="patient-type1">Department<span style="color:red">*</span></div>
           <input class="department-child" type="text" />
         </div>
         <div class="emergency-contact-name">
-          <div class="emergency-contact-name1">Emergency Contact Name</div>
+          <div class="emergency-contact-name1">Emergency Contact Name<span style="color:red">*</span></div>
           <input class="full-name-child" type="text" />
         </div>
         <div class="emergency-contact-number">
-          <div class="emergency-contact-number1">Emergency Contact Number</div>
+          <div class="emergency-contact-number1">Emergency Contact Number<span style="color:red">*</span></div>
           <input class="full-name-child" type="number" />
         </div>
         <div class="patient-email">
-          <div class="patient-email1">Patient Email</div>
+          <div class="patient-email1">Patient Email<span style="color:red">*</span></div>
           <input class="full-name-child" type="email" />
         </div>
         <div class="patient-password">
-          <div class="patient-email1">Patient Password</div>
+          <div class="patient-email1">Patient Password<span style="color:red">*</span></div>
           <input class="full-name-child" type="password" name="password" id="password"/>
           <i class="fas fa-eye password-toggle" id="togglePassword"></i>
         </div>
