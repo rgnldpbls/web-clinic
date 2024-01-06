@@ -28,8 +28,8 @@
       <div class="registration">Registration</div>
       <div class="register-child"></div>
       <form action="register.php" method="post" enctype="multipart/form-data">
-        <!-- <input class="register-item" type="file" id="imageInput" accept="image/*" onchange="previewImage(event)" name="image"/>
-        <div class="upload-your-picture"><img id="preview-image" alt="Preview" /></div> -->
+        <input class="register-item" type="file" name="image" id="imageInput" accept="image/*" onchange="previewImage(event)"/>
+        <div class="upload-your-picture"><img id="preview-image" alt="Preview" /></div>
         <div class="full-name">
           <div class="full-name1">Full Name<span style="color:red">*</span></div>
           <input class="full-name-child" type="text" name="fullName" required/>
@@ -102,9 +102,7 @@
       function newUser(){
         include 'dbconfig.php';
         // Patient Picture
-        // $targetFile = $_FILES["image"]["tmp_name"];
-        // $imageData = file_get_contents($targetFile);
-        // $encodedImageData = base64_encode($imageData);
+        $imageData = file_get_contents($_FILES["image"]["tmp_name"]);
         // Other patient data
         $name = $_POST['fullName'];
         $address = $_POST['address'];
@@ -121,13 +119,13 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
         $dateCreated = date("Y-m-d");
-        $medHistId = LAST_INSERT_ID();
-        $sql = "INSERT INTO patient(patient_Name, patient_Address, patient_City, patient_Age, patient_Birthdate, patient_Sex, patient_ContactNo, blood_Type, patient_Type, department, patient_Email, patient_Password, emer_ContactName, emer_ContactNo, pat_DateCreated)
-        VALUES ('$name', '$address', '$city', '$age', '$birthDate', '$sex', '$contactNumber', '$bloodType', '$patientType', '$department', '$email', '$password', '$emerContactName', '$emerContactNum', '$dateCreated')";
-        if(mysqli_query($conn, $sql)){
+        $sql = "INSERT INTO patient(patient_Pic, patient_Name, patient_Address, patient_City, patient_Age, patient_Birthdate, patient_Sex, patient_ContactNo, blood_Type, patient_Type, department, patient_Email, patient_Password, emer_ContactName, emer_ContactNo, pat_DateCreated, mdHist_Id)
+        VALUES ('$imageData','$name', '$address', '$city', '$age', '$birthDate', '$sex', '$contactNumber', '$bloodType', '$patientType', '$department', '$email', '$password', '$emerContactName', '$emerContactNum', '$dateCreated', LAST_INSERT_ID())";
+        if($conn->query($sql) === TRUE){
+          echo "<h2>Record created successfully!! Redirecting to next page....</h2>";
           header("Location: register2.php");
         }else{
-          echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          echo "Error: " . $sql . "<br>" . $conn->error;
         }
       }
       function checkEmail(){
