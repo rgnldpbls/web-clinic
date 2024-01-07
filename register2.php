@@ -16,6 +16,9 @@
     />
   </head>
   <body>
+    <?php
+     
+    ?>
     <div class="register2">
       <img class="bg-pic-icon1" alt="" src="assets/bg-pic@2x.png" />
       <div class="base1"></div>

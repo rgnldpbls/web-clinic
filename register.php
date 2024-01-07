@@ -17,6 +17,64 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
   <body>
+    <?php 
+      if($_POST){
+        checkEmail();
+      }
+      function checkEmail(){
+        include 'dbconfig.php';
+        $email = $_POST['email'];
+        $sql = "SELECT * FROM patient WHERE patient_Email = '$email'";
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result)!=0){
+          echo"<b><br>Email already exists!!";
+        }else if($_SERVER["REQUEST_METHOD"] == "POST"){
+          // $imageData = file_get_contents($_FILES["image"]["tmp_name"]);
+          // $name = $_POST['fullName'];
+          // $address = $_POST['address'];
+          // $city = $_POST['city'];
+          // $age = $_POST['age'];
+          // $birthDate = $_POST['birthDate'];
+          // $sex = $_POST['sex'];
+          // $contactNumber = $_POST['contactNumber'];
+          // $bloodType = $_POST['bloodType'];
+          // $patient_Type = $_POST['patientType'];
+          // $department = $_POST['department'];
+          // $email = $_POST['email'];
+          // $password = $_POST['password'];
+          // $emerContactName = $_POST['contactName'];
+          // $emerContactNum = $_POST['contactNo'];
+          // $dateCreated = date("Y-m-d");
+
+          // $sql = "INSERT INTO patient(patient_Pic, patient_Name, patient_Address, patient_City, patient_Age, patient_Birthdate, patient_Sex, patient_ContactNo, blood_Type, patient_Type, department, patient_Email, patient_Password, emer_ContactName, emer_ContactNo, pat_DateCreated) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+          // $stmt = $conn->prepare($sql);
+          // $stmt->bind_param("bsssississssssis", $imageData, $name, $address, $city, $age, $birthDate, $sex, $contactNumber, $bloodType, $patient_Type, $department, $email, $password, $emerContactName, $emerContactNum, $dateCreated);
+          // $stmt->execute();
+          // $stmt->close();
+
+          $_SESSION["personal"]=array(
+            'imageDate'=>file_get_contents($_FILES["image"]["tmp_name"]),
+            'name'=>$_POST['fullName'],
+            'address'=>$_POST['address'],
+            'city'=>$_POST['city'],
+            'age'=>$_POST['age'],
+            'birthDate'=>$_POST['birthDate'],
+            'sex'=>$_POST['sex'],
+            'contactNumber'=>$_POST['contactNumber'],
+            'bloodType'=>$_POST['bloodType'],
+            'patientType'=>$_POST['patientType'],
+            'department'=>$_POST['department'],
+            'email'=>$_POST['email'],
+            'password'=>$_POST['password'],
+            'emerContactName'=>$_POST['emerContactName'],
+            'emerContactNum'=>$_POST['emerContactNum']
+        );
+
+        header("location: register2.php");
+    
+        }
+      }
+    ?>
     <div class="register">
       <img class="bg-pic-icon" alt="" src="assets/bg-pic@2x.png" />
       <div class="base"></div>
@@ -27,8 +85,8 @@
       </div>
       <div class="registration">Registration</div>
       <div class="register-child"></div>
-      <form action="register.php" method="post" enctype="multipart/form-data">
-        <input class="register-item" type="file" name="image" id="imageInput" accept="image/*" onchange="previewImage(event)"/>
+      <form action="" method="post" enctype="multipart/form-data">
+        <input class="register-item" type="file" name="image" id="imageInput" accept="image/*" onchange="previewImage(event) required"/>
         <div class="upload-your-picture"><img id="preview-image" alt="Preview" /></div>
         <div class="full-name">
           <div class="full-name1">Full Name<span style="color:red">*</span></div>
@@ -98,55 +156,7 @@
           <div class="group-child"></div>
           <div class="next">Next</div>
         </button>
-    <?php 
-      function newUser(){
-        include 'dbconfig.php';
-        // Patient Picture
-        $imageData = file_get_contents($_FILES["image"]["tmp_name"]);
-        // Other patient data
-        $name = $_POST['fullName'];
-        $address = $_POST['address'];
-        $city = $_POST['city'];     
-        $birthDate = $_POST['birthDate'];
-        $age = $_POST['age'];
-        $sex = $_POST['sex'];
-        $contactNumber = $_POST['contactNumber'];
-        $bloodType = $_POST['bloodType'];
-        $patientType = $_POST['patientType'];
-        $department = $_POST['department'];
-        $emerContactName = $_POST['contactName'];
-        $emerContactNum = $_POST['contactNo'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $dateCreated = date("Y-m-d");
-        $sql = "INSERT INTO patient(patient_Pic, patient_Name, patient_Address, patient_City, patient_Age, patient_Birthdate, patient_Sex, patient_ContactNo, blood_Type, patient_Type, department, patient_Email, patient_Password, emer_ContactName, emer_ContactNo, pat_DateCreated, mdHist_Id)
-        VALUES ('$imageData','$name', '$address', '$city', '$age', '$birthDate', '$sex', '$contactNumber', '$bloodType', '$patientType', '$department', '$email', '$password', '$emerContactName', '$emerContactNum', '$dateCreated', LAST_INSERT_ID())";
-        if($conn->query($sql) === TRUE){
-          echo "<h2>Record created successfully!! Redirecting to next page....</h2>";
-          header("Location: register2.php");
-        }else{
-          echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-      }
-      function checkEmail(){
-        include 'dbconfig.php';
-        $email = $_POST['email'];
-        $sql = "SELECT * FROM patient WHERE patient_Email = '$email'";
-        $result = mysqli_query($conn, $sql);
-        if(mysqli_num_rows($result)!=0){
-          echo"<b><br>Email already exists!!";
-        }else if(isset($_POST['next'])){
-          newUser();
-        }
-      }
-      if(isset($_POST['next'])){
-        if(!empty($_POST['fullName']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['birthDate']) && !empty($_POST['age']) && !empty($_POST['sex']) && !empty($_POST['contactNumber']) && !empty($_POST['bloodType'])
-          && !empty($_POST['patientType']) && !empty($_POST['department']) && !empty($_POST['contactName']) && !empty($_POST['contactNo']) && !empty($_POST['email']) && !empty($_POST['password'])){
-            checkEmail();
-        }
-      }
-    ?>
-  </form>
+      </form>
       <img class="register-inner" alt="" src="assets/arrow-1.svg" />
       <img class="polygon-icon" alt="" src="assets/polygon-1@2x.png" />
       <script src="script/script.js"></script>
