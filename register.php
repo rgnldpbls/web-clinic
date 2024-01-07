@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
   <body>
-    <?php 
-      if($_POST){
+    <?php
+      session_start();
+      if(isset($_POST['next'])){
         checkEmail();
       }
       function checkEmail(){
@@ -28,7 +29,7 @@
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result)!=0){
           echo"<b><br>Email already exists!!";
-        }else if($_SERVER["REQUEST_METHOD"] == "POST"){
+        }else if(isset($_POST['next'])){
           // $imageData = file_get_contents($_FILES["image"]["tmp_name"]);
           // $name = $_POST['fullName'];
           // $address = $_POST['address'];
@@ -52,26 +53,46 @@
           // $stmt->execute();
           // $stmt->close();
 
-          $_SESSION["personal"]=array(
-            'imageDate'=>file_get_contents($_FILES["image"]["tmp_name"]),
-            'name'=>$_POST['fullName'],
-            'address'=>$_POST['address'],
-            'city'=>$_POST['city'],
-            'age'=>$_POST['age'],
-            'birthDate'=>$_POST['birthDate'],
-            'sex'=>$_POST['sex'],
-            'contactNumber'=>$_POST['contactNumber'],
-            'bloodType'=>$_POST['bloodType'],
-            'patientType'=>$_POST['patientType'],
-            'department'=>$_POST['department'],
-            'email'=>$_POST['email'],
-            'password'=>$_POST['password'],
-            'emerContactName'=>$_POST['emerContactName'],
-            'emerContactNum'=>$_POST['emerContactNum']
-        );
-
-        header("location: register2.php");
-    
+          if(!empty($_FILES["image"]["tmp_name"])){
+            $_SESSION["register"]=array(
+              'imageData'=>file_get_contents($_FILES["image"]["tmp_name"]),
+              'name'=>$_POST['fullName'],
+              'address'=>$_POST['address'],
+              'city'=>$_POST['city'],
+              'age'=>$_POST['age'],
+              'birthDate'=>$_POST['birthDate'],
+              'sex'=>$_POST['sex'],
+              'contactNumber'=>$_POST['contactNumber'],
+              'bloodType'=>$_POST['bloodType'],
+              'patientType'=>$_POST['patientType'],
+              'department'=>$_POST['department'],
+              'email'=>$_POST['email'],
+              'password'=>$_POST['password'],
+              'emerContactName'=>$_POST['contactName'],
+              'emerContactNum'=>$_POST['contactNo']
+            );
+            header("location: register2.php");
+            exit();
+          }else{
+            $_SESSION["register"]=array(
+              'name'=>$_POST['fullName'],
+              'address'=>$_POST['address'],
+              'city'=>$_POST['city'],
+              'age'=>$_POST['age'],
+              'birthDate'=>$_POST['birthDate'],
+              'sex'=>$_POST['sex'],
+              'contactNumber'=>$_POST['contactNumber'],
+              'bloodType'=>$_POST['bloodType'],
+              'patientType'=>$_POST['patientType'],
+              'department'=>$_POST['department'],
+              'email'=>$_POST['email'],
+              'password'=>$_POST['password'],
+              'emerContactName'=>$_POST['contactName'],
+              'emerContactNum'=>$_POST['contactNo']
+            );
+            header("location: register2.php");
+            exit();
+          }
         }
       }
     ?>
@@ -85,8 +106,8 @@
       </div>
       <div class="registration">Registration</div>
       <div class="register-child"></div>
-      <form action="" method="post" enctype="multipart/form-data">
-        <input class="register-item" type="file" name="image" id="imageInput" accept="image/*" onchange="previewImage(event) required"/>
+      <form action="register.php" method="post" enctype="multipart/form-data">
+        <input class="register-item" type="file" name="image" id="imageInput" accept="image/*" onchange="previewImage(event)"/>
         <div class="upload-your-picture"><img id="preview-image" alt="Preview" /></div>
         <div class="full-name">
           <div class="full-name1">Full Name<span style="color:red">*</span></div>
