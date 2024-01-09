@@ -62,7 +62,7 @@
           <img class="icons-1-1" alt="" src="assets/icons-1-1@2x.png" />
           <i class="fas fa-eye password-toggle" id="togglePassword"></i>
         </div>
-        <a href="fp.html" class="forgot-password">Forgot password?</a>
+        <a href="forgotpass.php" class="forgot-password">Forgot password?</a>
         <div class="login-inner"></div>
         <a href="dashboard.html" class="rectangle-button"></a>
         <div class="login2">Login</div>

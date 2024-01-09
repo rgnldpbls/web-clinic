@@ -26,6 +26,7 @@ body {
   --color-gray-100: #141414;
   --color-gray-200: #050505;
   --color-maroon-100: #760001;
+  --color-maroon-200: rgba(118, 0, 1, 0.5);
 
   /* Paddings */
   --padding-42xl: 61px;

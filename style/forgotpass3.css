@@ -1,0 +1,220 @@
+body {
+  zoom: 0.72;
+}
+.base1,
+.bg-pic-icon2 {
+  position: absolute;
+  left: 0;
+  width: 1920px;
+}
+.base1 {
+  top: 0;
+  background-color: var(--color-white);
+  height: 1080px;
+}
+.bg-pic-icon2 {
+  top: -50px;
+  height: 1440px;
+  object-fit: cover;
+}
+.forgot-pass3-child {
+  position: absolute;
+  top: 152px;
+  left: 274px;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 100px #141414;
+  width: 1372px;
+  height: 776px;
+}
+.logo-icon1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 86px;
+  height: 86px;
+  object-fit: cover;
+}
+.pup-clinic-appointment1,
+.sta-mesa-manila1 {
+  position: absolute;
+  top: 14px;
+  left: 110px;
+  display: inline-block;
+  width: 520px;
+  height: 50px;
+}
+.sta-mesa-manila1 {
+  top: 50px;
+  font-size: var(--font-size-mini);
+  font-family: var(--font-karla);
+  color: var(--color-gray-200);
+  width: 200px;
+  height: 20px;
+}
+.logo-group {
+  position: absolute;
+  top: 224px;
+  left: 389px;
+  width: 630px;
+  height: 86px;
+  text-align: left;
+}
+.forgot-pass3-item {
+  position: absolute;
+  top: 152px;
+  left: 960px;
+  background-color: var(--color-maroon-200);
+  width: 686px;
+  height: 776px;
+}
+.icons-2-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 37px;
+  height: 37px;
+  object-fit: cover;
+}
+.new-pass-child {
+  position: absolute;
+  top: 47.5px;
+  left: -0.5px;
+  border-top: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 524px;
+  height: 1px;
+}
+.enter-new-password {
+  border: 0;
+  outline: 0;
+  font-family: var(--font-kanit);
+  font-size: var(--font-size-3xl);
+  background-color: transparent;
+  position: absolute;
+  top: 5px;
+  left: 64px;
+  color: var(--color-darkgray);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 197px;
+  height: 25px;
+}
+.new-pass {
+  position: absolute;
+  top: 496px;
+  left: 352px;
+  width: 523px;
+  height: 48px;
+}
+.re-enter-pass-child {
+  position: absolute;
+  top: 49.5px;
+  left: -0.5px;
+  border-top: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 524px;
+  height: 1px;
+}
+.re-enter-new-password {
+  border: 0;
+  outline: 0;
+  font-family: var(--font-kanit);
+  font-size: var(--font-size-3xl);
+  background-color: transparent;
+  position: absolute;
+  top: 6px;
+  left: 64px;
+  color: var(--color-darkgray);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 246px;
+  height: 27px;
+}
+.icons-1-11 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+}
+.group-child,
+.re-enter-pass {
+  position: absolute;
+  top: 564px;
+  left: 352px;
+  width: 523px;
+  height: 50px;
+}
+.group-child {
+  top: 50.5px;
+  left: 12.5px;
+  border-top: 3px solid var(--color-deepskyblue);
+  box-sizing: border-box;
+  width: 46px;
+  height: 3px;
+}
+.forgot-your-password1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 434px;
+  height: 49px;
+}
+.line-parent {
+  position: absolute;
+  top: 388px;
+  left: 338px;
+  width: 434px;
+  height: 52px;
+  font-size: var(--font-size-21xl);
+  color: var(--color-gray-100);
+}
+.forgot-pass3-inner {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: var(--color-deepskyblue);
+  position: absolute;
+  top: 680px;
+  left: 351px;
+  border-radius: var(--br-6xs);
+  width: 523px;
+  height: 60px;
+}
+.confirm2 {
+  position: absolute;
+  top: 697px;
+  left: 550px;
+  font-size: var(--font-size-6xl);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  height: 25px;
+}
+.bg-pic-icon3 {
+  position: absolute;
+  top: 152px;
+  left: 960px;
+  width: 686px;
+  height: 776px;
+  object-fit: cover;
+}
+.forgot-pass3 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1080px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-maroon-100);
+  font-family: var(--font-kanit);
+}
