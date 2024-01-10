@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 09, 2024 at 03:46 PM
+-- Generation Time: Jan 10, 2024 at 03:12 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,6 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `admin_Id` int(11) NOT NULL,
+  `admin_Name` varchar(50) NOT NULL,
+  `admin_Email` varchar(50) NOT NULL,
+  `admin_Password` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_Id`, `admin_Name`, `admin_Email`, `admin_Password`) VALUES
+(1, 'Regienald Pueblos', 'regienaldpueblos13@gmail.com', 'admin');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `medhistory`
 --
 
@@ -36,6 +56,13 @@ CREATE TABLE `medhistory` (
   `ph_Smoking` varchar(3) NOT NULL,
   `ph_Alcohol` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `medhistory`
+--
+
+INSERT INTO `medhistory` (`mdHist_Id`, `md_Attention`, `md_Illness`, `md_AllergiesFoods`, `md_AllergiesMeds`, `ph_Smoking`, `ph_Alcohol`) VALUES
+(1, 'no', NULL, '', '', 'no', 'no');
 
 -- --------------------------------------------------------
 
@@ -66,8 +93,48 @@ CREATE TABLE `patient` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Dumping data for table `patient`
+--
+
+INSERT INTO `patient` (`patient_Id`, `patient_Pic`, `patient_Name`, `patient_Address`, `patient_City`, `patient_Age`, `patient_Birthdate`, `patient_Sex`, `patient_ContactNo`, `blood_Type`, `patient_Type`, `department`, `patient_Email`, `patient_Password`, `emer_ContactName`, `emer_ContactNo`, `pat_DateCreated`, `mdHist_Id`, `admin_Id`) VALUES
+(1, '', 'Jane Cortez', '#41st Groove St. Mexico Ave', 'Manila', 25, '1998-02-14', 'female', '90138287', 'B-', 'Faculty', 'CHK', 'jcortez14@gmail.com', 'jane1234', 'Philip Cortez', '90138287', '2024-01-09', 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personnel`
+--
+
+CREATE TABLE `personnel` (
+  `pers_Id` int(11) NOT NULL,
+  `pers_Pic` longblob DEFAULT NULL,
+  `pers_Name` varchar(50) NOT NULL,
+  `pers_Sex` varchar(6) NOT NULL,
+  `pers_ContactNo` varchar(15) NOT NULL,
+  `pers_Birthdate` date NOT NULL,
+  `pers_Type` varchar(10) NOT NULL,
+  `pers_Email` varchar(50) NOT NULL,
+  `pers_Password` varchar(30) NOT NULL,
+  `pers_DateCreated` date NOT NULL,
+  `admin_Id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `personnel`
+--
+
+INSERT INTO `personnel` (`pers_Id`, `pers_Pic`, `pers_Name`, `pers_Sex`, `pers_ContactNo`, `pers_Birthdate`, `pers_Type`, `pers_Email`, `pers_Password`, `pers_DateCreated`, `admin_Id`) VALUES
+(1, NULL, 'John Santos', 'Male', '9283861191', '1982-04-05', 'Doctor', 'drjohnsantos05@gmail.com', 'drjs05', '2024-01-10', NULL);
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin_Id`);
 
 --
 -- Indexes for table `medhistory`
@@ -82,20 +149,38 @@ ALTER TABLE `patient`
   ADD PRIMARY KEY (`patient_Id`);
 
 --
+-- Indexes for table `personnel`
+--
+ALTER TABLE `personnel`
+  ADD PRIMARY KEY (`pers_Id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `admin_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `medhistory`
 --
 ALTER TABLE `medhistory`
-  MODIFY `mdHist_Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `mdHist_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `patient_Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `patient_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `personnel`
+--
+ALTER TABLE `personnel`
+  MODIFY `pers_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
