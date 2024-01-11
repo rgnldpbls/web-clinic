@@ -20,35 +20,6 @@
       session_start();
       if(isset($_POST['register'])){
         include 'dbconfig.php';
-        // $name = $_POST['fullName'];
-        // $address = $_POST['address'];
-        // $city = $_POST['city'];
-        // $age = $_POST['age'];
-        // $birthDate = $_POST['birthDate'];
-        // $sex = $_POST['sex'];
-        // $contactNumber = $_POST['contactNumber'];
-        // $bloodType = $_POST['bloodType'];
-        // $patient_Type = $_POST['patientType'];
-        // $department = $_POST['department'];
-        // $email = $_POST['email'];
-        // $password = $_POST['password'];
-        // $emerContactName = $_POST['contactName'];
-        // $emerContactNum = $_POST['contactNo'];
-        // $dateCreated = date("Y-m-d");
-        // if(!empty($_FILES["image"]["tmp_name"])){
-        //   $imageData = file_get_contents($_FILES["image"]["tmp_name"]);
-        //   $sql = "INSERT INTO patient(patient_Pic, patient_Name, patient_Address, patient_City, patient_Age, patient_Birthdate, patient_Sex, patient_ContactNo, blood_Type, patient_Type, department, patient_Email, patient_Password, emer_ContactName, emer_ContactNo, pat_DateCreated) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        //   $stmt = $conn->prepare($sql);
-        //   $stmt->bind_param("bsssississssssis", $imageData, $name, $address, $city, $age, $birthDate, $sex, $contactNumber, $bloodType, $patient_Type, $department, $email, $password, $emerContactName, $emerContactNum, $dateCreated);
-        //   $stmt->execute();
-        //   $stmt->close();
-        // }else{
-        //   $sql = "INSERT INTO patient(patient_Name, patient_Address, patient_City, patient_Age, patient_Birthdate, patient_Sex, patient_ContactNo, blood_Type, patient_Type, department, patient_Email, patient_Password, emer_ContactName, emer_ContactNo, pat_DateCreated) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        //   $stmt = $conn->prepare($sql);
-        //   $stmt->bind_param("sssississssssis", $name, $address, $city, $age, $birthDate, $sex, $contactNumber, $bloodType, $patient_Type, $department, $email, $password, $emerContactName, $emerContactNum, $dateCreated);
-        //   $stmt->execute();
-        //   $stmt->close();
-        // }
         if(!empty($_SESSION['register']['imageData'])){
           $imageData=$_SESSION['register']['imageData'];
           $name=$_SESSION['register']['name'];
