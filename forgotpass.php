@@ -16,6 +16,63 @@
     />
   </head>
   <body>
+    <?php 
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
+    require 'vendor/autoload.php';
+
+    function sendMail($email, $vCode){
+      $mail = new PHPMailer(true);
+      try{
+        // $mail->SMTPDebug = 2;
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'pueblosregienaldnb15@gmail.com';
+        $mail->Password = 'fqne cvms spec zztc';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;;
+        $mail->Port = 587;
+
+        $mail->setFrom("noreply@gmail.com", 'PUP Clinic Appointment System');
+        $mail->addAddress($email);
+
+        $mail->isHTML(true);
+        $mail->Subject = "PUP Clinic Appointment System Verification Code";
+        $mail->Body = "Your verification code is: $vCode";
+
+        $mail->send();
+        $_SESSION["code"] = $verificationCode;
+        header("location: forgotpass2.php");
+      }catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+      }
+    }
+
+      if(isset($_POST['proceed'])){
+        session_start();
+        include 'dbconfig.php';
+        $email = $_POST['email'];
+        $verificationCode =  rand(100000, 999999);
+
+        $sql = "SELECT * FROM patient WHERE patient_Email = '$email'";
+        $sql2 = "SELECT * FROM personnel WHERE pers_Email = '$email'";
+        $sql3 = "SELECT * FROM admin WHERE admin_Email = '$email'";
+        $res = mysqli_query($conn, $sql);
+        $res2 = mysqli_query($conn, $sql2);
+        $res3 = mysqli_query($conn, $sql3);
+        if(mysqli_num_rows($res) == 1){
+          sendMail($email, $verificationCode);
+        }else if(mysqli_num_rows($res2) == 1){
+          sendMail($email, $verificationCode);
+        }else if(mysqli_num_rows($res3) == 1){
+          sendMail($email, $verificationCode);
+        }else{
+          echo "EMAIL CANNOT BE FOUND";
+        }
+      }
+    ?>
     <div class="forgot-pass1">
       <div class="base2"></div>
       <img class="bg-pic-icon4" alt="" src="assets/bg-pic@2x.png" />
@@ -29,16 +86,17 @@
       </div>
       <div class="forgot-pass1-item"></div>
       <div class="forgot-your-password2">Forgot your password?</div>
-      <div class="email1">
-        <img class="icons-1" alt="" src="assets/icons-1@2x.png" />
-
-        <div class="email-item"></div>
-        <input class="enter-your-registered" type="email" placeholder="Enter your registered email"/>
-      </div>
-      <div class="forgot-pass1-inner"></div>
-      <button class="rectangle-button"></button>
-      <div class="proceed">Proceed</div>
-      <img class="bg-pic-icon5" alt="" src="assets/bg-pic@2x.png" />
+      <form action="forgotpass.php" method="post">
+        <div class="email1">
+          <img class="icons-1" alt="" src="assets/icons-1@2x.png" />
+          <div class="email-item"></div>
+          <input class="enter-your-registered" type="email" placeholder="Enter your registered email" name="email"/>
+        </div>
+        <div class="forgot-pass1-inner"></div>
+        <button class="rectangle-button" type="submit" name="proceed"></button>
+        <div class="proceed">Proceed</div>
+        <img class="bg-pic-icon5" alt="" src="assets/bg-pic@2x.png" />
+      </form>
     </div>
   </body>
 </html>
