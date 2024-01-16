@@ -106,7 +106,7 @@ body {
   left: 64px;
   width: 289px;
   height: 25px;
-  color: var(--color-darkgray);
+  color: black;
 }
 .a-code-has,
 .email {

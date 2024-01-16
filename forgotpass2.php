@@ -17,7 +17,16 @@
   </head>
   <body>
     <?php 
-      
+      if(isset($_POST['confirm'])){
+        session_start();
+        $verifCode = $_SESSION['data'];
+        $vCode = $_POST['code'];
+        if($verifCode == $vCode){
+          header("location: forgotpass3.php");
+        }else{
+          echo "OTP was incorrect, Please try again!";
+        }
+      }
     ?>
     <div class="forgot-pass2">
       <div class="base"></div>
@@ -32,11 +41,11 @@
       </div>
       <div class="forgot-pass2-item"></div>
       <div class="forgot-your-password">Forgot your password?</div>
-      <form action="" method="">
+      <form action="forgotpass2.php" method="post">
         <div class="email">
           <div class="email-child"></div>
           <img class="icons-1-1" alt="" src="assets/icons-1-1@2x.png" />
-          <input class="enter-code" type="number" placeholder="Enter the 6-digit code" name="code" />
+          <input class="enter-code" type="number" placeholder="Enter the 6-digit code" name="code" required/>
         </div>
         <div class="a-code-has">A code has been sent to your email.</div>
         <div class="forgot-pass2-inner"></div>

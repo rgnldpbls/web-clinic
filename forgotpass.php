@@ -39,12 +39,14 @@
         $mail->addAddress($email);
 
         $mail->isHTML(true);
-        $mail->Subject = "PUP Clinic Appointment System Verification Code";
-        $mail->Body = "Your verification code is: $vCode";
+        $mail->Subject = "PUP Clinic Appointment System OTP Code";
+        $mail->Body = "Your OTP code is: <b>$vCode<b>";
 
         $mail->send();
-        $_SESSION["code"] = $verificationCode;
+        $_SESSION['data'] = $vCode;
+        $_SESSION['email'] = $email;
         header("location: forgotpass2.php");
+        exit();
       }catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
       }
@@ -90,7 +92,7 @@
         <div class="email1">
           <img class="icons-1" alt="" src="assets/icons-1@2x.png" />
           <div class="email-item"></div>
-          <input class="enter-your-registered" type="email" placeholder="Enter your registered email" name="email"/>
+          <input class="enter-your-registered" type="email" placeholder="Enter your registered email" name="email" required/>
         </div>
         <div class="forgot-pass1-inner"></div>
         <button class="rectangle-button" type="submit" name="proceed"></button>

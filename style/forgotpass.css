@@ -105,11 +105,11 @@ body {
   position: absolute;
   top: 5px;
   left: 64px;
-  color: var(--color-darkgray);
+  color: black;
   text-align: left;
   display: flex;
   align-items: center;
-  width: 289px;
+  width: 400px;
   height: 25px;
 }
 .email1 {
