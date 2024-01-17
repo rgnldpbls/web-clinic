@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <title>Homepage</title>
     <link rel="stylesheet" href="style/global.css" />
     <link rel="stylesheet" href="style/index.css" />
