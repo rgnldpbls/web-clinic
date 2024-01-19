@@ -20,50 +20,26 @@
       session_start();
       if(isset($_POST['register'])){
         include 'dbconfig.php';
-        if(!empty($_SESSION['register']['imageData'])){
-          $imageData=$_SESSION['register']['imageData'];
-          $name=$_SESSION['register']['name'];
-          $address=$_SESSION['register']['address'];
-          $city=$_SESSION['register']['city'];
-          $age=$_SESSION['register']['age'];
-          $birthDate=$_SESSION['register']['birthDate'];
-          $sex=$_SESSION['register']['sex'];
-          $contactNumber=$_SESSION['register']['contactNumber'];
-          $bloodType=$_SESSION['register']['bloodType'];
-          $patientType=$_SESSION['register']['patientType'];
-          $department=$_SESSION['register']['department'];
-          $email=$_SESSION['register']['email'];
-          $password=$_SESSION['register']['password'];
-          $emerContactName=$_SESSION['register']['emerContactName'];
-          $emerContactNum=$_SESSION['register']['emerContactNum'];
-          $dateCreated = date("Y-m-d");
-          $sql = "INSERT INTO patient(patient_Pic, patient_Name, patient_Address, patient_City, patient_Age, patient_Birthdate, patient_Sex, patient_ContactNo, blood_Type, patient_Type, department, patient_Email, patient_Password, emer_ContactName, emer_ContactNo, pat_DateCreated) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-          $stmt = $conn->prepare($sql);
-          $stmt->bind_param("bsssississssssis", $imageData, $name, $address, $city, $age, $birthDate, $sex, $contactNumber, $bloodType, $patientType, $department, $email, $password, $emerContactName, $emerContactNum, $dateCreated);
-          $stmt->execute();
-          $stmt->close();
-        }else{
-          $name=$_SESSION['register']['name'];
-          $address=$_SESSION['register']['address'];
-          $city=$_SESSION['register']['city'];
-          $age=$_SESSION['register']['age'];
-          $birthDate=$_SESSION['register']['birthDate'];
-          $sex=$_SESSION['register']['sex'];
-          $contactNumber=$_SESSION['register']['contactNumber'];
-          $bloodType=$_SESSION['register']['bloodType'];
-          $patientType=$_SESSION['register']['patientType'];
-          $department=$_SESSION['register']['department'];
-          $email=$_SESSION['register']['email'];
-          $password=$_SESSION['register']['password'];
-          $emerContactName=$_SESSION['register']['emerContactName'];
-          $emerContactNum=$_SESSION['register']['emerContactNum'];
-          $dateCreated = date("Y-m-d");
-          $sql = "INSERT INTO patient(patient_Name, patient_Address, patient_City, patient_Age, patient_Birthdate, patient_Sex, patient_ContactNo, blood_Type, patient_Type, department, patient_Email, patient_Password, emer_ContactName, emer_ContactNo, pat_DateCreated) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-          $stmt = $conn->prepare($sql);
-          $stmt->bind_param("sssississssssis", $name, $address, $city, $age, $birthDate, $sex, $contactNumber, $bloodType, $patientType, $department, $email, $password, $emerContactName, $emerContactNum, $dateCreated);
-          $stmt->execute();
-          $stmt->close();
-        }
+        $name=$_SESSION['register']['name'];
+        $address=$_SESSION['register']['address'];
+        $city=$_SESSION['register']['city'];
+        $age=$_SESSION['register']['age'];
+        $birthDate=$_SESSION['register']['birthDate'];
+        $sex=$_SESSION['register']['sex'];
+        $contactNumber=$_SESSION['register']['contactNumber'];
+        $bloodType=$_SESSION['register']['bloodType'];
+        $patientType=$_SESSION['register']['patientType'];
+        $department=$_SESSION['register']['department'];
+        $email=$_SESSION['register']['email'];
+        $password=$_SESSION['register']['password'];
+        $emerContactName=$_SESSION['register']['emerContactName'];
+        $emerContactNum=$_SESSION['register']['emerContactNum'];
+        $dateCreated = date("Y-m-d");
+        $sql = "INSERT INTO patient(patient_Name, patient_Address, patient_City, patient_Age, patient_Birthdate, patient_Sex, patient_ContactNo, blood_Type, patient_Type, department, patient_Email, patient_Password, emer_ContactName, emer_ContactNo, pat_DateCreated) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sssississssssis", $name, $address, $city, $age, $birthDate, $sex, $contactNumber, $bloodType, $patientType, $department, $email, $password, $emerContactName, $emerContactNum, $dateCreated);
+        $stmt->execute();
+        $stmt->close();
 
         $medAttention = $_POST['r1'];
         $medIllness = isset($_POST['medIllness']) ? $_POST['medIllness'] : NULL;
@@ -77,13 +53,13 @@
         $stmt->execute();
         $stmt->close(); 
 
-       $last_inserted_id = $conn->insert_id;
-       $sql3 = "UPDATE patient SET mdHist_Id = '$last_inserted_id' WHERE patient_Email = '$email'";
-       $stmt = $conn->prepare($sql3);
-       $stmt->execute();
-       $stmt->close(); 
-       echo "Record updated successfully";
-       header("location: login.php");
+        $last_inserted_id = $conn->insert_id;
+        $sql3 = "UPDATE patient SET mdHist_Id = '$last_inserted_id' WHERE patient_Email = '$email'";
+        $stmt = $conn->prepare($sql3);
+        $stmt->execute();
+        $stmt->close(); 
+        echo '<script>alert("Record updated successfully")</script>';
+        header("location: login.php");
       }
     ?>
     <div class="register2">

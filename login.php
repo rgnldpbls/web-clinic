@@ -45,7 +45,7 @@
           if(mysqli_num_rows($inner) == 1){
             header("location: patientpage.php");
           }else{
-            echo "INCORRECT PASSWORD!";
+            echo '<script>alert("Incorrect Password!")</script>';
           }
         }else if(mysqli_num_rows($res2) == 1){
           $sql = "SELECT * FROM personnel WHERE pers_Email = '$email' and pers_Password = '$password'";
@@ -53,7 +53,7 @@
           if(mysqli_num_rows($inner) == 1){
             header("location: personnelpage.php");
           }else{
-            echo "INCORRECT PASSWORD!";
+            echo '<script>alert("Incorrect Password!")</script>';
           }
         }else if(mysqli_num_rows($res3) == 1){
           $sql = "SELECT * FROM admin WHERE admin_Email = '$email' and admin_Password = '$password'";
@@ -61,10 +61,10 @@
           if(mysqli_num_rows($inner) == 1){
             header("location: adminpage.php");
           }else{
-            echo "INCORRECT PASSWORD!";
+            echo '<script>alert("Incorrect Password!")</script>';
           }
         }else{
-          echo "EMAIL CANNOT BE FOUND";
+          echo '<script>alert("Email Cannot be found! Please register first.")</script>';
         }
       }
     ?>
@@ -90,6 +90,7 @@
             type="email"
             name = "email"
             placeholder="Enter your email"
+            required
           />
         </div>
         <div class="password">
@@ -100,6 +101,7 @@
             placeholder="Enter your password"
             name="password"
             id="password"
+            required
           />
           <img class="icons-1-1" alt="" src="assets/icons-1-1@2x.png" />
           <i class="fas fa-eye password-toggle" id="togglePassword"></i>

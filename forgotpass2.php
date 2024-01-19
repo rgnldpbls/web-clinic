@@ -24,7 +24,7 @@
         if($verifCode == $vCode){
           header("location: forgotpass3.php");
         }else{
-          echo "OTP was incorrect, Please try again!";
+          echo '<script>alert("OTP was incorrect, Please try again!")</script>';
         }
       }
     ?>

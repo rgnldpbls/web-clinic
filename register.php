@@ -28,48 +28,26 @@
         $sql = "SELECT * FROM patient WHERE patient_Email = '$email'";
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result)!=0){
-          echo"<b><br>Email already exists!!";
+          echo"<script>alert(Email already exists! Please go to Login page.)</script>";
         }else if(isset($_POST['next'])){
-          if(!empty($_FILES["image"]["tmp_name"])){
-            $_SESSION["register"]=array(
-              'imageData'=>file_get_contents($_FILES["image"]["tmp_name"]),
-              'name'=>$_POST['fullName'],
-              'address'=>$_POST['address'],
-              'city'=>$_POST['city'],
-              'age'=>$_POST['age'],
-              'birthDate'=>$_POST['birthDate'],
-              'sex'=>$_POST['sex'],
-              'contactNumber'=>$_POST['contactNumber'],
-              'bloodType'=>$_POST['bloodType'],
-              'patientType'=>$_POST['patientType'],
-              'department'=>$_POST['department'],
-              'email'=>$_POST['email'],
-              'password'=>$_POST['password'],
-              'emerContactName'=>$_POST['contactName'],
-              'emerContactNum'=>$_POST['contactNo']
-            );
-            header("location: register2.php");
-            exit();
-          }else{
-            $_SESSION["register"]=array(
-              'name'=>$_POST['fullName'],
-              'address'=>$_POST['address'],
-              'city'=>$_POST['city'],
-              'age'=>$_POST['age'],
-              'birthDate'=>$_POST['birthDate'],
-              'sex'=>$_POST['sex'],
-              'contactNumber'=>$_POST['contactNumber'],
-              'bloodType'=>$_POST['bloodType'],
-              'patientType'=>$_POST['patientType'],
-              'department'=>$_POST['department'],
-              'email'=>$_POST['email'],
-              'password'=>$_POST['password'],
-              'emerContactName'=>$_POST['contactName'],
-              'emerContactNum'=>$_POST['contactNo']
-            );
-            header("location: register2.php");
-            exit();
-          }
+          $_SESSION["register"]=array(
+            'name'=>$_POST['fullName'],
+            'address'=>$_POST['address'],
+            'city'=>$_POST['city'],
+            'age'=>$_POST['age'],
+            'birthDate'=>$_POST['birthDate'],
+            'sex'=>$_POST['sex'],
+            'contactNumber'=>$_POST['contactNumber'],
+            'bloodType'=>$_POST['bloodType'],
+            'patientType'=>$_POST['patientType'],
+            'department'=>$_POST['department'],
+            'email'=>$_POST['email'],
+            'password'=>$_POST['password'],
+            'emerContactName'=>$_POST['contactName'],
+            'emerContactNum'=>$_POST['contactNo']
+          );
+          header("location: register2.php");
+          exit();
         }
       }
     ?>
@@ -83,9 +61,7 @@
       </div>
       <div class="registration">Registration</div>
       <div class="register-child"></div>
-      <form action="register.php" method="post" enctype="multipart/form-data">
-        <input class="register-item" type="file" name="image" id="imageInput" accept="image/*" onchange="previewImage(event)"/>
-        <div class="upload-your-picture"><img id="preview-image" alt="Preview" /></div>
+      <form action="register.php" method="post">
         <div class="full-name">
           <div class="full-name1">Full Name<span style="color:red">*</span></div>
           <input class="full-name-child" type="text" name="fullName" required/>
@@ -157,7 +133,7 @@
       </form>
       <img class="register-inner" alt="" src="assets/arrow-1.svg" />
       <img class="polygon-icon" alt="" src="assets/polygon-1@2x.png" />
-      <script src="script/script.js"></script>
     </div>
+    <script src="script/script.js"></script>
   </body>
 </html>

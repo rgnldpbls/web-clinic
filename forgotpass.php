@@ -48,7 +48,7 @@
         header("location: forgotpass2.php");
         exit();
       }catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo '<script>alert("Message could not be sent. Mailer Error: {$mail->ErrorInfo}")</script>';
       }
     }
 
@@ -71,7 +71,7 @@
         }else if(mysqli_num_rows($res3) == 1){
           sendMail($email, $verificationCode);
         }else{
-          echo "EMAIL CANNOT BE FOUND";
+          echo '<script>alert("Email Cannot be found! Please register first.")</script>';
         }
       }
     ?>

@@ -36,10 +36,10 @@
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $stmt->close();
-            echo "Record updated successfully";
+            echo '<script>alert("Record updated successfully")</script>';
             header("location: login.php");
           }else{
-            echo "Unmatched password, Try again!";
+            echo '<script>alert("Unmatched password, Try again!")</script>';
           }
         }else if(mysqli_num_rows($res2) == 1){
           if($password == $password2){
@@ -47,10 +47,10 @@
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $stmt->close();
-            echo "Record updated successfully";
+            echo '<script>alert("Record updated successfully")</script>';
             header("location: login.php");
           }else{
-            echo "Unmatched password, Try again!";
+            echo '<script>alert("Unmatched password, Try again!")</script>';
           }
         }else if(mysqli_num_rows($res3) == 1){
           if($password == $password2){
@@ -58,13 +58,13 @@
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $stmt->close();
-            echo "Record updated successfully";
+            echo '<script>alert("Record updated successfully")</script>';
             header("location: login.php");
           }else{
-            echo "Unmatched password, Try again!";
+            echo '<script>alert("Unmatched password, Try again!")</script>';
           }
         }else{
-          echo "EMAIL CANNOT BE FOUND";
+          echo '<script>alert("Email Cannot be found! Please register first.")</script>';
         }
       }
     ?>
