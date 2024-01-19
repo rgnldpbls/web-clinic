@@ -28,7 +28,7 @@
         $sql = "SELECT * FROM patient WHERE patient_Email = '$email'";
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result)!=0){
-          echo"<script>alert(Email already exists! Please go to Login page.)</script>";
+          echo '<script>alert("Email already exists! Please go to Login page.")</script>';
         }else if(isset($_POST['next'])){
           $_SESSION["register"]=array(
             'name'=>$_POST['fullName'],
