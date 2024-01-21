@@ -1,0 +1,761 @@
+body {
+  zoom: 0.7;
+}
+.base,
+.sidebar {
+  position: absolute;
+  top: 0;
+}
+.base {
+  left: 355px;
+  background-color: #eaeaea;
+  box-shadow: 0 4px 100px rgba(20, 20, 20, 0.5);
+  width: 1920px;
+  height: 1080px;
+}
+.sidebar {
+  left: 3px;
+  background: linear-gradient(
+    180deg,
+    rgba(152, 152, 152, 0.16) 30.5%,
+    rgba(239, 11, 11, 0.3)
+  );
+  width: 355px;
+  height: 1274px;
+}
+.bg-pic-icon {
+  position: absolute;
+  top: 170px;
+  left: 0;
+  width: 360.7px;
+  height: 1080px;
+  object-fit: cover;
+}
+.dashboard1 {
+  top: 0;
+  left: 37px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-karla);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 180px;
+}
+.dashboard,
+.dashboard-icon,
+.dashboard1 {
+  position: absolute;
+  height: 26px;
+}
+.dashboard-icon {
+  top: 0;
+  left: 0;
+  width: 26px;
+  object-fit: contain;
+}
+.dashboard {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 319px;
+  left: 35px;
+  width: 217px;
+}
+.appointments-icon {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+.appointments {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 369px;
+  left: 35px;
+  width: 217px;
+  height: 26px;
+}
+.book-an-appointment1 {
+  position: absolute;
+  top: 0;
+  left: 37px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-karla);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 250px;
+  height: 26px;
+}
+.book-icon {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+.book-an-appointment {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 419px;
+  left: 35px;
+  width: 287px;
+  height: 26px;
+}
+.transactions1 {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-karla);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 180px;
+  height: 26px;
+}
+.transactions-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 29px;
+  height: 29px;
+  object-fit: cover;
+}
+.transactions {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 469px;
+  left: 32px;
+  width: 220px;
+  height: 29px;
+}
+.logo-icon,
+.sidebar-container {
+  position: absolute;
+  top: -75px;
+  left: -3px;
+  width: 360.7px;
+  height: 1274px;
+}
+.logo-icon {
+  top: 0;
+  left: 0;
+  width: 58.3px;
+  height: 58.3px;
+  object-fit: cover;
+}
+.pup-clinic-appointment,
+.sta-mesa-manila {
+  position: absolute;
+  top: 8.5px;
+  left: 74.6px;
+  display: inline-block;
+  width: 352.4px;
+  height: 33.9px;
+}
+.sta-mesa-manila {
+  top: 34.9px;
+  font-size: 13px;
+  font-family: var(--font-karla);
+  color: #050505;
+  width: 135.6px;
+  height: 13.6px;
+}
+.header {
+  position: absolute;
+  top: 21px;
+  left: 22px;
+  width: 427px;
+  height: 58.3px;
+  font-size: var(--font-size-base);
+  color: var(--color-maroon);
+}
+.patient-dashboard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 301px;
+  height: 49px;
+}
+.patient-dashboard-title-child {
+  position: absolute;
+  top: 54.5px;
+  left: -1.5px;
+  border-top: 3px solid var(--color-deepskyblue);
+  box-sizing: border-box;
+  width: 46px;
+  height: 3px;
+}
+.patient-dashboard-title {
+  position: absolute;
+  top: 140px;
+  left: 29px;
+  width: 301px;
+  height: 56px;
+  font-size: var(--font-size-11xl);
+}
+.patient-dashboard-dashboard-child {
+  position: absolute;
+  top: 106.5px;
+  left: -0.5px;
+  border-top: 1px solid #5d5858;
+  box-sizing: border-box;
+  width: 356px;
+  height: 1px;
+}
+.patient-dashboard-dashboard-inner,
+.patient-dashboard-dashboard-item {
+  position: absolute;
+  top: 0;
+  left: 355px;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  width: 1565px;
+  height: 76px;
+}
+.patient-dashboard-dashboard-inner {
+  top: 108px;
+  width: 1566px;
+  height: 1297px;
+}
+.group-child {
+  position: absolute;
+  top: 2.2px;
+  left: 0;
+  background-color: #24282e;
+  width: 1932px;
+  height: 77.7px;
+}
+.bsit-3-2n-group,
+.contact-us-at {
+  position: absolute;
+  top: 19.4px;
+  left: 32.2px;
+  display: flex;
+  align-items: center;
+  width: 588.7px;
+  height: 43.2px;
+}
+.contact-us-at {
+  top: 0;
+  left: 1375.2px;
+  text-align: right;
+  width: 891.5px;
+  height: 82px;
+}
+.rectangle-parent {
+  position: absolute;
+  top: 1158px;
+  left: -3px;
+  width: 1932px;
+  height: 82px;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  font-family: var(--font-questrial);
+}
+.group-item {
+  cursor: pointer;
+  border: 1px solid var(--color-maroon);
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 4px 7px 1px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  width: 75px;
+  height: 45px;
+}
+.patient {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 27px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.rectangle-group {
+  position: absolute;
+  top: 13px;
+  left: 1812px;
+  width: 75px;
+  height: 45px;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-maroon);
+  font-family: var(--font-karla);
+}
+.dashboard2 {
+  position: absolute;
+  top: 0;
+  left: 27px;
+  display: flex;
+  align-items: center;
+  width: 301px;
+  height: 49px;
+}
+.patient-dashboard-title-item {
+  position: absolute;
+  top: 57.5px;
+  left: -1.5px;
+  border-top: 3px solid var(--color-deepskyblue);
+  box-sizing: border-box;
+  width: 1568px;
+  height: 3px;
+}
+.patient-dashboard-title1 {
+  position: absolute;
+  top: 115px;
+  left: 355px;
+  width: 1565px;
+  height: 59px;
+  font-size: var(--font-size-11xl);
+}
+.full-name,
+.full-name-child {
+  position: absolute;
+  width: 533px;
+}
+.full-name-child {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  top: 35px;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  height: 53px;
+}
+.full-name {
+  top: 213px;
+  left: 505px;
+  height: 88px;
+}
+.emergency-contact-number1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 311px;
+  height: 27px;
+}
+.emergency-contact-number {
+  position: absolute;
+  top: 1001px;
+  left: 505px;
+  width: 533px;
+  height: 88px;
+}
+.emergency-contact-name1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 284px;
+  height: 27px;
+}
+.emergency-contact-name,
+.patient-email1 {
+  position: absolute;
+  top: 888px;
+  left: 505px;
+  width: 533px;
+  height: 88px;
+}
+.patient-email1 {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 238.2px;
+  height: 27px;
+}
+.patient-email,
+.patient-password,
+.patient-type1 {
+  position: absolute;
+  top: 213px;
+  left: 1212px;
+  width: 533px;
+  height: 88px;
+}
+.patient-password,
+.patient-type1 {
+  top: 323px;
+}
+.patient-type1 {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 176px;
+  height: 27px;
+}
+.patient-type-child {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  width: 249px;
+  height: 53px;
+}
+.department,
+.patient-type {
+  position: absolute;
+  top: 764px;
+  left: 505px;
+  width: 249px;
+  height: 88px;
+}
+.department {
+  left: 789px;
+}
+.contact-number-child {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  width: 305px;
+  height: 53px;
+}
+.contact-number {
+  position: absolute;
+  top: 651px;
+  left: 505px;
+  width: 305px;
+  height: 88px;
+}
+.blood-type-child {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  width: 192px;
+  height: 53px;
+}
+.address,
+.age1,
+.blood-type {
+  position: absolute;
+  top: 651px;
+  left: 846px;
+  width: 238.2px;
+  height: 88px;
+}
+.address,
+.age1 {
+  top: 323px;
+  left: 505px;
+  width: 533px;
+}
+.age1 {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 238px;
+  height: 27px;
+}
+.age,
+.age-child,
+.male,
+.sex1 {
+  position: absolute;
+  width: 259px;
+}
+.age-child {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  top: 35px;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  height: 53px;
+}
+.age,
+.male,
+.sex1 {
+  top: 538px;
+  left: 505px;
+  height: 88px;
+}
+.male,
+.sex1 {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 219px;
+  height: 27px;
+}
+.male {
+  top: 45px;
+  left: 32px;
+  width: 65px;
+}
+.sex-child {
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px #000;
+  border: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 17px;
+  height: 17px;
+}
+.female {
+  position: absolute;
+  top: 45px;
+  left: 154px;
+  display: flex;
+  align-items: center;
+  width: 86px;
+  height: 27px;
+}
+.sex-item {
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: 50px;
+  left: 122px;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px #000;
+  border: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 17px;
+  height: 17px;
+}
+.city1,
+.sex {
+  position: absolute;
+  top: 538px;
+  left: 810px;
+  width: 240px;
+  height: 72px;
+}
+.city1 {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 104px;
+  height: 27px;
+}
+.city,
+.city-child {
+  position: absolute;
+  width: 227px;
+}
+.city-child {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  top: 35px;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  height: 53px;
+}
+.city {
+  top: 433px;
+  left: 505px;
+  height: 88px;
+}
+.birthdate-mmddyyyy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 265px;
+  height: 27px;
+}
+.birthdate-child {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  width: 274px;
+  height: 53px;
+}
+.birthdate,
+.medical-illness {
+  position: absolute;
+  top: 433px;
+  left: 764px;
+  width: 274px;
+  height: 88px;
+}
+.medical-illness {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 244.2px;
+  height: 27px;
+}
+.address2,
+.yes {
+  position: absolute;
+  top: 602px;
+  left: 1212px;
+  width: 533px;
+  height: 88px;
+}
+.yes {
+  top: 43px;
+  left: 32px;
+  display: flex;
+  align-items: center;
+  width: 65px;
+  height: 27px;
+}
+.needs-medical-attention-child {
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px #000;
+  border: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 17px;
+  height: 17px;
+}
+.no {
+  position: absolute;
+  top: 43px;
+  left: 154px;
+  display: flex;
+  align-items: center;
+  width: 86px;
+  height: 27px;
+}
+.needs-medical-attention-item {
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: 48px;
+  left: 122px;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px #000;
+  border: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 17px;
+  height: 17px;
+}
+.any-history-of,
+.needs-medical-attention {
+  position: absolute;
+  top: 511px;
+  left: 1210px;
+  width: 274px;
+  height: 70px;
+}
+.any-history-of {
+  top: 0;
+  left: 2px;
+  display: flex;
+  align-items: center;
+  width: 272px;
+  height: 27px;
+}
+.needs-medical-attention2,
+.needs-medical-attention3 {
+  position: absolute;
+  top: 933px;
+  left: 1212px;
+  width: 274px;
+  height: 70px;
+}
+.needs-medical-attention3 {
+  left: 1554px;
+}
+.allergies-in-food,
+.allergies-in-medicine {
+  position: absolute;
+  top: 712px;
+  left: 1212px;
+  width: 533px;
+  height: 88px;
+}
+.allergies-in-medicine {
+  top: 817px;
+}
+.patient-dashboard-dashboard,
+.welcome-fn-mi {
+  text-align: left;
+  color: var(--color-gray-100);
+  font-family: var(--font-kanit);
+}
+.welcome-fn-mi {
+  border: 0;
+  outline: 0;
+  font-size: var(--font-size-5xl);
+  background-color: transparent;
+  position: absolute;
+  top: 13px;
+  left: 382px;
+  display: flex;
+  align-items: center;
+  width: 301px;
+  height: 49px;
+}
+.patient-dashboard-dashboard {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 1236px;
+  overflow: hidden;
+  font-size: var(--font-size-3xl);
+}

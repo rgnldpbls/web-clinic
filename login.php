@@ -43,7 +43,31 @@
           $sql = "SELECT * FROM patient WHERE patient_Email = '$email' and patient_Password = '$password'";
           $inner = mysqli_query($conn, $sql);
           if(mysqli_num_rows($inner) == 1){
-            header("location: patientpage.php");
+            $rows = mysqli_fetch_assoc($inner);
+            $_SESSION['fullname'] = $rows['patient_Name'];
+            $_SESSION['address'] = $rows['patient_Address'];
+            $_SESSION['city'] = $rows['patient_City'];
+            $_SESSION['birthDate'] = $rows['patient_Birthdate'];
+            $_SESSION['sex'] = $rows['patient_Sex'];
+            $_SESSION['contactNum'] = $rows['patient_ContactNo'];
+            $_SESSION['bType'] = $rows['blood_Type'];
+            $_SESSION['pType'] = $rows['patient_Type'];
+            $_SESSION['dept'] = $rows['department'];
+            $_SESSION['emerName'] = $rows['emer_ContactName'];
+            $_SESSION['emerNo'] = $rows['emer_ContactNo'];
+            $_SESSION['email'] = $rows['patient_Email'];
+            $_SESSION['password'] = $rows['patient_Password'];
+            $mdHistId = $rows['mdHist_Id'];
+            $sql2 = "SELECT * FROM medhistory WHERE mdHist_Id = '$mdHistId'";
+            $inTwo = mysqli_query($conn, $sql2);
+            $rowsB = mysqli_fetch_assoc($inTwo);
+            $_SESSION['medAttention'] = $rowsB['md_Attention'];
+            $_SESSION['medIllness'] = $rowsB['md_Illness'];
+            $_SESSION['allergyFood'] = $rowsB['md_AllergiesFoods'];
+            $_SESSION['allergyMed'] = $rowsB['md_AllergiesMeds'];
+            $_SESSION['smoking'] = $rowsB['ph_Smoking'];
+            $_SESSION['alcohol'] = $rowsB['ph_Alcohol'];
+            header("location: patient/index.php");
           }else{
             echo '<script>alert("Incorrect Password!")</script>';
           }
