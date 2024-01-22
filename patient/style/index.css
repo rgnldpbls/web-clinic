@@ -346,6 +346,9 @@ body {
   box-shadow: 0 1px 4px #000;
   box-sizing: border-box;
   height: 53px;
+  color: black;
+  font-family: var(--font-kanit);
+  font-size: 20px;
 }
 .full-name {
   top: 213px;
@@ -426,6 +429,9 @@ body {
   box-sizing: border-box;
   width: 249px;
   height: 53px;
+  color: black;
+  font-family: var(--font-kanit);
+  font-size: 20px;
 }
 .department,
 .patient-type {
@@ -450,6 +456,9 @@ body {
   box-sizing: border-box;
   width: 305px;
   height: 53px;
+  color: black;
+  font-family: var(--font-kanit);
+  font-size: 20px;
 }
 .contact-number {
   position: absolute;
@@ -470,6 +479,9 @@ body {
   box-sizing: border-box;
   width: 192px;
   height: 53px;
+  color: black;
+  font-family: var(--font-kanit);
+  font-size: 20px;
 }
 .address,
 .age1,
@@ -511,6 +523,9 @@ body {
   box-shadow: 0 1px 4px #000;
   box-sizing: border-box;
   height: 53px;
+  color: black;
+  font-family: var(--font-kanit);
+  font-size: 20px;
 }
 .age,
 .male,
@@ -540,7 +555,6 @@ body {
   top: 50px;
   left: 0;
   border-radius: 50%;
-  box-shadow: 0 1px 4px #000;
   border: 1px solid var(--color-darkgray);
   box-sizing: border-box;
   width: 17px;
@@ -562,7 +576,6 @@ body {
   top: 50px;
   left: 122px;
   border-radius: 50%;
-  box-shadow: 0 1px 4px #000;
   border: 1px solid var(--color-darkgray);
   box-sizing: border-box;
   width: 17px;
@@ -599,6 +612,9 @@ body {
   box-shadow: 0 1px 4px #000;
   box-sizing: border-box;
   height: 53px;
+  color: black;
+  font-family: var(--font-kanit);
+  font-size: 20px;
 }
 .city {
   top: 433px;
@@ -626,6 +642,9 @@ body {
   box-sizing: border-box;
   width: 274px;
   height: 53px;
+  color: black;
+  font-family: var(--font-kanit);
+  font-size: 20px;
 }
 .birthdate,
 .medical-illness {
@@ -666,7 +685,6 @@ body {
   top: 48px;
   left: 0;
   border-radius: 50%;
-  box-shadow: 0 1px 4px #000;
   border: 1px solid var(--color-darkgray);
   box-sizing: border-box;
   width: 17px;
@@ -688,7 +706,6 @@ body {
   top: 48px;
   left: 122px;
   border-radius: 50%;
-  box-shadow: 0 1px 4px #000;
   border: 1px solid var(--color-darkgray);
   box-sizing: border-box;
   width: 17px;

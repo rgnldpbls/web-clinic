@@ -27,6 +27,7 @@
         $city = $_SESSION['city'];
         $birthDate = $_SESSION['birthDate'];
         $sex = $_SESSION['sex'];
+        $age = $_SESSION['age'];
         $contactNo =  $_SESSION['contactNum'];
         $bloodType = $_SESSION['bType'];
         $patientType = $_SESSION['pType'];
@@ -114,35 +115,35 @@
       </div>
       <div class="emergency-contact-number">
         <div class="emergency-contact-number1">Emergency Contact Number</div>
-        <input class="full-name-child" type="text" />
+        <input class="full-name-child" type="text" value="<?php echo $emerNo;?>" disabled/>
       </div>
       <div class="emergency-contact-name">
         <div class="emergency-contact-name1">Emergency Contact Name</div>
-        <input class="full-name-child" type="text" />
+        <input class="full-name-child" type="text" value="<?php echo $emerName;?>" disabled/>
       </div>
       <div class="patient-email">
         <div class="patient-email1">Patient Email</div>
-        <input class="full-name-child" type="text" />
+        <input class="full-name-child" type="text" value="<?php echo $email;?>" disabled/>
       </div>
       <div class="patient-password">
         <div class="patient-email1">Patient Password</div>
-        <input class="full-name-child" type="text" />
+        <input class="full-name-child" type="password" value="<?php echo $password?>" disabled/>
       </div>
       <div class="patient-type">
         <div class="patient-type1">Patient Type</div>
-        <input class="patient-type-child" type="text" />
+        <input class="patient-type-child" type="text" value="<?php echo $patientType;?>" disabled/>
       </div>
       <div class="department">
         <div class="patient-type1">Department</div>
-        <input class="patient-type-child" type="text" />
+        <input class="patient-type-child" type="text" value="<?php echo $department;?>" disabled/>
       </div>
       <div class="contact-number">
         <div class="patient-email1">Contact Number</div>
-        <input class="contact-number-child" type="text" />
+        <input class="contact-number-child" type="text" value="<?php echo $contactNo;?>" disabled/>
       </div>
       <div class="blood-type">
         <div class="patient-email1">Blood Type</div>
-        <input class="blood-type-child" type="text" />
+        <input class="blood-type-child" type="text" value="<?php echo $bloodType;?>" disabled/>
       </div>
       <div class="address">
         <div class="medical-illness">Address</div>
@@ -150,7 +151,7 @@
       </div>
       <div class="age">
         <div class="age1">Age</div>
-        <input class="age-child" type="text" />
+        <input class="age-child" type="text" value="<?php echo $age;?>" disabled/>
       </div>
       <div class="sex">
         <div class="sex1">Sex</div>
@@ -161,50 +162,50 @@
       </div>
       <div class="city">
         <div class="city1">City</div>
-        <input class="city-child" type="text" />
+        <input class="city-child" type="text" value="<?php echo $city;?>" disabled/>
       </div>
       <div class="birthdate">
-        <div class="birthdate-mmddyyyy">Birthdate (MM/DD/YYYY)</div>
-        <input class="birthdate-child" type="text" />
+        <div class="birthdate-mmddyyyy">Birthdate (YYYY-MM-DD)</div>
+        <input class="birthdate-child" type="text" value="<?php echo $birthDate;?>" disabled/>
       </div>
       <div class="address2">
         <div class="medical-illness">Medical Illness</div>
-        <input class="full-name-child" type="text" />
+        <input class="full-name-child" type="text" value="<?php echo $medIllness?>" disabled/>
       </div>
       <div class="needs-medical-attention">
         <div class="yes">Yes</div>
-        <input class="needs-medical-attention-child" type="radio" />
+        <input class="needs-medical-attention-child" type="radio" value="yes" <?php echo($medAttention === "yes") ? 'checked' : ''?>/>
 
         <div class="no">No</div>
-        <input class="needs-medical-attention-item" type="radio" />
+        <input class="needs-medical-attention-item" type="radio" value="no" <?php echo($medAttention === "no") ? 'checked': ''?>/>
 
         <div class="any-history-of">Needs Medical Attention?</div>
       </div>
       <div class="needs-medical-attention2">
         <div class="yes">Yes</div>
-        <input class="needs-medical-attention-child" type="radio" />
+        <input class="needs-medical-attention-child" type="radio" value="yes" <?php echo($smoking === "yes") ? 'checked' : ''?>/>
 
         <div class="no">No</div>
-        <input class="needs-medical-attention-item" type="radio" />
+        <input class="needs-medical-attention-item" type="radio" value="no" <?php echo($smoking === "no") ? 'checked' : ''?>/>
 
         <div class="any-history-of">Any history of Smoking?</div>
       </div>
       <div class="needs-medical-attention3">
         <div class="yes">Yes</div>
-        <input class="needs-medical-attention-child" type="radio" />
+        <input class="needs-medical-attention-child" type="radio" value="yes" <?php echo($alcohol === "yes") ? 'checked' : ''?> />
 
         <div class="no">No</div>
-        <input class="needs-medical-attention-item" type="radio" />
+        <input class="needs-medical-attention-item" type="radio" value="no" <?php echo($alcohol === "no") ? 'checked' : ''?>/>
 
         <div class="any-history-of">Drinking Alcohol?</div>
       </div>
       <div class="allergies-in-food">
         <div class="medical-illness">Allergies in Food</div>
-        <input class="full-name-child" type="text" />
+        <input class="full-name-child" type="text" value="<?php echo $allerFood;?>" disabled/>
       </div>
       <div class="allergies-in-medicine">
         <div class="medical-illness">Allergies in Medicine</div>
-        <input class="full-name-child" type="text" />
+        <input class="full-name-child" type="text" value="<?php echo $allerMed;?>" disabled/>
       </div>
       <input class="welcome-fn-mi" type="text" value="<?php echo "Welcome, $name";?>" disabled/>
     </div>

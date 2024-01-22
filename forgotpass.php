@@ -95,8 +95,12 @@
           <input class="enter-your-registered" type="email" placeholder="Enter your registered email" name="email" required/>
         </div>
         <div class="forgot-pass1-inner"></div>
-        <button class="rectangle-button" type="submit" name="proceed"></button>
-        <div class="proceed">Proceed</div>
+        <!-- <button class="rectangle-button" type="submit" name="proceed"></button>
+        <div class="proceed">Proceed</div> -->
+        <button class="rectangle-parent">
+          <div class="group-child"></div>
+          <div class="proceed">Proceed</div>
+        </button>
         <img class="bg-pic-icon5" alt="" src="assets/bg-pic@2x.png" />
       </form>
     </div>

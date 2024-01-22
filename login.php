@@ -49,6 +49,7 @@
             $_SESSION['city'] = $rows['patient_City'];
             $_SESSION['birthDate'] = $rows['patient_Birthdate'];
             $_SESSION['sex'] = $rows['patient_Sex'];
+            $_SESSION['age'] = $rows['patient_Age'];
             $_SESSION['contactNum'] = $rows['patient_ContactNo'];
             $_SESSION['bType'] = $rows['blood_Type'];
             $_SESSION['pType'] = $rows['patient_Type'];
@@ -132,8 +133,12 @@
         </div>
         <a href="forgotpass.php" class="forgot-password">Forgot password?</a>
         <div class="login-inner"></div>
-        <button type="submit" name="login" class="rectangle-button"></button>
-        <div class="login2">Login</div>
+        <!-- <button type="submit" name="login" class="rectangle-button"></button>
+        <div class="login2">Login</div> -->
+        <button class="rectangle-parent" type="submit" name="login">
+          <div class="group-child"></div>
+          <div class="login2">Login</div>
+        </button>
         <div class="dont-have-an">Don’t have an account?</div>
           <a href="register.php" class="register-here">Register here.</a>
         </div>

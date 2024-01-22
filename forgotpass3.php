@@ -95,8 +95,12 @@
           <div class="group-child"></div>
           <div class="forgot-your-password1">Forgot your password?</div>
         </div>
-        <button class="forgot-pass3-inner" type="submit" name="confirm"></button>
-        <div class="confirm2">Confirm</div>
+        <!-- <button class="forgot-pass3-inner" type="submit" name="confirm"></button>
+        <div class="confirm2">Confirm</div> -->
+        <button class="rectangle-parent">
+          <div class="group-item"></div>
+          <div class="confirm2">Confirm</div>
+        </button>
         <img class="bg-pic-icon3" alt="" src="assets/bg-pic@2x.png" />
       </form>
     </div>
