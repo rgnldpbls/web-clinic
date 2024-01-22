@@ -17,11 +17,16 @@
   </head>
   <body>
     <?php 
+      session_start();
+      if (!isset($_SESSION['fpass']) || $_SESSION['fpass'] !== true) {
+        header("Location: forgotpass.php");
+        exit();
+      }
       if(isset($_POST['confirm'])){
-        session_start();
         $verifCode = $_SESSION['data'];
         $vCode = $_POST['code'];
         if($verifCode == $vCode){
+          $_SESSION['fpass2'] = true;
           header("location: forgotpass3.php");
         }else{
           echo '<script>alert("OTP was incorrect, Please try again!")</script>';

@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
     <link rel="stylesheet" href="style/global.css" />
     <link rel="stylesheet" href="style/index.css" />
     <link
@@ -22,6 +21,10 @@
   <body>
     <?php 
         session_start();
+        if (!isset($_SESSION['loginVisit']) || $_SESSION['loginVisit'] !== true) {
+          header("Location: ../login.php");
+          exit();
+        }
         $name = $_SESSION['fullname'];
         $address = $_SESSION['address'];
         $city = $_SESSION['city'];
@@ -49,7 +52,7 @@
         <div class="sidebar"></div>
         <img class="bg-pic-icon" alt="" src="public/bg-pic@2x.png" />
 
-        <button class="dashboard">
+        <button class="dashboard" type="button" onclick="selfPage()">
           <div class="dashboard1">Dashboard</div>
           <img
             class="dashboard-icon"
@@ -101,7 +104,7 @@
           group7email@gmail.com
         </div>
       </div>
-      <button class="rectangle-group" type="submit">
+      <button class="rectangle-group" type="button" onclick="logoutPage()">
         <div class="group-item"></div>
         <div class="patient">Logout</div>
       </button>
@@ -209,5 +212,13 @@
       </div>
       <input class="welcome-fn-mi" type="text" value="<?php echo "Welcome, $name";?>" disabled/>
     </div>
+    <script>
+      function selfPage(){
+        window.location.href = 'index.php';
+      }
+      function logoutPage(){
+        window.location.href = '../login.php';
+      }
+    </script>
   </body>
 </html>

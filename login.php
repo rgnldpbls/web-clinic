@@ -42,8 +42,10 @@
         if(mysqli_num_rows($res) == 1){
           $sql = "SELECT * FROM patient WHERE patient_Email = '$email' and patient_Password = '$password'";
           $inner = mysqli_query($conn, $sql);
-          if(mysqli_num_rows($inner) == 1){
-            $rows = mysqli_fetch_assoc($inner);
+          $rows = mysqli_fetch_assoc($inner);
+          $dbemail = isset($rows['patient_Email']) ? $rows['patient_Email'] : null;
+          $dbpassword = isset($rows['patient_Password']) ? $rows['patient_Password'] : null;
+          if($email === $dbemail && $password === $dbpassword){
             $_SESSION['fullname'] = $rows['patient_Name'];
             $_SESSION['address'] = $rows['patient_Address'];
             $_SESSION['city'] = $rows['patient_City'];
@@ -68,6 +70,7 @@
             $_SESSION['allergyMed'] = $rowsB['md_AllergiesMeds'];
             $_SESSION['smoking'] = $rowsB['ph_Smoking'];
             $_SESSION['alcohol'] = $rowsB['ph_Alcohol'];
+            $_SESSION['loginVisit'] = true;
             header("location: patient/index.php");
           }else{
             echo '<script>alert("Incorrect Password!")</script>';
@@ -133,8 +136,6 @@
         </div>
         <a href="forgotpass.php" class="forgot-password">Forgot password?</a>
         <div class="login-inner"></div>
-        <!-- <button type="submit" name="login" class="rectangle-button"></button>
-        <div class="login2">Login</div> -->
         <button class="rectangle-parent" type="submit" name="login">
           <div class="group-child"></div>
           <div class="login2">Login</div>

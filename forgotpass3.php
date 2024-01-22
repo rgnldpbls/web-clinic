@@ -17,8 +17,12 @@
   </head>
   <body>
     <?php 
+      session_start();
+      if (!isset($_SESSION['fpass2']) || $_SESSION['fpass2'] !== true) {
+        header("Location: forgotpass.php");
+        exit();
+      }
       if(isset($_POST['confirm'])){
-        session_start();
         include 'dbconfig.php';
         $email = $_SESSION['email'];
         $password = $_POST['newPass'];
@@ -95,9 +99,7 @@
           <div class="group-child"></div>
           <div class="forgot-your-password1">Forgot your password?</div>
         </div>
-        <!-- <button class="forgot-pass3-inner" type="submit" name="confirm"></button>
-        <div class="confirm2">Confirm</div> -->
-        <button class="rectangle-parent">
+        <button class="rectangle-parent" type="submit" name="confirm">
           <div class="group-item"></div>
           <div class="confirm2">Confirm</div>
         </button>

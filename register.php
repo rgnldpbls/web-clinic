@@ -29,6 +29,7 @@
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result)!=0){
           echo '<script>alert("Email already exists! Please go to Login page.")</script>';
+          header("location: login.php");
         }else if(isset($_POST['next'])){
           $_SESSION["register"]=array(
             'name'=>$_POST['fullName'],
@@ -46,6 +47,7 @@
             'emerContactName'=>$_POST['contactName'],
             'emerContactNum'=>$_POST['contactNo']
           );
+          $_SESSION['regisVisit'] = true;
           header("location: register2.php");
           exit();
         }

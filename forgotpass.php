@@ -45,6 +45,7 @@
         $mail->send();
         $_SESSION['data'] = $vCode;
         $_SESSION['email'] = $email;
+        $_SESSION['fpass'] = true;
         header("location: forgotpass2.php");
         exit();
       }catch (Exception $e) {
@@ -95,9 +96,7 @@
           <input class="enter-your-registered" type="email" placeholder="Enter your registered email" name="email" required/>
         </div>
         <div class="forgot-pass1-inner"></div>
-        <!-- <button class="rectangle-button" type="submit" name="proceed"></button>
-        <div class="proceed">Proceed</div> -->
-        <button class="rectangle-parent">
+        <button class="rectangle-parent" type="submit" name="proceed">
           <div class="group-child"></div>
           <div class="proceed">Proceed</div>
         </button>

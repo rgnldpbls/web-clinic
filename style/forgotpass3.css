@@ -175,34 +175,7 @@ body {
   font-size: var(--font-size-21xl);
   color: var(--color-gray-100);
 }
-/* .forgot-pass3-inner {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: var(--color-deepskyblue);
-  position: absolute;
-  top: 680px;
-  left: 351px;
-  border-radius: var(--br-6xs);
-  width: 523px;
-  height: 60px;
-}
-.confirm2 {
-  position: absolute;
-  top: 697px;
-  left: 550px;
-  font-size: var(--font-size-6xl);
-  color: var(--color-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 125px;
-  height: 25px;
-} */
-
 .group-item {
-  /* position: absolute;
-  left: 0; */
   top: 0;
   border-radius: var(--br-6xs);
   background-color: var(--color-deepskyblue);
@@ -234,7 +207,6 @@ body {
   width: 523px;
   height: 60px;
 }
-
 .bg-pic-icon3 {
   position: absolute;
   top: 152px;

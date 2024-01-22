@@ -18,6 +18,10 @@
   <body>
     <?php
       session_start();
+      if (!isset($_SESSION['regisVisit']) || $_SESSION['regisVisit'] !== true) {
+        header("Location: register.php");
+        exit();
+      }
       if(isset($_POST['register'])){
         include 'dbconfig.php';
         $name=$_SESSION['register']['name'];
@@ -58,7 +62,7 @@
         $stmt = $conn->prepare($sql3);
         $stmt->execute();
         $stmt->close(); 
-        echo '<script>alert("Record updated successfully")</script>';
+        echo '<script>alert("Record added successfully")</script>';
         header("location: login.php");
       }
     ?>
