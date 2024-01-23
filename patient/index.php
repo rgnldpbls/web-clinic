@@ -45,6 +45,11 @@
         $allerMed =  $_SESSION['allergyMed'];
         $smoking = $_SESSION['smoking'];
         $alcohol = $_SESSION['alcohol'];
+        if (isset($_POST['logoutBTN'])) {      
+          session_destroy();
+          header("Location: ../login.php");
+          exit();
+      }
     ?>
     <div class="patient-dashboard-dashboard">
       <div class="base"></div>
@@ -68,7 +73,7 @@
             src="public/appointmentsicon@2x.png"
           />
         </button>
-        <button class="book-an-appointment">
+        <button class="book-an-appointment" type="button" onclick="bookPage()">
           <div class="book-an-appointment1">Book an Appointment</div>
           <img class="book-icon" alt="" src="public/bookicon@2x.png" />
         </button>
@@ -104,10 +109,12 @@
           group7email@gmail.com
         </div>
       </div>
-      <button class="rectangle-group" type="button" onclick="logoutPage()">
-        <div class="group-item"></div>
-        <div class="patient">Logout</div>
-      </button>
+      <form method="post">
+        <button class="rectangle-group" type="submit" name="logoutBTN">
+          <div class="group-item"></div>
+          <div class="patient">Logout</div>
+        </button>
+      </form>
       <div class="patient-dashboard-title1">
         <div class="dashboard2">Dashboard</div>
         <div class="patient-dashboard-title-item"></div>
@@ -216,8 +223,8 @@
       function selfPage(){
         window.location.href = 'index.php';
       }
-      function logoutPage(){
-        window.location.href = '../login.php';
+      function bookPage(){
+        window.location.href = 'booking.php';
       }
     </script>
   </body>
