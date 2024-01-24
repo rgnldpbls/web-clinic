@@ -28,8 +28,8 @@
         $sql = "SELECT * FROM patient WHERE patient_Email = '$email'";
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result)!=0){
-          echo '<script>alert("Email already exists! Please go to Login page.")</script>';
-          header("location: login.php");
+          echo '<script>alert("Email already exists! Redirected to Login page.");
+          window.location.href = "login.php";</script>';
         }else{
           $_SESSION["register"]=array(
             'name'=>$_POST['fullName'],

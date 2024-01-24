@@ -42,11 +42,15 @@
           $appointTime = $_POST['appointTime'];
           $appointInfo = $_POST['appointInfo'];
           $appointStatus = "Pending";
+          $selectDateTime = new DateTime($appointDate);
+          $currentDateTime = new DateTime();
           $sql = "SELECT * FROM appointment WHERE appoint_Date = '$appointDate' AND appoint_Time = '$appointTime' AND patient_Id = '$patientId'";
           $res = mysqli_query($conn, $sql);
           if(mysqli_num_rows($res)!=0){
-            echo '<script>alert("You have duplicate appointment!")</script>';
-            header("location: index.php");
+            echo '<script>alert("You have duplicate appointment!")
+            window.location.href="index.php"</script>';
+          }else if($selectDateTime <= $currentDateTime){
+            echo '<script>alert("Error: Please select a date that is not earlier than today.")</script>';
           }else{
             $query = "INSERT INTO appointment(appoint_Info, appoint_Date, appoint_Time, appoint_Status, patient_Id) VALUES (?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($query);
@@ -61,6 +65,8 @@
             $stmt->bind_param("si", $transactStatus, $last_inserted_id);
             $stmt->execute();
             $stmt->close();
+            echo '<script>alert("Appointment added successfully"); 
+            window.location.href = "index.php";</script>';
           }
         }
     ?>
@@ -145,7 +151,7 @@
           </div>
           <div class="appointment-information">
             <div class="appointment-information1">Appointment Information</div>
-            <textarea class="appointment-information-child" name="appointInfo" placeholder="Please provide details on the purpose of your appointment"></textarea>
+            <textarea class="appointment-information-child" name="appointInfo" placeholder="Please provide details on the purpose of your appointment" required></textarea>
           </div>
         </div>
         <button class="confirm" type="submit" name="confirmBTN">

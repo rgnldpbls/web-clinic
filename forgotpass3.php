@@ -40,8 +40,8 @@
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $stmt->close();
-            echo '<script>alert("Record updated successfully")</script>';
-            header("location: login.php");
+            echo '<script>alert("Record updated successfully"); 
+            window.location.href = "login.php";</script>';
           }else{
             echo '<script>alert("Unmatched password, Try again!")</script>';
           }
@@ -51,8 +51,8 @@
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $stmt->close();
-            echo '<script>alert("Record updated successfully")</script>';
-            header("location: login.php");
+            echo '<script>alert("Record updated successfully"); 
+            window.location.href = "login.php";</script>';
           }else{
             echo '<script>alert("Unmatched password, Try again!")</script>';
           }
@@ -62,8 +62,8 @@
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $stmt->close();
-            echo '<script>alert("Record updated successfully")</script>';
-            header("location: login.php");
+            echo '<script>alert("Record updated successfully"); 
+            window.location.href = "login.php";</script>';
           }else{
             echo '<script>alert("Unmatched password, Try again!")</script>';
           }

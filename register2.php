@@ -62,8 +62,9 @@
         $stmt = $conn->prepare($sql3);
         $stmt->execute();
         $stmt->close(); 
-        echo '<script>alert("Record added successfully")</script>';
-        header("location: login.php");
+        session_destroy();
+        echo '<script>alert("Record added successfully"); 
+        window.location.href = "login.php";</script>';
       }
     ?>
     <div class="register2">
@@ -86,7 +87,7 @@
         </div>
         <div class="medical-illness">
             <div class="medical-illness1">Medical Illness</div>
-            <input class="medical-illness-child" type="text" name=medIllness/>
+            <input class="medical-illness-child" type="text" name="medIllness"/>
         </div>
         <div class="allergies-in-food">
             <div class="medical-illness1">Allergies in Food</div>
