@@ -32,6 +32,37 @@
           header("Location: ../login.php");
           exit();
         }
+        if(isset($_POST['confirmBTN'])) {
+          chkpendingAppoint();
+        }
+        function chkpendingAppoint() {
+          include '../dbconfig.php';
+          $patientId = $_SESSION['patientId'];
+          $appointDate = $_POST['appointDate'];
+          $appointTime = $_POST['appointTime'];
+          $appointInfo = $_POST['appointInfo'];
+          $appointStatus = "Pending";
+          $sql = "SELECT * FROM appointment WHERE appoint_Date = '$appointDate' AND appoint_Time = '$appointTime' AND patient_Id = '$patientId'";
+          $res = mysqli_query($conn, $sql);
+          if(mysqli_num_rows($res)!=0){
+            echo '<script>alert("You have duplicate appointment!")</script>';
+            header("location: index.php");
+          }else{
+            $query = "INSERT INTO appointment(appoint_Info, appoint_Date, appoint_Time, appoint_Status, patient_Id) VALUES (?, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($query);
+            $stmt->bind_param("ssssi", $appointInfo, $appointDate, $appointTime, $appointStatus, $patientId);
+            $stmt->execute();
+            $stmt->close();
+
+            $last_inserted_id = $conn->insert_id;
+            $transactStatus = "Pending";
+            $query2 = "INSERT INTO transaction(transact_Status, appoint_No) VALUES (?, ?)";
+            $stmt = $conn->prepare($query2);
+            $stmt->bind_param("si", $transactStatus, $last_inserted_id);
+            $stmt->execute();
+            $stmt->close();
+          }
+        }
     ?>
     <div class="patient-dashboard-book">
       <div class="base"></div>
@@ -102,25 +133,22 @@
         <div class="book-an-appointment2">Book an Appointment</div>
         <div class="header-child"></div>
       </div>
-      <form action = "" method = "post">
+      <form action = "booking.php" method = "post">
         <div class="contents">
           <div class="appointment-date">
             <div class="appointment-date1">Appointment Date</div>
-            <input class="appointment-date-item" type="date" />
+            <input class="appointment-date-item" type="date" name="appointDate" required/>
           </div>
           <div class="appointment-time">
             <div class="appointment-date1">Appointment Time</div>
-            <input class="appointment-time-item" type="time" />
+            <input class="appointment-time-item" type="time" name="appointTime" required/>
           </div>
           <div class="appointment-information">
-            <div class="please-provide-details">
-              Please provide details on the purpose of your appointment
-            </div>
             <div class="appointment-information1">Appointment Information</div>
-            <textarea class="appointment-information-child"> </textarea>
+            <textarea class="appointment-information-child" name="appointInfo" placeholder="Please provide details on the purpose of your appointment"></textarea>
           </div>
         </div>
-        <button class="confirm">
+        <button class="confirm" type="submit" name="confirmBTN">
           <div class="confirm-child"></div>
           <div class="confirm1">Confirm</div>
         </button>

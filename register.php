@@ -30,7 +30,7 @@
         if(mysqli_num_rows($result)!=0){
           echo '<script>alert("Email already exists! Please go to Login page.")</script>';
           header("location: login.php");
-        }else if(isset($_POST['next'])){
+        }else{
           $_SESSION["register"]=array(
             'name'=>$_POST['fullName'],
             'address'=>$_POST['address'],

@@ -371,6 +371,8 @@ body {
   box-sizing: border-box;
   width: 399px;
   height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 18px;
 }
 .appointment-date {
   position: absolute;
@@ -391,6 +393,8 @@ body {
   box-sizing: border-box;
   width: 400px;
   height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 18px;
 }
 .appointment-time {
   position: absolute;
@@ -429,6 +433,8 @@ body {
   box-sizing: border-box;
   width: 669px;
   height: 334.6px;
+  font-family: var(--font-kanit);
+  font-size: 18px;
 }
 .appointment-information {
   position: absolute;

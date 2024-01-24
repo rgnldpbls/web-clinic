@@ -46,6 +46,7 @@
           $dbemail = isset($rows['patient_Email']) ? $rows['patient_Email'] : null;
           $dbpassword = isset($rows['patient_Password']) ? $rows['patient_Password'] : null;
           if($email === $dbemail && $password === $dbpassword){
+            $_SESSION['patientId'] = $rows['patient_Id'];
             $_SESSION['fullname'] = $rows['patient_Name'];
             $_SESSION['address'] = $rows['patient_Address'];
             $_SESSION['city'] = $rows['patient_City'];
@@ -60,16 +61,7 @@
             $_SESSION['emerNo'] = $rows['emer_ContactNo'];
             $_SESSION['email'] = $rows['patient_Email'];
             $_SESSION['password'] = $rows['patient_Password'];
-            $mdHistId = $rows['mdHist_Id'];
-            $sql2 = "SELECT * FROM medhistory WHERE mdHist_Id = '$mdHistId'";
-            $inTwo = mysqli_query($conn, $sql2);
-            $rowsB = mysqli_fetch_assoc($inTwo);
-            $_SESSION['medAttention'] = $rowsB['md_Attention'];
-            $_SESSION['medIllness'] = $rowsB['md_Illness'];
-            $_SESSION['allergyFood'] = $rowsB['md_AllergiesFoods'];
-            $_SESSION['allergyMed'] = $rowsB['md_AllergiesMeds'];
-            $_SESSION['smoking'] = $rowsB['ph_Smoking'];
-            $_SESSION['alcohol'] = $rowsB['ph_Alcohol'];
+            $_SESSION['medHistId'] = $rows['mdHist_Id'];
             $_SESSION['loginVisit'] = true;
             header("location: patient/index.php");
           }else{

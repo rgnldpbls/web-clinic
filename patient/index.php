@@ -20,6 +20,7 @@
   </head>
   <body>
     <?php 
+        include '../dbconfig.php';
         session_start();
         if (!isset($_SESSION['loginVisit']) || $_SESSION['loginVisit'] !== true) {
           header("Location: ../login.php");
@@ -39,12 +40,16 @@
         $emerNo = $_SESSION['emerNo'];
         $email =  $_SESSION['email'];
         $password = $_SESSION['password'];
-        $medAttention = $_SESSION['medAttention'];
-        $medIllness = $_SESSION['medIllness'];
-        $allerFood =  $_SESSION['allergyFood'];
-        $allerMed =  $_SESSION['allergyMed'];
-        $smoking = $_SESSION['smoking'];
-        $alcohol = $_SESSION['alcohol'];
+        $mdHistId = $_SESSION['medHistId'];
+        $sql = "SELECT * FROM medhistory WHERE mdHist_Id = '$mdHistId'";
+        $inner = mysqli_query($conn, $sql);
+        $rows = mysqli_fetch_assoc($inner);
+        $medAttention =$rows['md_Attention'];
+        $medIllness = $rows['md_Illness'];
+        $allerFood =  $rows['md_AllergiesFoods'];
+        $allerMed =  $rows['md_AllergiesMeds'];
+        $smoking = $rows['ph_Smoking'];
+        $alcohol = $rows['ph_Alcohol'];
         if (isset($_POST['logoutBTN'])) {      
           session_destroy();
           header("Location: ../login.php");
@@ -166,9 +171,9 @@
       <div class="sex">
         <div class="sex1">Sex</div>
         <div class="male">Male</div>
-        <input class="sex-child" type="radio" value="male" <?php echo($sex === "male") ? 'checked' : '';?>/>
+        <input class="sex-child" type="radio" value="male" <?php echo($sex === "male") ? 'checked' : '';?> disabled/>
         <div class="female">Female</div>
-        <input class="sex-item" type="radio" value ="female" <?php echo($sex === "female") ? 'checked' : ''?>/>
+        <input class="sex-item" type="radio" value ="female" <?php echo($sex === "female") ? 'checked' : ''?> disabled/>
       </div>
       <div class="city">
         <div class="city1">City</div>
@@ -184,28 +189,28 @@
       </div>
       <div class="needs-medical-attention">
         <div class="yes">Yes</div>
-        <input class="needs-medical-attention-child" type="radio" value="yes" <?php echo($medAttention === "yes") ? 'checked' : ''?>/>
+        <input class="needs-medical-attention-child" type="radio" value="yes" <?php echo($medAttention === "yes") ? 'checked' : ''?> disabled/>
 
         <div class="no">No</div>
-        <input class="needs-medical-attention-item" type="radio" value="no" <?php echo($medAttention === "no") ? 'checked': ''?>/>
+        <input class="needs-medical-attention-item" type="radio" value="no" <?php echo($medAttention === "no") ? 'checked': ''?> disabled/>
 
         <div class="any-history-of">Needs Medical Attention?</div>
       </div>
       <div class="needs-medical-attention2">
         <div class="yes">Yes</div>
-        <input class="needs-medical-attention-child" type="radio" value="yes" <?php echo($smoking === "yes") ? 'checked' : ''?>/>
+        <input class="needs-medical-attention-child" type="radio" value="yes" <?php echo($smoking === "yes") ? 'checked' : ''?> disabled/>
 
         <div class="no">No</div>
-        <input class="needs-medical-attention-item" type="radio" value="no" <?php echo($smoking === "no") ? 'checked' : ''?>/>
+        <input class="needs-medical-attention-item" type="radio" value="no" <?php echo($smoking === "no") ? 'checked' : ''?> disabled/>
 
         <div class="any-history-of">Any history of Smoking?</div>
       </div>
       <div class="needs-medical-attention3">
         <div class="yes">Yes</div>
-        <input class="needs-medical-attention-child" type="radio" value="yes" <?php echo($alcohol === "yes") ? 'checked' : ''?> />
+        <input class="needs-medical-attention-child" type="radio" value="yes" <?php echo($alcohol === "yes") ? 'checked' : ''?> disabled/>
 
         <div class="no">No</div>
-        <input class="needs-medical-attention-item" type="radio" value="no" <?php echo($alcohol === "no") ? 'checked' : ''?>/>
+        <input class="needs-medical-attention-item" type="radio" value="no" <?php echo($alcohol === "no") ? 'checked' : ''?> disabled/>
 
         <div class="any-history-of">Drinking Alcohol?</div>
       </div>
