@@ -70,7 +70,7 @@
             src="public/dashboardicon@2x.png"
           />
         </button>
-        <button class="appointments">
+        <button class="appointments" type="button" onclick="viewAppointPage()">
           <div class="dashboard1">Appointments</div>
           <img
             class="appointments-icon"
@@ -227,6 +227,9 @@
     <script>
       function selfPage(){
         window.location.href = 'index.php';
+      }
+      function viewAppointPage(){
+        window.location.href = 'viewappointment.php';
       }
       function bookPage(){
         window.location.href = 'booking.php';

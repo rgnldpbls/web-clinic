@@ -178,7 +178,6 @@ body {
   position: absolute;
   top: 21px;
   left: 22px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 427px;
   height: 58.3px;
   color: var(--color-maroon);
@@ -356,21 +355,28 @@ body {
 .appointments5,
 .appointments5:hover {
   font-family: var(--font-kanit);
-  font-size: var(--font-size-11xl);
+  font-size: 24px;
   text-align: left;
-  color: var(--color-gray-100);
+  color: black;
   display: flex;
-  width: 272.5px;
+  width: 250px;
   height: 49px;
 }
 .th {
   position: relative;
   padding-bottom: 0;
 }
+.th1 {
+  position: relative;
+  padding-bottom: 0;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
 .table {
   position: absolute;
   top: 196px;
-  left: 419.4px;
+  left: 400px;
   width: 272.5px;
   height: 49px;
 }

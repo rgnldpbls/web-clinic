@@ -48,7 +48,7 @@
           $res = mysqli_query($conn, $sql);
           if(mysqli_num_rows($res)!=0){
             echo '<script>alert("You have duplicate appointment!")
-            window.location.href="index.php"</script>';
+            window.location.href="viewappointment.php"</script>';
           }else if($selectDateTime <= $currentDateTime){
             echo '<script>alert("Error: Please select a date that is not earlier than today.")</script>';
           }else{
@@ -66,7 +66,7 @@
             $stmt->execute();
             $stmt->close();
             echo '<script>alert("Appointment added successfully"); 
-            window.location.href = "index.php";</script>';
+            window.location.href = "viewappointment.php";</script>';
           }
         }
     ?>
@@ -83,7 +83,7 @@
             src="./public/dashboardicon@2x.png"
           />
         </button>
-        <button class="appointments">
+        <button class="appointments" type="button" onclick="viewAppointPage()">
           <div class="dashboard1">Appointments</div>
           <img
             class="appointments-icon"
@@ -163,6 +163,9 @@
     <script>
         function dbPage(){
             window.location.href = 'index.php';
+        }
+        function viewAppointPage(){
+          window.location.href = 'viewappointment.php';
         }
         function selfPage(){
             window.location.href = 'booking.php';
