@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
     <link rel="stylesheet" href="style/global.css" />
-    <link rel="stylesheet" href="style/viewappointment.css" />
+    <link rel="stylesheet" href="style/transaction.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Karla:wght@400&display=swap"
@@ -34,13 +34,13 @@
         }
         include '../dbconfig.php';
         $patientId = $_SESSION['patientId'];
-        $query = "SELECT appoint_No, appoint_Info, appoint_Date, appoint_Time, appoint_Status, pers_Id
-        FROM appointment
-        WHERE patient_Id = '$patientId'
-        ORDER BY appoint_No DESC";
+        $query = "SELECT transaction_No, form_Type, date_Issued, place_Issued, date_Validity, transact_Status, claimed
+        FROM transaction tr JOIN appointment app ON tr.appoint_No = app.appoint_No
+        WHERE app.patient_Id = '$patientId'
+        ORDER BY tr.appoint_No DESC";
         $result = mysqli_query($conn, $query);
     ?>
-    <div class="patient-dashboard-appointments">
+    <div class="patient-dashboard-transactions">
       <div class="base1"></div>
       <div class="sidebar-container1">
         <div class="sidebar1"></div>
@@ -54,7 +54,7 @@
             src="public/dashboardicon@2x.png"
           />
         </button>
-        <button class="appointments2" type="button" onclick="selfPage()">
+        <button class="appointments2" type="button" onclick="viewAppointPage()">
           <div class="dashboard3">Appointments</div>
           <img
             class="appointments-icon1"
@@ -64,9 +64,9 @@
         </button>
         <button class="book-an-appointment3" type="button" onclick="bookPage()">
           <div class="book-an-appointment4">Book an Appointment</div>
-          <img class="book-icon1" alt="" src="public/bookicon@2x.png" />
+          <img class="book-icon1" alt="" src="./public/bookicon@2x.png" />
         </button>
-        <button class="transactions2" type="button" onclick="transactPage()">
+        <button class="transactions2" type="button" onclick="selfPage()">
           <div class="transactions3">Transactions</div>
           <img
             class="transactions-icon1"
@@ -77,6 +77,7 @@
       </div>
       <div class="header2">
         <img class="logo-icon1" alt="" src="public/logo@2x.png" />
+
         <div class="pup-clinic-appointment1">PUP Clinic Appointment System</div>
         <div class="sta-mesa-manila1">Sta. Mesa, Manila</div>
       </div>
@@ -84,10 +85,11 @@
         <div class="patient-dashboard1">Patient Dashboard</div>
         <div class="patient-dashboard-title-item"></div>
       </div>
-      <div class="patient-dashboard-appointments-child"></div>
+      <div class="patient-dashboard-transactions-child"></div>
       <div class="base-main-header1"></div>
       <div class="base-main1"></div>
       <input class="welcome-fn-mi1" type="text" value="<?php echo "Welcome, $name";?>" disabled/>
+
       <div class="footer1">
         <div class="footer-item"></div>
         <div class="bsit-3-2n-group1">
@@ -105,54 +107,69 @@
         </button>
       </form>
       <div class="header3">
-        <div class="appointments4">Appointments</div>
+        <div class="transactions4">Transactions</div>
         <div class="header-item"></div>
       </div>
       <table class="table">
         <thead>
           <tr>
             <th class="th">
-              <div class="appointments5">Appointment No</div>
+              <div class="transactions5">Transaction No.</div>
             </th>
             <th class="th">
-                <div class="appointments5">Details</div>
+              <div class="transactions5">Form Type</div>
             </th>
             <th class="th">
-                <div class="appointments5">Date</div>
+              <div class="transactions5">Form Validity</div>
             </th>
             <th class="th">
-                <div class="appointments5">Time</div>
+              <div class="transactions5">Date Issued</div>
             </th>
             <th class="th">
-                <div class="appointments5">Status</div>
+              <div class="transactions5">Place Issued</div>
             </th>
             <th class="th">
-                <div class="appointments5">Assigned Personnel</div>
+              <div class="transactions5">Status</div>
+            </th>
+            <th class="th">
+              <div class="transactions5">Claimed By</div>
             </th>
           </tr>
         </thead>
         <tbody>
-        <?php 
+          <?php 
             while($rows = mysqli_fetch_assoc($result)){
-                $persId = $rows['pers_Id'];
-                if($persId === NULL){
-                    $persName = 'None';
-                }else{
-                    $query2 = "SELECT pers_Name FROM personnel WHERE pers_Id = '$persId'";
-                    $result2 = mysqli_query($conn, $query2);
-                    $row = mysqli_fetch_assoc($result2);
-                    $persName = $row['pers_Name'];
-                }
-                echo '<tr>';
-                echo '<td class="th1">' . $rows['appoint_No'] . '</td>';
-                echo '<td class="th1">' . $rows['appoint_Info'] . '</td>';
-                echo '<td class="th1">' . $rows['appoint_Date'] . '</td>';
-                echo '<td class="th1">' . $rows['appoint_Time'] . '</td>';
-                echo '<td class="th1">' . $rows['appoint_Status'] . '</td>';
-                echo '<td class="th1">' . $persName . '</td>';
-                echo '</tr>';
+              $formType = $rows['form_Type'];
+              $formValidity = $rows['date_Validity'];
+              $dateIssued = $rows['date_Issued'];
+              $placeIssued = $rows['place_Issued'];
+              $claimed = $rows['claimed'];
+              if($formType === NULL){
+                $formType = 'None';
+              }
+              if($formValidity === NULL){
+                $formValidity = 'None';
+              }
+              if($dateIssued === NULL){
+                $dateIssued = 'None';
+              }
+              if($placeIssued === NULL){
+                $placeIssued = 'None';
+              }
+              if($claimed === NULL){
+                $claimed = 'None';
+              }
+              echo '<tr>';
+              echo '<td class="th1">' . $rows['transaction_No'] . '</td>';
+              echo '<td class="th1">' . $formType . '</td>';
+              echo '<td class="th1">' . $formValidity . '</td>';
+              echo '<td class="th1">' . $dateIssued . '</td>';
+              echo '<td class="th1">' . $placeIssued . '</td>';
+              echo '<td class="th1">' . $rows['transact_Status'] . '</td>';
+              echo '<td class="th1">' . $claimed . '</td>';
+              echo '</tr>';
             }
-        ?>
+          ?>
         </tbody>
       </table>
     </div>
@@ -160,13 +177,13 @@
         function dbPage(){
             window.location.href = 'index.php';
         }
-        function selfPage(){
+        function viewAppointPage(){
             window.location.href = 'viewappointment.php';
         }
         function bookPage(){
             window.location.href = 'booking.php';
         }
-        function transactPage(){
+        function selfPage(){
           window.location.href = 'transaction.php';
         }
     </script>

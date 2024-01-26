@@ -95,7 +95,7 @@
           <div class="book-an-appointment1">Book an Appointment</div>
           <img class="book-icon" alt="" src="./public/bookicon@2x.png" />
         </button>
-        <button class="transactions">
+        <button class="transactions" type="button" onclick="transactPage()">
           <div class="transactions1">Transactions</div>
           <img
             class="transactions-icon"
@@ -169,6 +169,9 @@
         }
         function selfPage(){
             window.location.href = 'booking.php';
+        }
+        function transactPage(){
+          window.location.href = 'transaction.php';
         }
     </script>
   </body>

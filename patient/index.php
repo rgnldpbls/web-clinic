@@ -82,7 +82,7 @@
           <div class="book-an-appointment1">Book an Appointment</div>
           <img class="book-icon" alt="" src="public/bookicon@2x.png" />
         </button>
-        <button class="transactions">
+        <button class="transactions" type="button" onclick="transactPage()">
           <div class="transactions1">Transactions</div>
           <img
             class="transactions-icon"
@@ -115,9 +115,9 @@
         </div>
       </div>
       <form method="post">
-        <button class="rectangle-group" type="submit" name="logoutBTN">
-          <div class="group-item"></div>
-          <div class="patient">Logout</div>
+        <button class="logout2" type="submit" name="logoutBTN">
+            <div class="logout-item"></div>
+            <div class="logout3">Logout</div>
         </button>
       </form>
       <div class="patient-dashboard-title1">
@@ -233,6 +233,9 @@
       }
       function bookPage(){
         window.location.href = 'booking.php';
+      }
+      function transactPage(){
+        window.location.href = 'transaction.php';
       }
     </script>
   </body>

@@ -208,7 +208,7 @@ body {
   height: 56px;
   font-size: var(--font-size-11xl);
 }
-.patient-dashboard-appointments-child {
+.patient-dashboard-transactions-child {
   position: absolute;
   top: 106.5px;
   left: -0.5px;
@@ -230,7 +230,7 @@ body {
 .base-main1 {
   top: 108px;
   width: 1566px;
-  height: 896px;
+  height: 1297px;
 }
 .welcome-fn-mi1 {
   border: 0;
@@ -322,7 +322,7 @@ body {
   width: 75px;
   height: 45px;
 }
-.appointments4 {
+.transactions4 {
   position: absolute;
   top: 0;
   left: 27px;
@@ -348,18 +348,18 @@ body {
   height: 59px;
   font-size: var(--font-size-11xl);
 }
-.appointments5 {
+.transactions5 {
   position: relative;
   align-items: center;
 }
-.appointments5,
-.appointments5:hover {
+.transactions5,
+.transactions5:hover {
   font-family: var(--font-kanit);
   font-size: 24px;
   text-align: left;
-  color: black;
+  color: var(--color-gray-100);
   display: flex;
-  width: 250px;
+  width: 225px;
   height: 49px;
 }
 .th {
@@ -375,12 +375,12 @@ body {
 }
 .table {
   position: absolute;
-  top: 196px;
-  left: 400px;
-  width: 272.5px;
+  top: 195px;
+  left: 363px;
+  width: 255px;
   height: 49px;
 }
-.patient-dashboard-appointments {
+.patient-dashboard-transactions {
   width: 100%;
   position: relative;
   background-color: var(--color-white);
