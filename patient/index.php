@@ -55,7 +55,7 @@
           session_destroy();
           header("Location: ../login.php");
           exit();
-      }
+        }
     ?>
     <div class="patient-dashboard-dashboard">
       <div class="base"></div>

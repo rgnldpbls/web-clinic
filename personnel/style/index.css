@@ -1,0 +1,572 @@
+body {
+  zoom: 0.71;
+}
+.base,
+.sidebar {
+  position: absolute;
+  top: 0;
+}
+.base {
+  left: 355px;
+  background-color: #eaeaea;
+  box-shadow: 0 4px 100px rgba(20, 20, 20, 0.5);
+  width: 1920px;
+  height: 1080px;
+}
+.sidebar {
+  left: 3px;
+  background: linear-gradient(
+    180deg,
+    rgba(152, 152, 152, 0.16) 30.5%,
+    rgba(239, 11, 11, 0.3)
+  );
+  width: 355px;
+  height: 1274px;
+}
+.bg-pic-icon {
+  position: absolute;
+  top: 168px;
+  left: 0;
+  width: 360.7px;
+  height: 1080px;
+  object-fit: cover;
+}
+.dashboard1 {
+  top: 0;
+  left: 37px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-karla);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 180px;
+}
+.dashboard,
+.dashboard-icon,
+.dashboard1 {
+  position: absolute;
+  height: 26px;
+}
+.dashboard-icon {
+  top: 0;
+  left: 0;
+  width: 26px;
+  object-fit: contain;
+}
+.dashboard {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 432px;
+  left: 35px;
+  width: 217px;
+}
+.appointments-icon {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+.appointments {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 482px;
+  left: 35px;
+  width: 217px;
+  height: 26px;
+}
+.book-an-appointment {
+  position: absolute;
+  top: 0;
+  left: 39px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-karla);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 250px;
+  height: 26px;
+}
+.patient-icon {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+}
+.patients {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 532px;
+  left: 33px;
+  width: 289px;
+  height: 29px;
+}
+.transactions1 {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-karla);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 180px;
+  height: 26px;
+}
+.transactions-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 29px;
+  height: 29px;
+  object-fit: cover;
+}
+.transactions {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 582px;
+  left: 32px;
+  width: 220px;
+  height: 29px;
+}
+.logo-icon,
+.sidebar-container {
+  position: absolute;
+  top: -188px;
+  left: -3px;
+  width: 360.7px;
+  height: 1274px;
+}
+.logo-icon {
+  top: 0;
+  left: 0;
+  width: 58.3px;
+  height: 58.3px;
+  object-fit: cover;
+}
+.pup-clinic-appointment,
+.sta-mesa-manila {
+  position: absolute;
+  top: 8.5px;
+  left: 74.6px;
+  display: inline-block;
+  width: 352.4px;
+  height: 33.9px;
+}
+.sta-mesa-manila {
+  top: 34.9px;
+  font-size: 13px;
+  font-family: var(--font-karla);
+  color: #050505;
+  width: 135.6px;
+  height: 13.6px;
+}
+.header {
+  position: absolute;
+  top: 21px;
+  left: 22px;
+  width: 427px;
+  height: 58.3px;
+  font-size: var(--font-size-base);
+  color: var(--color-maroon);
+}
+.personnel-dashboard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 301px;
+  height: 49px;
+}
+.patient-dashboard-title-child {
+  position: absolute;
+  top: 54.5px;
+  left: -1.5px;
+  border-top: 3px solid var(--color-deepskyblue);
+  box-sizing: border-box;
+  width: 46px;
+  height: 3px;
+}
+.patient-dashboard-title {
+  position: absolute;
+  top: 140px;
+  left: 29px;
+  width: 301px;
+  height: 56px;
+  font-size: var(--font-size-11xl);
+}
+.personnel-dashboard-dashboard-child {
+  position: absolute;
+  top: 106.5px;
+  left: -0.5px;
+  border-top: 1px solid #5d5858;
+  box-sizing: border-box;
+  width: 356px;
+  height: 1px;
+}
+.personnel-dashboard-dashboard-inner,
+.personnel-dashboard-dashboard-item {
+  position: absolute;
+  top: 0;
+  left: 355px;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  width: 1565px;
+  height: 76px;
+}
+.personnel-dashboard-dashboard-inner {
+  top: 108px;
+  width: 1566px;
+  height: 1297px;
+}
+.group-child {
+  position: absolute;
+  top: 2.2px;
+  left: 0;
+  background-color: #24282e;
+  width: 1932px;
+  height: 77.7px;
+}
+.bsit-3-2n-group,
+.contact-us-at {
+  position: absolute;
+  top: 19.4px;
+  left: 32.2px;
+  display: flex;
+  align-items: center;
+  width: 588.7px;
+  height: 43.2px;
+}
+.contact-us-at {
+  top: 0;
+  left: 1365.2px;
+  text-align: right;
+  width: 891.5px;
+  height: 82px;
+}
+.rectangle-parent {
+  position: absolute;
+  top: 1002px;
+  left: -3px;
+  width: 1932px;
+  height: 82px;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  font-family: var(--font-questrial);
+}
+.group-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 4px 7px 1px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-maroon);
+  box-sizing: border-box;
+  width: 75px;
+  height: 45px;
+}
+.patient {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  font-size: var(--font-size-base);
+  font-family: var(--font-karla);
+  color: var(--color-maroon);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 27px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.rectangle-group {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 13px;
+  left: 1812px;
+  width: 75px;
+  height: 45px;
+}
+.dashboard2 {
+  position: absolute;
+  top: 0;
+  left: 27px;
+  display: flex;
+  align-items: center;
+  width: 301px;
+  height: 49px;
+}
+.patient-dashboard-title-item {
+  position: absolute;
+  top: 57.5px;
+  left: -1.5px;
+  border-top: 3px solid var(--color-deepskyblue);
+  box-sizing: border-box;
+  width: 1568px;
+  height: 3px;
+}
+.patient-dashboard-title1 {
+  position: absolute;
+  top: 115px;
+  left: 355px;
+  width: 1565px;
+  height: 59px;
+  font-size: var(--font-size-11xl);
+}
+.personnel-email {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 238.2px;
+  height: 27px;
+}
+.patient-email-child {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  width: 533px;
+  height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+.contact-number1,
+.patient-email,
+.patient-password {
+  position: absolute;
+  top: 232px;
+  left: 1167px;
+  width: 533px;
+  height: 88px;
+}
+.contact-number1,
+.patient-password {
+  top: 342px;
+}
+.contact-number1 {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 397.4px;
+  height: 27px;
+}
+.contact-number-child {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  width: 442px;
+  height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+.contact-number,
+.full-name1 {
+  position: absolute;
+  top: 456px;
+  left: 1167px;
+  width: 442px;
+  height: 88px;
+}
+.full-name1 {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 244.2px;
+  height: 27px;
+}
+.full-name,
+.male,
+.sex1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 533px;
+  height: 88px;
+}
+.male,
+.sex1 {
+  display: flex;
+  align-items: center;
+  width: 219px;
+  height: 27px;
+}
+.male {
+  top: 45px;
+  left: 32px;
+  width: 65px;
+}
+.sex-child {
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  border-radius: 50%;
+  border: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 17px;
+  height: 17px;
+}
+.female {
+  top: 45px;
+  left: 154px;
+  display: flex;
+  align-items: center;
+  width: 86px;
+  height: 27px;
+}
+.female,
+.sex,
+.sex-item {
+  position: absolute;
+}
+.sex-item {
+  cursor: pointer;
+  margin: 0;
+  top: 50px;
+  left: 122px;
+  border-radius: 50%;
+  border: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 17px;
+  height: 17px;
+}
+.sex {
+  top: 110px;
+  left: 305px;
+  width: 240px;
+  height: 72px;
+}
+.birthdate-mmddyyyy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 265px;
+  height: 27px;
+}
+.birthdate-child {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  width: 274px;
+  height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+.birthdate,
+.personnel-type {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  width: 274px;
+  height: 88px;
+}
+.personnel-type {
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 227.6px;
+  height: 27px;
+}
+.patient-type,
+.patient-type-child {
+  position: absolute;
+  left: 0;
+  width: 322px;
+}
+.patient-type-child {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  top: 35px;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+.patient-type {
+  top: 224px;
+  height: 88px;
+}
+.full-name-parent {
+  position: absolute;
+  top: 232px;
+  left: 532px;
+  width: 545px;
+  height: 312px;
+}
+.personnel-dashboard-dashboard,
+.welcome-fn-mi {
+  text-align: left;
+  color: var(--color-gray-100);
+  font-family: var(--font-kanit);
+}
+.welcome-fn-mi {
+  border: 0;
+  outline: 0;
+  font-size: var(--font-size-5xl);
+  background-color: transparent;
+  position: absolute;
+  top: 13px;
+  left: 382px;
+  display: flex;
+  align-items: center;
+  width: 301px;
+  height: 49px;
+}
+.personnel-dashboard-dashboard {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 1080px;
+  overflow: hidden;
+  font-size: var(--font-size-3xl);
+}

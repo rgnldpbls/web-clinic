@@ -70,8 +70,20 @@
         }else if(mysqli_num_rows($res2) == 1){
           $sql = "SELECT * FROM personnel WHERE pers_Email = '$email' and pers_Password = '$password'";
           $inner = mysqli_query($conn, $sql);
-          if(mysqli_num_rows($inner) == 1){
-            header("location: personnelpage.php");
+          $rows = mysqli_fetch_assoc($inner);
+          $dbemail = isset($rows['pers_Email']) ? $rows['pers_Email'] : null;
+          $dbpassword = isset($rows['pers_Password']) ? $rows['pers_Password'] : null;
+          if($email === $dbemail && $password === $dbpassword){
+            $_SESSION['persId'] = $rows['pers_Id'];
+            $_SESSION['fullName'] = $rows ['pers_Name'];
+            $_SESSION['birthDate'] = $rows['pers_Birthdate'];
+            $_SESSION['sex'] = $rows['pers_Sex'];
+            $_SESSION['type'] = $rows['pers_Type'];
+            $_SESSION['contactNum'] = $rows['pers_ContactNo'];
+            $_SESSION['email'] = $rows['pers_Email'];
+            $_SESSION['password'] = $rows['pers_Password'];
+            $_SESSION['loginVisit'] = true;
+            header("location: personnel/index.php");
           }else{
             echo '<script>alert("Incorrect Password!")</script>';
           }
