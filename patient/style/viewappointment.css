@@ -359,7 +359,7 @@ body {
   text-align: left;
   color: black;
   display: flex;
-  width: 250px;
+  width: 248px;
   height: 49px;
 }
 .th {
@@ -373,10 +373,17 @@ body {
   font-size: 20px;
   color: black;
 }
+table {
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid black;
+}
 .table {
   position: absolute;
   top: 196px;
-  left: 400px;
+  left: 370px;
   width: 272.5px;
   height: 49px;
 }

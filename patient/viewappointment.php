@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
+    <title>View Appointment</title>
     <link rel="stylesheet" href="style/global.css" />
     <link rel="stylesheet" href="style/viewappointment.css" />
     <link
@@ -109,7 +109,6 @@
         <div class="header-item"></div>
       </div>
       <table class="table">
-        <thead>
           <tr>
             <th class="th">
               <div class="appointments5">Appointment No</div>
@@ -130,9 +129,7 @@
                 <div class="appointments5">Assigned Personnel</div>
             </th>
           </tr>
-        </thead>
-        <tbody>
-        <?php 
+          <?php 
             while($rows = mysqli_fetch_assoc($result)){
                 $persId = $rows['pers_Id'];
                 if($persId === NULL){
@@ -152,8 +149,7 @@
                 echo '<td class="th1">' . $persName . '</td>';
                 echo '</tr>';
             }
-        ?>
-        </tbody>
+          ?>
       </table>
     </div>
     <script>

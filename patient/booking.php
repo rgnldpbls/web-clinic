@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
+    <title>Appointment Booking</title>
     <link rel="stylesheet" href="style/global.css" />
     <link rel="stylesheet" href="style/booking.css" />
     <link

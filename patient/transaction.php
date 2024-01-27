@@ -111,7 +111,6 @@
         <div class="header-item"></div>
       </div>
       <table class="table">
-        <thead>
           <tr>
             <th class="th">
               <div class="transactions5">Transaction No.</div>
@@ -135,8 +134,6 @@
               <div class="transactions5">Claimed By</div>
             </th>
           </tr>
-        </thead>
-        <tbody>
           <?php 
             while($rows = mysqli_fetch_assoc($result)){
               $formType = $rows['form_Type'];
@@ -170,7 +167,6 @@
               echo '</tr>';
             }
           ?>
-        </tbody>
       </table>
     </div>
     <script>

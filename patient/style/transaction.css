@@ -359,7 +359,7 @@ body {
   text-align: left;
   color: var(--color-gray-100);
   display: flex;
-  width: 225px;
+  width: 215px;
   height: 49px;
 }
 .th {
@@ -376,9 +376,16 @@ body {
 .table {
   position: absolute;
   top: 195px;
-  left: 363px;
+  left: 360px;
   width: 255px;
   height: 49px;
+}
+table {
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid black;
 }
 .patient-dashboard-transactions {
   width: 100%;
