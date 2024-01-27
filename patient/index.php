@@ -122,7 +122,7 @@
         </button>
       </form>
       <div class="patient-dashboard-title1">
-        <div class="dashboard2">Dashboard</div>
+        <div class="dashboard2">Patient Details</div>
         <div class="patient-dashboard-title-item"></div>
       </div>
       <div class="full-name">
