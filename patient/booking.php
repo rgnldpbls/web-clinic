@@ -49,20 +49,10 @@
           if(mysqli_num_rows($res)!=0){
             echo '<script>alert("You have duplicate appointment!")
             window.location.href="viewappointment.php"</script>';
-          }else if($selectDateTime <= $currentDateTime){
-            echo '<script>alert("Error: Please select a date that is not earlier than today.")</script>';
           }else{
             $query = "INSERT INTO appointment(appoint_Info, appoint_Date, appoint_Time, appoint_Status, patient_Id) VALUES (?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($query);
             $stmt->bind_param("ssssi", $appointInfo, $appointDate, $appointTime, $appointStatus, $patientId);
-            $stmt->execute();
-            $stmt->close();
-
-            $last_inserted_id = $conn->insert_id;
-            $transactStatus = "Pending";
-            $query2 = "INSERT INTO transaction(transact_Status, appoint_No) VALUES (?, ?)";
-            $stmt = $conn->prepare($query2);
-            $stmt->bind_param("si", $transactStatus, $last_inserted_id);
             $stmt->execute();
             $stmt->close();
             echo '<script>alert("Appointment added successfully"); 
@@ -143,11 +133,11 @@
         <div class="contents">
           <div class="appointment-date">
             <div class="appointment-date1">Appointment Date</div>
-            <input class="appointment-date-item" type="date" name="appointDate" required/>
+            <input class="appointment-date-item" type="date" name="appointDate" id="date" required/>
           </div>
           <div class="appointment-time">
             <div class="appointment-date1">Appointment Time</div>
-            <input class="appointment-time-item" type="time" name="appointTime" required/>
+            <input class="appointment-time-item" type="time" name="appointTime" id="time" required/>
           </div>
           <div class="appointment-information">
             <div class="appointment-information1">Appointment Information</div>
@@ -173,6 +163,25 @@
         function transactPage(){
           window.location.href = 'transaction.php';
         }
+        // Date
+        var tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        var tomorrowFormatted = tomorrow.toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', tomorrowFormatted);
+        // Time
+        var timeInput = document.getElementById('time');
+        timeInput.addEventListener('input', function() {
+          var selectedTime = timeInput.value;
+          var minTime = '08:00'; // Minimum allowed time
+          var maxTime = '16:00'; // Maximum allowed time
+          // Compare the selected time with the minimum and maximum
+          if (selectedTime < minTime || selectedTime > maxTime) {
+            // If the selected time is outside the range, display an error message
+            alert('Please select a time between 08:00AM and 04:00PM.');
+            // Reset the input value to an empty string
+            timeInput.value = '';
+          }
+        });
     </script>
   </body>
 </html>

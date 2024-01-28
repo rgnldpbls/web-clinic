@@ -45,7 +45,6 @@
       <div class="sidebar-container">
         <div class="sidebar"></div>
         <img class="bg-pic-icon" alt="" src="public/bg-pic@2x.png" />
-
         <button class="dashboard" type="button" onclick="selfPage()">
           <div class="dashboard1">Dashboard</div>
           <img
@@ -62,7 +61,7 @@
             src="public/appointmentsicon@2x.png"
           />
         </button>
-        <button class="patients" type="button" onclick="#">
+        <button class="patients" type="button" onclick="viewPatientPage()">
           <div class="book-an-appointment">Patients</div>
           <img class="patient-icon" alt="" src="public/patienticon@2x.png" />
         </button>
@@ -133,7 +132,7 @@
           <input class="sex-item" type="radio" value="female" <?php echo($sex === "female") ? 'checked' : '';?> disabled/>
         </div>
         <div class="birthdate">
-          <div class="birthdate-mmddyyyy">Birthdate (MM/DD/YYYY)</div>
+          <div class="birthdate-mmddyyyy">Birthdate (YYYY-MM-DD)</div>
           <input class="birthdate-child" type="text" value="<?php echo $birthdate;?>" disabled/>
         </div>
         <div class="patient-type">
@@ -150,9 +149,9 @@
     //   function viewAppointPage(){
     //     window.location.href = 'viewappointment.php';
     //   }
-    //   function bookPage(){
-    //     window.location.href = 'booking.php';
-    //   }
+       function viewPatientPage(){
+         window.location.href = 'viewpatient.php';
+       }
     //   function transactPage(){
     //     window.location.href = 'transaction.php';
     //   }

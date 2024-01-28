@@ -132,6 +132,10 @@
           <?php 
             while($rows = mysqli_fetch_assoc($result)){
                 $persId = $rows['pers_Id'];
+                $appointNo = $rows['appoint_No'];
+                $appointDate = $rows['appoint_Date'];
+                $currentDate = date('Y-m-d');
+                $status = $rows['appoint_Status'];
                 if($persId === NULL){
                     $persName = 'None';
                 }else{
@@ -140,12 +144,18 @@
                     $row = mysqli_fetch_assoc($result2);
                     $persName = $row['pers_Name'];
                 }
+                if($currentDate >= $appointDate){
+                  $query3 = "UPDATE appointment SET appoint_Status = 'Rejected' WHERE appoint_No = '$appointNo' AND appoint_Status = 'Pending'";
+                  $stmt = $conn->prepare($query3);
+                  $stmt->execute();
+                  $stmt->close();
+                }
                 echo '<tr>';
-                echo '<td class="th1">' . $rows['appoint_No'] . '</td>';
+                echo '<td class="th1">' . $appointNo . '</td>';
                 echo '<td class="th1">' . $rows['appoint_Info'] . '</td>';
-                echo '<td class="th1">' . $rows['appoint_Date'] . '</td>';
+                echo '<td class="th1">' . $appointDate . '</td>';
                 echo '<td class="th1">' . $rows['appoint_Time'] . '</td>';
-                echo '<td class="th1">' . $rows['appoint_Status'] . '</td>';
+                echo '<td class="th1">' . $status . '</td>';
                 echo '<td class="th1">' . $persName . '</td>';
                 echo '</tr>';
             }
