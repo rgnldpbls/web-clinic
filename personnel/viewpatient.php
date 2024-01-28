@@ -34,8 +34,8 @@
             exit();
         }
         $personnelId = $_SESSION['persId'];
-        $query = "SELECT patient_Name, appoint_Info, appoint_Date, appoint_Time
-        FROM appointment app JOIN patient p ON app.patient_Id = p.patient_Id
+        $query = "SELECT patient_Name, patient_Age, patient_Sex, patient_ContactNo, patient_Type, department, appoint_No, appoint_Info, appoint_Date, appoint_Time, md_Attention, md_Illness, md_AllergiesFoods, md_AllergiesMeds, ph_Smoking, ph_Alcohol
+        FROM appointment app JOIN patient p ON app.patient_Id = p.patient_Id JOIN medhistory md ON p.mdHist_Id = md.mdHist_Id
         WHERE appoint_Status = 'Pending'";
         $result = mysqli_query($conn, $query);
     ?>
@@ -126,16 +126,136 @@
           </tr>
           <?php
             while($rows = mysqli_fetch_assoc($result)){
+                $fname = $rows['patient_Name'];
+                $age = $rows['patient_Age'];
+                $sex = $rows['patient_Sex'];
+                $contactNo = $rows['patient_ContactNo'];
+                $type = $rows['patient_Type'];
+                $dept = $rows['department'];
+                $medAtt = $rows['md_Attention'];
+                $medIll = $rows['md_Illness'];
+                $foodAl = $rows['md_AllergiesFoods'];
+                $medAl = $rows['md_AllergiesMeds'];
+                $smkng = $rows['ph_Smoking'];
+                $alc = $rows['ph_Alcohol'];
                 echo '<tr>';
-                echo '<td class="th1">' . $rows['patient_Name'] . '</td>';
+                echo '<td class="th1">' . $fname. '</td>';
                 echo '<td class="th1">' . $rows['appoint_Info'] . '</td>';
                 echo '<td class="th1">' . $rows['appoint_Date'] . '</td>';
                 echo '<td class="th1">' . $rows['appoint_Time'] . '</td>';
-                echo '<td class="th1">' . '<a href="">View</a>'. '</td>';
+                echo '<td class="th1">' . '<button onclick="getId(\'' . $fname . '\', \'' . $age . '\', \'' . $sex . '\', \'' . $contactNo . '\', \'' . $type . '\', \'' . $dept . '\', \'' . $medAtt . '\', \'' . $medIll . '\', \'' . $foodAl . '\', \'' . $medAl . '\', \'' . $smkng . '\', \'' . $alc . '\')">View</button>'. '</td>';
                 echo '</tr>';
             }
           ?>
       </table>
+    </div>
+    <div id="id01" class="modal">
+     <form class="modal-content" action="" method="">
+      <div class="contents-parent">
+        <div class="contents">
+          <div class="any-history-of-drinking">
+            <div class="any-history-of-drinking-child"></div>
+            <div class="any-history-of-container">
+              <span class="any-history-of-container1">
+                <p class="any-history">Any history</p>
+                <p class="any-history">of Drinking?</p>
+              </span>
+            </div>
+            <input class="any-history-of-drinking-item" type="text" id="alc" disabled/>
+            <div class="any-history-of-drinking-inner"></div>
+          </div>
+          <div class="any-history-of-smoking">
+            <div class="any-history-of-drinking-child"></div>
+            <div class="any-history-of-container">
+              <span class="any-history-of-container1">
+                <p class="any-history">Any history</p>
+                <p class="any-history">of Smoking?</p>
+              </span>
+            </div>
+            <input class="any-history-of-drinking-item" type="text" id="smk" disabled/>
+            <div class="any-history-of-drinking-inner"></div>
+          </div>
+          <div class="allergies-in-medicine2">
+            <div class="allergies-in-medicine-item"></div>
+            <div class="allergies-in-medicine3">Allergies in Medicine</div>
+            <input class="allergies-in-medicine-inner" type="text" id="medAl" disabled/>
+            <div class="rectangle-div"></div>
+          </div>
+          <div class="allergies-in-food2">
+            <div class="allergies-in-food-item"></div>
+            <div class="allergies-in-medicine3">Allergies in Food</div>
+            <input class="allergies-in-food-inner" type="text" id="foodAl" disabled/>
+            <div class="rectangle-div"></div>
+          </div>
+          <div class="medical-illness1">
+            <div class="medical-illness-child"></div>
+            <div class="allergies-in-medicine3">Medical Illness</div>
+            <input class="medical-illness-item" type="text" id="medIll" disabled/>
+            <div class="rectangle-div"></div>
+          </div>
+          <div class="needs-medical-attention4">
+            <div class="needs-medical-attention-child3"></div>
+            <div class="allergies-in-medicine3">Needs Medical Attention?</div>
+            <input class="rectangle-input" type="text" id="medAtt" disabled/>
+            <div class="rectangle-div"></div>
+          </div>
+          <div class="contact-no">
+            <div class="contact-no-child"></div>
+            <input class="contact-no-item" type="text" id="contactNo" disabled/>
+            <div class="rectangle-div"></div>
+            <div class="contact-no1">Contact No.</div>
+          </div>
+          <div class="department2">
+            <div class="any-history-of-drinking-child"></div>
+            <div class="department3">Department</div>
+            <input class="department-inner" type="text" id="dept" disabled/>
+            <div class="department-child1"></div>
+          </div>
+          <div class="patient-type2">
+            <div class="any-history-of-drinking-child"></div>
+            <div class="patient-type3">Patient Type</div>
+            <input class="department-inner" type="text" id="type" disabled/>
+            <div class="department-child1"></div>
+          </div>
+          <div class="sex2">
+            <div class="sex-inner"></div>
+            <div class="sex3">Sex</div>
+            <input class="age-inner" type="text" id="sex" disabled/>
+            <div class="sex-child2"></div>
+          </div>
+          <div class="age2">
+            <div class="age-item"></div>
+            <div class="sex3">Age</div>
+            <input class="age-inner" type="text" id="age" disabled/>
+            <div class="sex-child2"></div>
+          </div>
+          <div class="full-name2">
+            <div class="full-name-item"></div>
+            <input class="full-name-inner" type="text" id="name" disabled/>
+            <div class="rectangle-div"></div>
+            <div class="contact-no1">Full Name</div>
+          </div>
+        </div>
+        <div class="patient-details">Patient Details</div>
+        <button class="confirmbtn">
+          <div class="confirmbtn-child"></div>
+          <div class="confirm">Confirm</div>
+        </button>
+        <div class="appointment-status">
+          <div class="appointment-status-child"></div>
+          <div class="appointment-status1">Appointment Status</div>
+          <select class="appointment-status-item" name="appointStatus" required>
+            <option value="Approve">Approved</option>
+            <option value="Reject">Rejected</option>
+          </select>
+        </div>
+        <div class="header3">
+          <div class="view-patient">View Patient</div>
+          <div class="header-child"></div>
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        </div>
+      </div>
+     </form>
     </div>
     <script>
       function dbPage(){
@@ -150,6 +270,24 @@
     //   function transactPage(){
     //     window.location.href = 'transaction.php';
     //   }
+        function getId(fname, age, sex, contactNo, type, dept, medAtt, medIll, foodAl, medAl, smk, alc){
+          var element = document.getElementById("id01");
+          if (element) {
+            element.style.display = "block";
+          }
+          document.getElementById('name').value = fname;
+          document.getElementById('age').value = age;
+          document.getElementById('sex').value = sex;
+          document.getElementById('contactNo').value = contactNo;
+          document.getElementById('type').value = type;
+          document.getElementById('dept').value = dept;
+          document.getElementById('medAtt').value = medAtt;
+          document.getElementById('medIll').value = medIll;
+          document.getElementById('foodAl').value = foodAl;
+          document.getElementById('medAl').value = medAl;
+          document.getElementById('smk').value = smk;
+          document.getElementById('alc').value = alc;
+        }
     </script>
   </body>
 </html>
