@@ -79,7 +79,7 @@
         <div class="sta-mesa-manila2">Sta. Mesa, Manila</div>
       </div>
       <div class="patient-dashboard-title2">
-        <div class="patient-dashboard2">Patient Dashboard</div>
+        <div class="patient-dashboard2">Personnel Dashboard</div>
         <div class="patient-dashboard-title-inner"></div>
       </div>
       <div class="patient-dashboard-appointments-child"></div>
@@ -126,6 +126,7 @@
           </tr>
           <?php
             while($rows = mysqli_fetch_assoc($result)){
+                $appointNo = $rows['appoint_No'];
                 $fname = $rows['patient_Name'];
                 $age = $rows['patient_Age'];
                 $sex = $rows['patient_Sex'];
@@ -138,10 +139,18 @@
                 $medAl = $rows['md_AllergiesMeds'];
                 $smkng = $rows['ph_Smoking'];
                 $alc = $rows['ph_Alcohol'];
+                $appointDate = $rows['appoint_Date'];
+                $currentDate = date('Y-m-d');
+                if($currentDate >= $appointDate){
+                  $query3 = "UPDATE appointment SET appoint_Status = 'Rejected' WHERE appoint_No = '$appointNo' AND appoint_Status = 'Pending'";
+                  $stmt = $conn->prepare($query3);
+                  $stmt->execute();
+                  $stmt->close();
+                }
                 echo '<tr>';
                 echo '<td class="th1">' . $fname. '</td>';
                 echo '<td class="th1">' . $rows['appoint_Info'] . '</td>';
-                echo '<td class="th1">' . $rows['appoint_Date'] . '</td>';
+                echo '<td class="th1">' . $appointDate . '</td>';
                 echo '<td class="th1">' . $rows['appoint_Time'] . '</td>';
                 echo '<td class="th1">' . '<button onclick="getId(\'' . $fname . '\', \'' . $age . '\', \'' . $sex . '\', \'' . $contactNo . '\', \'' . $type . '\', \'' . $dept . '\', \'' . $medAtt . '\', \'' . $medIll . '\', \'' . $foodAl . '\', \'' . $medAl . '\', \'' . $smkng . '\', \'' . $alc . '\')">View</button>'. '</td>';
                 echo '</tr>';
@@ -150,7 +159,33 @@
       </table>
     </div>
     <div id="id01" class="modal">
-     <form class="modal-content" action="" method="">
+      <?php 
+        if (isset($_POST['param1'])) {
+          $receivedData = $_POST['param1'];
+          // Process the data as needed (e.g., store it in a database, perform calculations, etc.)
+          // Send a response back to JavaScript
+          echo "Data received by PHP: " . $receivedData;
+        } else {
+          // If data is not received, send an error response
+          echo "Error: Data not received by PHP";
+        }
+        // if(isset($_POST['confirmBTN'])) {
+        //   echo $_COOKIE["appNo"]; 
+        //   $status = $_POST['appointStatus'];
+        //   if($status === 'Approved'){
+        //     $sql = "UPDATE appointment SET appoint_Status = '$status' WHERE appoint_No = '$scriptTag'";
+        //     $stmt = $conn->prepare($sql);
+        //     $stmt->execute();
+        //     $stmt->close();
+        //   }else if($status === 'Rejected'){
+        //     $sql = "UPDATE appointment SET appoint_Status = '$status' WHERE appoint_No = '$scriptTag'";
+        //     $stmt = $conn->prepare($sql);
+        //     $stmt->execute();
+        //     $stmt->close();
+        //   }
+        // } 
+      ?>
+     <form class="modal-content" action="viewpatient.php" method="post">
       <div class="contents-parent">
         <div class="contents">
           <div class="any-history-of-drinking">
@@ -237,7 +272,7 @@
           </div>
         </div>
         <div class="patient-details">Patient Details</div>
-        <button class="confirmbtn">
+        <button class="confirmbtn" type="submit" name="confirmBTN">
           <div class="confirmbtn-child"></div>
           <div class="confirm">Confirm</div>
         </button>
@@ -245,8 +280,8 @@
           <div class="appointment-status-child"></div>
           <div class="appointment-status1">Appointment Status</div>
           <select class="appointment-status-item" name="appointStatus" required>
-            <option value="Approve">Approved</option>
-            <option value="Reject">Rejected</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
           </select>
         </div>
         <div class="header3">
