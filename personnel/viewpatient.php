@@ -161,7 +161,26 @@
       </table>
     </div>
     <div id="id01" class="modal">
-     <form class="modal-content" action="update.php" method="post">
+    <?php 
+      if(isset($_POST['confirmBTN'])) {
+        $userData = $_POST['appointNo'];
+        $status = $_POST['appointStatus'];
+        if($status === 'Approved'){
+            $sql = "UPDATE appointment SET appoint_Status = '$status' WHERE appoint_No = '$userData'";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $stmt->close();
+            header("location: index.php");
+        }else if($status === 'Rejected'){
+            $sql = "UPDATE appointment SET appoint_Status = '$status' WHERE appoint_No = '$userData'";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $stmt->close();
+            header("location: index.php");
+        }
+    } 
+    ?>
+     <form class="modal-content" action="viewpatient.php" method="post">
       <div class="contents-parent">
         <div class="contents">
           <div class="any-history-of-drinking">
@@ -265,6 +284,7 @@
           <div class="header-child"></div>
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
         </div>
+        <input type="hidden" name="appointNo" id="appointNum"/>
       </div>
      </form>
     </div>
@@ -286,7 +306,8 @@
           if (element) {
             element.style.display = "block";
           }
-          document.getElementById('name').value = appointNo;
+          document.getElementById('appointNum').value = appointNo;
+          document.getElementById('name').value = name;
           document.getElementById('age').value = age;
           document.getElementById('sex').value = sex;
           document.getElementById('contactNo').value = contactNo;
