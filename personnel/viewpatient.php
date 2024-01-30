@@ -18,6 +18,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Questrial:wght@400&display=swap"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
     <?php 
@@ -152,40 +153,15 @@
                 echo '<td class="th1">' . $rows['appoint_Info'] . '</td>';
                 echo '<td class="th1">' . $appointDate . '</td>';
                 echo '<td class="th1">' . $rows['appoint_Time'] . '</td>';
-                echo '<td class="th1">' . '<button onclick="getId(\'' . $fname . '\', \'' . $age . '\', \'' . $sex . '\', \'' . $contactNo . '\', \'' . $type . '\', \'' . $dept . '\', \'' . $medAtt . '\', \'' . $medIll . '\', \'' . $foodAl . '\', \'' . $medAl . '\', \'' . $smkng . '\', \'' . $alc . '\')">View</button>'. '</td>';
+                echo '<td class="th1">' . '<button onclick="getId(\'' . $appointNo . '\', \'' . $fname . '\', \'' . $age . '\', \'' . $sex . '\', \'' . $contactNo . '\', \'' . $type . '\', \'' . $dept . '\', \'' . $medAtt . '\', \'' . $medIll . '\', \'' . $foodAl . '\', \'' . $medAl . '\', \'' . $smkng . '\', \'' . $alc . '\');">View</button>'. '</td>';
                 echo '</tr>';
             }
+
           ?>
       </table>
     </div>
     <div id="id01" class="modal">
-      <?php 
-        if (isset($_POST['param1'])) {
-          $receivedData = $_POST['param1'];
-          // Process the data as needed (e.g., store it in a database, perform calculations, etc.)
-          // Send a response back to JavaScript
-          echo "Data received by PHP: " . $receivedData;
-        } else {
-          // If data is not received, send an error response
-          echo "Error: Data not received by PHP";
-        }
-        // if(isset($_POST['confirmBTN'])) {
-        //   echo $_COOKIE["appNo"]; 
-        //   $status = $_POST['appointStatus'];
-        //   if($status === 'Approved'){
-        //     $sql = "UPDATE appointment SET appoint_Status = '$status' WHERE appoint_No = '$scriptTag'";
-        //     $stmt = $conn->prepare($sql);
-        //     $stmt->execute();
-        //     $stmt->close();
-        //   }else if($status === 'Rejected'){
-        //     $sql = "UPDATE appointment SET appoint_Status = '$status' WHERE appoint_No = '$scriptTag'";
-        //     $stmt = $conn->prepare($sql);
-        //     $stmt->execute();
-        //     $stmt->close();
-        //   }
-        // } 
-      ?>
-     <form class="modal-content" action="viewpatient.php" method="post">
+     <form class="modal-content" action="update.php" method="post">
       <div class="contents-parent">
         <div class="contents">
           <div class="any-history-of-drinking">
@@ -305,12 +281,12 @@
     //   function transactPage(){
     //     window.location.href = 'transaction.php';
     //   }
-        function getId(fname, age, sex, contactNo, type, dept, medAtt, medIll, foodAl, medAl, smk, alc){
+        function getId(appointNo, fname, age, sex, contactNo, type, dept, medAtt, medIll, foodAl, medAl, smk, alc){
           var element = document.getElementById("id01");
           if (element) {
             element.style.display = "block";
           }
-          document.getElementById('name').value = fname;
+          document.getElementById('name').value = appointNo;
           document.getElementById('age').value = age;
           document.getElementById('sex').value = sex;
           document.getElementById('contactNo').value = contactNo;
