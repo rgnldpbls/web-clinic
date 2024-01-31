@@ -34,11 +34,30 @@
             header("Location: ../login.php");
             exit();
         }
-        $personnelId = $_SESSION['persId'];
         $query = "SELECT patient_Name, patient_Age, patient_Sex, patient_ContactNo, patient_Type, department, appoint_No, appoint_Info, appoint_Date, appoint_Time, md_Attention, md_Illness, md_AllergiesFoods, md_AllergiesMeds, ph_Smoking, ph_Alcohol
         FROM appointment app JOIN patient p ON app.patient_Id = p.patient_Id JOIN medhistory md ON p.mdHist_Id = md.mdHist_Id
         WHERE appoint_Status = 'Pending'";
         $result = mysqli_query($conn, $query);
+        if(isset($_POST['confirmBTN'])) {
+          $personnelId = $_SESSION['persId'];
+          $userData = $_POST['appointNo'];
+          $status = $_POST['appointStatus'];
+          if($status === 'Approved'){
+              $sql = "UPDATE appointment SET appoint_Status = '$status', pers_Id = '$personnelId' WHERE appoint_No = '$userData'";
+              $stmt = $conn->prepare($sql);
+              $stmt->execute();
+              $stmt->close();
+              header("location: index.php");
+              exit();
+          }else if($status === 'Rejected'){
+              $sql = "UPDATE appointment SET appoint_Status = '$status', pers_Id = '$personnelId' WHERE appoint_No = '$userData'";
+              $stmt = $conn->prepare($sql);
+              $stmt->execute();
+              $stmt->close();
+              header("location: index.php");
+              exit();
+          }
+      } 
     ?>
     <div class="patient-dashboard-appointments">
       <div class="base2"></div>
@@ -53,7 +72,7 @@
             src="public/dashboardicon@2x.png"
           />
         </button>
-        <button class="appointments4" type="button" onclick="#">
+        <button class="appointments4" type="button" onclick="viewAppointPage()">
           <div class="dashboard5">Appointments</div>
           <img
             class="appointments-icon2"
@@ -65,7 +84,7 @@
           <div class="book-an-appointment6">Patients</div>
           <img class="book-icon2" alt="" src="public/patienticon@2x.png" />
         </button>
-        <button class="transactions6" type="button" onclick="#">
+        <button class="transactions6" type="button" onclick="transactPage()">
           <div class="transactions7">Transactions</div>
           <img
             class="transactions-icon2"
@@ -161,25 +180,6 @@
       </table>
     </div>
     <div id="id01" class="modal">
-    <?php 
-      if(isset($_POST['confirmBTN'])) {
-        $userData = $_POST['appointNo'];
-        $status = $_POST['appointStatus'];
-        if($status === 'Approved'){
-            $sql = "UPDATE appointment SET appoint_Status = '$status' WHERE appoint_No = '$userData'";
-            $stmt = $conn->prepare($sql);
-            $stmt->execute();
-            $stmt->close();
-            header("location: index.php");
-        }else if($status === 'Rejected'){
-            $sql = "UPDATE appointment SET appoint_Status = '$status' WHERE appoint_No = '$userData'";
-            $stmt = $conn->prepare($sql);
-            $stmt->execute();
-            $stmt->close();
-            header("location: index.php");
-        }
-    } 
-    ?>
      <form class="modal-content" action="viewpatient.php" method="post">
       <div class="contents-parent">
         <div class="contents">
@@ -292,15 +292,15 @@
       function dbPage(){
         window.location.href = 'index.php';
       }
-    //   function viewAppointPage(){
-    //     window.location.href = 'viewappointment.php';
-    //   }
+      function viewAppointPage(){
+        window.location.href = 'appointment.php';
+      }
        function selfPage(){
          window.location.href = 'viewpatient.php';
        }
-    //   function transactPage(){
-    //     window.location.href = 'transaction.php';
-    //   }
+      function transactPage(){
+        window.location.href = 'transaction.php';
+      }
         function getId(appointNo, fname, age, sex, contactNo, type, dept, medAtt, medIll, foodAl, medAl, smk, alc){
           var element = document.getElementById("id01");
           if (element) {

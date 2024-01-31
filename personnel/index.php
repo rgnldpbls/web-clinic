@@ -53,7 +53,7 @@
             src="public/dashboardicon@2x.png"
           />
         </button>
-        <button class="appointments" type="button" onclick="#">
+        <button class="appointments" type="button" onclick="viewAppointPage()">
           <div class="dashboard1">Appointments</div>
           <img
             class="appointments-icon"
@@ -65,7 +65,7 @@
           <div class="book-an-appointment">Patients</div>
           <img class="patient-icon" alt="" src="public/patienticon@2x.png" />
         </button>
-        <button class="transactions" type="button" onclick="#">
+        <button class="transactions" type="button" onclick="transactPage()">
           <div class="transactions1">Transactions</div>
           <img
             class="transactions-icon"
@@ -146,15 +146,15 @@
       function selfPage(){
         window.location.href = 'index.php';
       }
-    //   function viewAppointPage(){
-    //     window.location.href = 'viewappointment.php';
-    //   }
+      function viewAppointPage(){
+        window.location.href = 'appointment.php';
+      }
        function viewPatientPage(){
          window.location.href = 'viewpatient.php';
        }
-    //   function transactPage(){
-    //     window.location.href = 'transaction.php';
-    //   }
+      function transactPage(){
+        window.location.href = 'transaction.php';
+      }
     </script>
   </body>
 </html>
