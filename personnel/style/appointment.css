@@ -1,11 +1,8 @@
 body {
   zoom: 0.71;
 }
-.base,
-.sidebar {
+.base2 {
   position: absolute;
-}
-.base {
   top: 0;
   left: 355px;
   background-color: var(--color-whitesmoke);
@@ -13,7 +10,8 @@ body {
   width: 1920px;
   height: 1080px;
 }
-.sidebar {
+.sidebar2 {
+  position: absolute;
   top: 3px;
   left: 3px;
   background: linear-gradient(
@@ -24,7 +22,7 @@ body {
   width: 355px;
   height: 1039px;
 }
-.bg-pic-icon {
+.bg-pic-icon2 {
   position: absolute;
   top: 0;
   left: 0;
@@ -32,8 +30,13 @@ body {
   height: 1080px;
   object-fit: cover;
 }
-.dashboard1 {
+.dashboard-icon2,
+.dashboard5 {
+  position: absolute;
   top: 0;
+  height: 26px;
+}
+.dashboard5 {
   left: 37px;
   font-size: var(--font-size-5xl);
   font-family: var(--font-karla);
@@ -42,28 +45,23 @@ body {
   display: inline-block;
   width: 180px;
 }
-.dashboard,
-.dashboard-icon,
-.dashboard1 {
-  position: absolute;
-  height: 26px;
-}
-.dashboard-icon {
-  top: 0;
+.dashboard-icon2 {
   left: 0;
   width: 26px;
   object-fit: contain;
 }
-.dashboard {
+.dashboard4 {
   cursor: pointer;
   border: 0;
   padding: 0;
   background-color: transparent;
+  position: absolute;
   top: 247px;
   left: 35px;
   width: 217px;
+  height: 26px;
 }
-.appointments-icon {
+.appointments-icon2 {
   position: absolute;
   top: 1px;
   left: 0;
@@ -71,7 +69,7 @@ body {
   height: 25px;
   object-fit: cover;
 }
-.appointments {
+.appointments4 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -82,7 +80,38 @@ body {
   width: 217px;
   height: 26px;
 }
-.transactions1 {
+.book-an-appointment6 {
+  position: absolute;
+  top: 0;
+  left: 37px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-karla);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 250px;
+  height: 26px;
+}
+.book-icon2 {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+.book-an-appointment5 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 347px;
+  left: 35px;
+  width: 287px;
+  height: 26px;
+}
+.transactions7 {
   position: absolute;
   top: 0;
   left: 40px;
@@ -94,7 +123,7 @@ body {
   width: 180px;
   height: 26px;
 }
-.transactions-icon {
+.transactions-icon2 {
   position: absolute;
   top: 0;
   left: 0;
@@ -102,7 +131,7 @@ body {
   height: 29px;
   object-fit: cover;
 }
-.transactions {
+.transactions6 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -113,54 +142,23 @@ body {
   width: 220px;
   height: 29px;
 }
-.book-an-appointment {
-  position: absolute;
-  top: 0;
-  left: 39px;
-  font-size: var(--font-size-5xl);
-  font-family: var(--font-karla);
-  color: var(--color-black);
-  text-align: left;
-  display: inline-block;
-  width: 250px;
-  height: 26px;
-}
-.patient-icon {
-  position: absolute;
-  top: 1px;
-  left: 0;
-  width: 28px;
-  height: 28px;
-  object-fit: cover;
-}
-.patients {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: transparent;
-  position: absolute;
-  top: 348px;
-  left: 33px;
-  width: 289px;
-  height: 29px;
-}
-.logo-icon,
-.sidebar-container {
+.logo-icon2,
+.sidebar-container2 {
   position: absolute;
   top: -3px;
   left: -3px;
   width: 360.7px;
   height: 1080px;
 }
-.logo-icon {
+.logo-icon2 {
   top: 0;
   left: 0;
   width: 58.3px;
   height: 58.3px;
   object-fit: cover;
 }
-.pup-clinic-appointment,
-.sta-mesa-manila {
+.pup-clinic-appointment2,
+.sta-mesa-manila2 {
   position: absolute;
   top: 8.5px;
   left: 74.6px;
@@ -168,7 +166,7 @@ body {
   width: 352.4px;
   height: 33.9px;
 }
-.sta-mesa-manila {
+.sta-mesa-manila2 {
   top: 34.9px;
   font-size: var(--font-size-smi);
   font-family: var(--font-karla);
@@ -176,7 +174,7 @@ body {
   width: 135.6px;
   height: 13.6px;
 }
-.header {
+.header4 {
   position: absolute;
   top: 21px;
   left: 22px;
@@ -184,7 +182,7 @@ body {
   height: 58.3px;
   color: var(--color-maroon);
 }
-.personnel-dashboard {
+.patient-dashboard2 {
   position: absolute;
   top: 0;
   left: 0;
@@ -193,7 +191,7 @@ body {
   width: 301px;
   height: 49px;
 }
-.patient-dashboard-title-child {
+.patient-dashboard-title-inner {
   position: absolute;
   top: 54.5px;
   left: -1.5px;
@@ -202,7 +200,7 @@ body {
   width: 46px;
   height: 3px;
 }
-.patient-dashboard-title {
+.patient-dashboard-title2 {
   position: absolute;
   top: 140px;
   left: 29px;
@@ -210,7 +208,7 @@ body {
   height: 56px;
   font-size: var(--font-size-11xl);
 }
-.personnel-dashboard-appointmen-child {
+.patient-dashboard-appointments-child {
   position: absolute;
   top: 106.5px;
   left: -0.5px;
@@ -219,8 +217,8 @@ body {
   width: 356px;
   height: 1px;
 }
-.base-main,
-.base-main-header {
+.base-main-header2,
+.base-main2 {
   position: absolute;
   top: 0;
   left: 355px;
@@ -229,12 +227,12 @@ body {
   width: 1565px;
   height: 76px;
 }
-.base-main {
+.base-main2 {
   top: 108px;
   width: 1566px;
-  height: 1297px;
+  height: 896px;
 }
-.welcome-fn-mi {
+.welcome-fn-mi2 {
   border: 0;
   outline: 0;
   font-family: var(--font-kanit);
@@ -243,22 +241,22 @@ body {
   position: absolute;
   top: 13px;
   left: 383px;
-  color: var(--color-gray-200);
+  color: var(--color-gray-100);
   text-align: left;
   display: flex;
   align-items: center;
   width: 301px;
   height: 49px;
 }
-.footer-child {
+.footer-inner {
   position: absolute;
   top: 2.2px;
   left: 0;
-  background-color: var(--color-gray-100);
+  background-color: var(--color-gray-200);
   width: 1932px;
   height: 77.7px;
 }
-.bsit-3-2n-group {
+.bsit-3-2n-group2 {
   position: absolute;
   top: 19.4px;
   left: 32.2px;
@@ -267,12 +265,12 @@ body {
   width: 588.7px;
   height: 43.2px;
 }
-.contact-us-at,
-.footer {
+.contact-us-at2,
+.footer2 {
   position: absolute;
   height: 82px;
 }
-.contact-us-at {
+.contact-us-at2 {
   top: 0;
   left: 1365.2px;
   text-align: right;
@@ -280,14 +278,14 @@ body {
   align-items: center;
   width: 891.5px;
 }
-.footer {
+.footer2 {
   top: 1002px;
   left: -3px;
   width: 1932px;
   color: var(--color-white);
   font-family: var(--font-questrial);
 }
-.logout-child {
+.logout-inner {
   position: absolute;
   top: 0;
   left: 0;
@@ -298,7 +296,7 @@ body {
   width: 75px;
   height: 45px;
 }
-.logout1 {
+.logout5 {
   position: absolute;
   top: 9px;
   left: 10px;
@@ -313,7 +311,7 @@ body {
   height: 27px;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-.logout {
+.logout4 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -324,16 +322,16 @@ body {
   width: 75px;
   height: 45px;
 }
-.appointments2 {
+.appointments6 {
   position: absolute;
   top: 0;
   left: 27px;
   display: flex;
   align-items: center;
-  width: 301px;
+  width: 501px;
   height: 49px;
 }
-.header-child {
+.header-inner {
   position: absolute;
   top: 57.5px;
   left: -1.5px;
@@ -342,7 +340,7 @@ body {
   width: 1568px;
   height: 3px;
 }
-.header1 {
+.header5 {
   position: absolute;
   top: 115px;
   left: 355px;
@@ -350,32 +348,46 @@ body {
   height: 59px;
   font-size: var(--font-size-11xl);
 }
-.appointments3 {
+.appointments7 {
   position: relative;
   align-items: center;
 }
-.appointments3,
-.appointments3:hover {
+.appointments7,
+.appointments7:hover {
   font-family: var(--font-kanit);
-  font-size: var(--font-size-11xl);
+  font-size: 24px;
   text-align: left;
-  color: var(--color-gray-200);
+  color: black;
   display: flex;
-  width: 301px;
+  width: 272.5px;
   height: 49px;
 }
 .th {
   position: relative;
   padding-bottom: 0;
 }
-.table {
+.th1 {
+  position: relative;
+  padding-bottom: 0;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+table {
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid black;
+}
+.table1 {
   position: absolute;
   top: 196px;
-  left: 382px;
-  width: 301px;
+  left: 419.4px;
+  width: 272.5px;
   height: 49px;
 }
-.personnel-dashboard-appointmen {
+.patient-dashboard-appointments {
   width: 100%;
   position: relative;
   background-color: var(--color-white);
@@ -383,6 +395,539 @@ body {
   overflow: hidden;
   text-align: left;
   font-size: var(--font-size-base);
-  color: var(--color-gray-200);
+  color: var(--color-gray-100);
   font-family: var(--font-kanit);
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 35%; /* Could be more or less, depending on screen size */
+}
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+.any-history-of-drinking-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-tomato);
+  width: 169px;
+  height: 53px;
+}
+.any-history {
+  margin: 0;
+}
+.any-history-of-container1 {
+  width: 100%;
+}
+.any-history-of-container {
+  position: absolute;
+  top: 12px;
+  left: 30px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  width: 176px;
+  height: 27px;
+}
+.any-history-of-drinking-item {
+  border: 0;
+  outline: 0;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 2px;
+  left: 175px;
+  width: 101px;
+  height: 49px;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+.any-history-of-drinking-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  border: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 281px;
+  height: 53px;
+}
+.any-history-of-drinking,
+.any-history-of-smoking {
+  position: absolute;
+  top: 300px;
+  left: 991px;
+  width: 281px;
+  height: 53px;
+  font-size: var(--font-size-xl);
+}
+.any-history-of-smoking {
+  left: 678px;
+}
+.allergies-in-medicine-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-tomato);
+  width: 263px;
+  height: 53px;
+}
+.allergies-in-medicine3 {
+  position: absolute;
+  top: 13px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  width: 275px;
+  height: 27px;
+}
+.allergies-in-medicine-inner {
+  border: 0;
+  outline: 0;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 2px;
+  left: 268px;
+  width: 320px;
+  height: 49px;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+.rectangle-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  border: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 594px;
+  height: 53px;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+.allergies-in-food-item,
+.allergies-in-medicine2 {
+  position: absolute;
+  top: 225px;
+  left: 678px;
+  width: 594px;
+  height: 53px;
+}
+.allergies-in-food-item {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-tomato);
+  width: 224px;
+}
+.allergies-in-food-inner {
+  border: 0;
+  outline: 0;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 2px;
+  left: 228px;
+  width: 360px;
+  height: 49px;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+.allergies-in-food2,
+.medical-illness-child {
+  position: absolute;
+  top: 150px;
+  left: 678px;
+  width: 594px;
+  height: 53px;
+}
+.medical-illness-child {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-tomato);
+  width: 204px;
+}
+.medical-illness-item {
+  border: 0;
+  outline: 0;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 2px;
+  left: 210px;
+  width: 378px;
+  height: 49px;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+.medical-illness1 {
+  position: absolute;
+  top: 75px;
+  left: 678px;
+  width: 594px;
+  height: 53px;
+}
+.needs-medical-attention-child3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-tomato);
+  width: 314px;
+  height: 53px;
+}
+.rectangle-input {
+  border: 0;
+  outline: 0;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 2px;
+  left: 321px;
+  width: 267px;
+  height: 49px;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+.contact-no-child,
+.needs-medical-attention4 {
+  position: absolute;
+  top: 0;
+  left: 678px;
+  width: 594px;
+  height: 53px;
+}
+.contact-no-child {
+  left: 0;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-tomato);
+  width: 182px;
+}
+.contact-no-item {
+  border: 0;
+  outline: 0;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 2px;
+  left: 186px;
+  width: 402px;
+  height: 49px;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+.contact-no1 {
+  position: absolute;
+  top: 13px;
+  left: 32px;
+  display: flex;
+  align-items: center;
+  width: 139px;
+  height: 27px;
+}
+.contact-no,
+.department3 {
+  position: absolute;
+  top: 225px;
+  left: 0;
+  width: 594px;
+  height: 53px;
+}
+.department3 {
+  top: 13px;
+  left: 26px;
+  display: flex;
+  align-items: center;
+  width: 176px;
+  height: 27px;
+}
+.department-inner {
+  border: 0;
+  outline: 0;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 2px;
+  left: 175px;
+  width: 148px;
+  height: 49px;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+.department-child1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  border: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 329px;
+  height: 53px;
+}
+.department2,
+.patient-type3 {
+  position: absolute;
+  top: 150px;
+  left: 265px;
+  width: 329px;
+  height: 53px;
+}
+.patient-type3 {
+  top: 13px;
+  left: 22px;
+  display: flex;
+  align-items: center;
+  width: 176px;
+  height: 27px;
+}
+.patient-type2,
+.sex-inner {
+  position: absolute;
+  top: 75px;
+  left: 265px;
+  width: 329px;
+  height: 53px;
+}
+.sex-inner {
+  top: 0;
+  left: 1px;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-tomato);
+  width: 103px;
+}
+.sex3 {
+  position: absolute;
+  top: 13px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  width: 80px;
+  height: 27px;
+}
+.age-item,
+.sex-child2,
+.sex2 {
+  position: absolute;
+  left: 0;
+  width: 225px;
+  height: 53px;
+}
+.sex-child2 {
+  top: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  border: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+}
+.age-item,
+.sex2 {
+  top: 150px;
+}
+.age-item {
+  top: 0;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-tomato);
+  width: 103px;
+}
+.age-inner {
+  border: 0;
+  outline: 0;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 2px;
+  left: 107px;
+  width: 111px;
+  height: 49px;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+.age2,
+.full-name-item {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 225px;
+  height: 53px;
+}
+.full-name-item {
+  top: 0;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-tomato);
+  width: 162px;
+}
+.full-name-inner {
+  border: 0;
+  outline: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 2px;
+  left: 163px;
+  border-radius: 4px;
+  width: 429px;
+  height: 49px;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}
+.contents,
+.full-name2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 594px;
+  height: 53px;
+}
+.contents {
+  top: 310px;
+  left: 135px;
+  width: 1272px;
+  height: 353px;
+  font-size: var(--font-size-3xl);
+}
+.patient-details {
+  position: absolute;
+  top: 228px;
+  left: 78px;
+  display: flex;
+  align-items: center;
+  width: 301px;
+  height: 49px;
+}
+.confirmbtn-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-deepskyblue);
+  width: 169px;
+  height: 67px;
+}
+.confirm {
+  position: absolute;
+  top: 19px;
+  left: 22px;
+  font-size: var(--font-size-6xl);
+  font-family: var(--font-kanit);
+  color: var(--color-white);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  height: 27.9px;
+}
+.confirmbtn {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 110px;
+  left: 710px;
+  width: 169px;
+  height: 67px;
+}
+.appointment-status-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-tomato);
+  width: 296px;
+  height: 67px;
+}
+.appointment-status1 {
+  position: absolute;
+  top: 18px;
+  left: 29px;
+  display: flex;
+  align-items: center;
+  width: 256px;
+  height: 27px;
+}
+.appointment-status-item {
+  border: 1px solid var(--color-darkgray);
+  outline: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 296px;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 1px 4px #000;
+  box-sizing: border-box;
+  width: 297px;
+  height: 67px;
+}
+.appointment-status {
+  position: absolute;
+  top: 110px;
+  left: 78px;
+  width: 593px;
+  height: 67px;
+  font-size: 26px;
+}
+select {
+  padding: 8px;
+  font-family: var(--font-kanit);
+  font-size: var(--font-size-3xl);
+}
+.view-patient {
+  position: absolute;
+  top: 0;
+  left: 27px;
+  display: flex;
+  align-items: center;
+  width: 301px;
+  height: 49px;
+  padding-top: 20px;
+}
+.contents-parent,
+.header3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1565px;
+  height: 59px;
+}
+.contents-parent {
+  top: 100px;
+  left: 265px;
+  height: 663px;
+  font-size: var(--font-size-11xl);
+  background-color: white;
+  padding-top: 50px;
 }

@@ -33,6 +33,11 @@
             header("Location: ../login.php");
             exit();
         }
+        $persId = $_SESSION['persId'];
+        $query = "SELECT patient_Name, form_Type, date_Validity, date_Issued, place_Issued, transact_Status, claimed, patient_Rel
+        FROM transaction tr JOIN appointment app ON tr.appoint_No = app.appoint_No JOIN patient p ON app.patient_Id = p.patient_Id
+        WHERE app.pers_Id = '$persId' AND tr.transact_Status = 'Completed'";
+        $result = mysqli_query($conn, $query);
     ?>
     <div class="patient-dashboard-transactions">
       <div class="base1"></div>
@@ -107,7 +112,7 @@
       <table class="table">
           <tr>
             <th class="th">
-              <div class="transactions5">Transaction No.</div>
+              <div class="transactions5">Patient Name</div>
             </th>
             <th class="th">
               <div class="transactions5">Form Type</div>
@@ -126,6 +131,9 @@
             </th>
             <th class="th">
               <div class="transactions5">Claimed By</div>
+            </th>
+            <th class="th">
+              <div class="transactions5">Relationship</div>
             </th>
           </tr>
       </table>

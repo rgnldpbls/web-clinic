@@ -359,7 +359,7 @@ body {
   text-align: left;
   color: var(--color-gray-100);
   display: flex;
-  width: 215px;
+  width: 189px;
   height: 49px;
 }
 .th {
@@ -377,7 +377,7 @@ body {
   position: absolute;
   top: 195px;
   left: 360px;
-  width: 255px;
+  width: 215px;
   height: 49px;
 }
 table {

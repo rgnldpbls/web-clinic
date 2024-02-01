@@ -34,7 +34,7 @@
         }
         include '../dbconfig.php';
         $patientId = $_SESSION['patientId'];
-        $query = "SELECT transaction_No, form_Type, date_Issued, place_Issued, date_Validity, transact_Status, claimed
+        $query = "SELECT transaction_No, form_Type, date_Issued, place_Issued, date_Validity, transact_Status, claimed, patient_Rel
         FROM transaction tr JOIN appointment app ON tr.appoint_No = app.appoint_No
         WHERE app.patient_Id = '$patientId'
         ORDER BY tr.appoint_No DESC";
@@ -133,6 +133,9 @@
             <th class="th">
               <div class="transactions5">Claimed By</div>
             </th>
+            <th class="th">
+              <div class="transactions5">Relationship</div>
+            </th>
           </tr>
           <?php 
             while($rows = mysqli_fetch_assoc($result)){
@@ -141,21 +144,7 @@
               $dateIssued = $rows['date_Issued'];
               $placeIssued = $rows['place_Issued'];
               $claimed = $rows['claimed'];
-              if($formType === NULL){
-                $formType = 'None';
-              }
-              if($formValidity === NULL){
-                $formValidity = 'None';
-              }
-              if($dateIssued === NULL){
-                $dateIssued = 'None';
-              }
-              if($placeIssued === NULL){
-                $placeIssued = 'None';
-              }
-              if($claimed === NULL){
-                $claimed = 'None';
-              }
+              $rel = $rows['patient_Rel'];
               echo '<tr>';
               echo '<td class="th1">' . $rows['transaction_No'] . '</td>';
               echo '<td class="th1">' . $formType . '</td>';
@@ -164,6 +153,7 @@
               echo '<td class="th1">' . $placeIssued . '</td>';
               echo '<td class="th1">' . $rows['transact_Status'] . '</td>';
               echo '<td class="th1">' . $claimed . '</td>';
+              echo '<td class="th1">' . $rel . '</td>';
               echo '</tr>';
             }
           ?>
