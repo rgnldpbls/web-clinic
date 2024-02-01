@@ -32,6 +32,7 @@ body {
   --color-black: #000;
   --color-whitesmoke: #eaeaea;
   --color-tomato: rgb(173, 216, 230);
+  --color-lightblue: #add8e6;
 
   /* Border radiuses */
   --br-6xs: 7px;

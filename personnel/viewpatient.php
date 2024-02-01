@@ -36,9 +36,29 @@
         $persId = $_SESSION['persId'];
         $query = "SELECT patient_Name, appoint_Info, appoint_Date, appoint_Time, appoint_Status
         FROM appointment app JOIN patient p ON app.patient_Id = p.patient_Id
-        WHERE pers_Id = '$persId'
+        WHERE pers_Id = '$persId' AND appoint_Status IN('Approved', 'Rejected')
         ORDER BY appoint_Date DESC";
         $result = mysqli_query($conn, $query);
+        if(isset($_POST['confirmBTN'])){
+          $transactStatus = $_POST['transactStatus'];
+          $dateIssued = isset($_POST['dateIssued']) ? $_POST['dateIssued'] : NULL;
+          $placeIssued = isset($_POST['placeIssued']) ? $_POST['placeIssued'] : NULL;
+          $validDate = isset($_POST['validDate']) ? $_POST['validDate'] : NULL;
+          $formType = isset($_POST['formType']) ? $_POST['formType'] : NULL;
+          $claimed = isset($_POST['claimed']) ? $_POST['claimed'] : NULL;
+          $rel = isset($_POST['patientRel']) ? $_POST['patientRel'] : NULL;
+          if(!empty($dateIssued) && !empty($placeIssued) && !empty($validDate) && !empty($formType) && 
+          !empty($_POST['claimed']) && !empty($rel) && $transactStatus === 'Completed'){
+            echo '<script>alert("Transaction added"); 
+            window.location.href = "transaction.php";</script>';
+          }else if($transactStatus === 'Nonattendance'){
+            echo '<script>alert("Transaction added"); 
+            window.location.href = "transaction.php";</script>';
+          }else{
+            echo '<script>alert("Invalid, Please try Again!"); 
+            window.location.href = "viewpatient.php";</script>';
+          }
+        }
     ?>
     <div class="personnel-dashboard-appointmen">
       <div class="base"></div>
@@ -140,7 +160,7 @@
                 echo '<td class="th1">' . $rows['appoint_Time']. '</td>';
                 echo '<td class="th1">' . $appStatus. '</td>';
                 if($appStatus == 'Approved'){
-                  echo '<td class="th1">' . '<button>View</button>'. '</td>';
+                  echo '<td class="th1">' . '<button onclick="transactForm();">View</button>'. '</td>';
                 }
                 else{
                   echo '<td class="th1"></td>';
@@ -150,7 +170,68 @@
           ?>
       </table>
     </div>
-    
+<div id="id01" class="modal"> 
+  <form class="modal-content" action="viewpatient.php" method="post">
+    <div class="contents-parent">
+        <div class="contents">
+          <div class="form-type">
+            <div class="form-type-child"></div>
+            <div class="relation-to-the">Form Type</div>
+            <div class="form-type-item"></div>
+            <input class="form-type-inner" type="text" name="formType"/>
+          </div>
+          <div class="relation">
+            <div class="relation-child"></div>
+            <div class="relation-item"></div>
+            <input class="relation-inner" type="text" name="patientRel"/>
+            <div class="relation-to-the">Relation to the Patient</div>
+          </div>
+          <div class="claimed-by">
+            <div class="claimed-by-child"></div>
+            <div class="claimed-by1">Claimed By</div>
+            <div class="claimed-by-item"></div>
+            <input class="claimed-by-inner" type="text" name="claimed"/>
+          </div>
+          <div class="date-validity">
+            <div class="date-validity-child"></div>
+            <div class="date-validity-item"></div>
+            <input class="date-validity-inner" type="date" name="validDate" min="<?php echo date('Y-m-d'); ?>"/>
+            <div class="date-validity1">Date Validity</div>
+          </div>
+          <div class="date-issued">
+            <div class="date-issued-child"></div>
+            <div class="date-issued1">Date Issued</div>
+            <div class="date-validity-item"></div>
+            <input class="date-issued-inner" type="date" name="dateIssued" min="<?php echo date('Y-m-d'); ?>"/>
+          </div>
+          <div class="place-issued">
+            <div class="date-issued-child"></div>
+            <div class="date-issued1">Place Issued</div>
+            <div class="date-validity-item"></div>
+            <input class="date-issued-inner" type="text" name="placeIssued"/>
+          </div>
+        </div>
+        <div class="transaction-details">Transaction Details</div>
+        <button class="confirmbtn" type="submit" name="confirmBTN">
+          <div class="confirmbtn-child"></div>
+          <div class="confirm">Confirm</div>
+        </button>
+        <div class="transaction-status">
+          <div class="transaction-status-child"></div>
+          <div class="appointment-status">Transaction Status</div>
+          <select class="transaction-status-item" name="transactStatus" required>
+            <option value="Completed">Completed</option>
+            <option value="Nonattendance">Nonattendance</option>
+          </select>
+        </div>
+        <div class="header2">
+          <div class="personnel-dashboard1">Add Transaction</div>
+          <div class="header-child"></div>
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        </div>
+      </div>
+  </form>
+</div>
     <script>
       function dbPage(){
         window.location.href = 'index.php';
@@ -163,6 +244,12 @@
        }
       function transactPage(){
         window.location.href = 'transaction.php';
+      }
+      function transactForm(){
+        var element = document.getElementById("id01");
+          if (element) {
+            element.style.display = "block";
+          }
       }
     </script>
   </body>
