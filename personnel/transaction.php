@@ -36,7 +36,8 @@
         $persId = $_SESSION['persId'];
         $query = "SELECT patient_Name, form_Type, date_Validity, date_Issued, place_Issued, transact_Status, claimed, patient_Rel
         FROM transaction tr JOIN appointment app ON tr.appoint_No = app.appoint_No JOIN patient p ON app.patient_Id = p.patient_Id
-        WHERE app.pers_Id = '$persId' AND tr.transact_Status = 'Completed'";
+        WHERE app.pers_Id = '$persId'
+        ORDER BY app.appoint_Date DESC";
         $result = mysqli_query($conn, $query);
     ?>
     <div class="patient-dashboard-transactions">
@@ -118,13 +119,13 @@
               <div class="transactions5">Form Type</div>
             </th>
             <th class="th">
-              <div class="transactions5">Form Validity</div>
-            </th>
-            <th class="th">
               <div class="transactions5">Date Issued</div>
             </th>
             <th class="th">
               <div class="transactions5">Place Issued</div>
+            </th>
+            <th class="th">
+              <div class="transactions5">Form Validity</div>
             </th>
             <th class="th">
               <div class="transactions5">Status</div>
@@ -136,6 +137,20 @@
               <div class="transactions5">Relationship</div>
             </th>
           </tr>
+          <?php 
+            while($rows = mysqli_fetch_assoc($result)){
+              echo '<tr>';
+              echo '<td class="th1">' . $rows['patient_Name'] . '</td>';
+              echo '<td class="th1">' . $rows['form_Type'] . '</td>';
+              echo '<td class="th1">' . $rows['date_Issued'] . '</td>';
+              echo '<td class="th1">' . $rows['place_Issued'] . '</td>';
+              echo '<td class="th1">' . $rows['date_Validity'] . '</td>';
+              echo '<td class="th1">' . $rows['transact_Status']. '</td>';
+              echo '<td class="th1">' . $rows['claimed'] . '</td>';
+              echo '<td class="th1">' . $rows['patient_Rel'] . '</td>';
+              echo '</tr>';
+            }
+          ?>
       </table>
     </div>
     <script>

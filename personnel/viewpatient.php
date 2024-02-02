@@ -34,26 +34,41 @@
             exit();
         }
         $persId = $_SESSION['persId'];
-        $query = "SELECT patient_Name, appoint_Info, appoint_Date, appoint_Time, appoint_Status
+        $query = "SELECT patient_Name, appoint_No, appoint_Info, appoint_Date, appoint_Time, appoint_Status
         FROM appointment app JOIN patient p ON app.patient_Id = p.patient_Id
-        WHERE pers_Id = '$persId' AND appoint_Status IN('Approved', 'Rejected')
+        WHERE pers_Id = '$persId' AND appoint_Status IN('Approved', 'Rejected', 'Nonattendance')
         ORDER BY appoint_Date DESC";
         $result = mysqli_query($conn, $query);
         if(isset($_POST['confirmBTN'])){
+          $appNum = $_POST['appointNo'];
           $transactStatus = $_POST['transactStatus'];
-          $dateIssued = isset($_POST['dateIssued']) ? $_POST['dateIssued'] : NULL;
-          $placeIssued = isset($_POST['placeIssued']) ? $_POST['placeIssued'] : NULL;
-          $validDate = isset($_POST['validDate']) ? $_POST['validDate'] : NULL;
-          $formType = isset($_POST['formType']) ? $_POST['formType'] : NULL;
-          $claimed = isset($_POST['claimed']) ? $_POST['claimed'] : NULL;
-          $rel = isset($_POST['patientRel']) ? $_POST['patientRel'] : NULL;
+          $dateIssued = $_POST['dateIssued'];
+          $placeIssued = $_POST['placeIssued'];
+          $validDate = $_POST['validDate'];
+          $formType = $_POST['formType'];
+          $claimed = $_POST['claimed'];
+          $rel = $_POST['patientRel'];
           if(!empty($dateIssued) && !empty($placeIssued) && !empty($validDate) && !empty($formType) && 
-          !empty($_POST['claimed']) && !empty($rel) && $transactStatus === 'Completed'){
-            echo '<script>alert("Transaction added"); 
+          !empty($claimed) && !empty($rel) && $transactStatus === 'Completed'){
+            $sql = "INSERT INTO transaction(form_Type, date_Issued, place_Issued, date_Validity, transact_Status, claimed, patient_Rel, appoint_No) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("sssssssi", $formType, $dateIssued, $placeIssued, $validDate, $transactStatus, $claimed, $rel, $appNum);
+            $stmt->execute();
+            $stmt->close();
+            $sql2 = "UPDATE appointment SET appoint_Status = '$transactStatus' WHERE appoint_No = '$appNum'";
+            $stmt = $conn->prepare($sql2);
+            $stmt->execute();
+            $stmt->close();
+            echo '<script>alert("Transaction added successfully"); 
             window.location.href = "transaction.php";</script>';
-          }else if($transactStatus === 'Nonattendance'){
-            echo '<script>alert("Transaction added"); 
-            window.location.href = "transaction.php";</script>';
+          }else if(empty($dateIssued) && empty($placeIssued) && empty($validDate) && empty($formType) &&
+          empty($claimed) && empty($rel) && $transactStatus === 'Nonattendance'){
+            $sql2 = "UPDATE appointment SET appoint_Status = '$transactStatus' WHERE appoint_No = '$appNum'";
+            $stmt = $conn->prepare($sql2);
+            $stmt->execute();
+            $stmt->close();
+            echo '<script>alert("Appointment status updated"); 
+            window.location.href = "viewpatient.php";</script>';
           }else{
             echo '<script>alert("Invalid, Please try Again!"); 
             window.location.href = "viewpatient.php";</script>';
@@ -152,6 +167,7 @@
           </tr>
           <?php 
               while($rows = mysqli_fetch_assoc($result)){
+                $appNo = $rows['appoint_No'];
                 $appStatus = $rows['appoint_Status'];
                 echo '<tr>';
                 echo '<td class="th1">' . $rows['patient_Name']. '</td>';
@@ -160,7 +176,7 @@
                 echo '<td class="th1">' . $rows['appoint_Time']. '</td>';
                 echo '<td class="th1">' . $appStatus. '</td>';
                 if($appStatus == 'Approved'){
-                  echo '<td class="th1">' . '<button onclick="transactForm();">View</button>'. '</td>';
+                  echo '<td class="th1">' . '<button onclick="transactForm(\'' . $appNo . '\');">View</button>'. '</td>';
                 }
                 else{
                   echo '<td class="th1"></td>';
@@ -195,7 +211,7 @@
           <div class="date-validity">
             <div class="date-validity-child"></div>
             <div class="date-validity-item"></div>
-            <input class="date-validity-inner" type="date" name="validDate" min="<?php echo date('Y-m-d'); ?>"/>
+            <input class="date-validity-inner" type="date" name="validDate" min="<?php echo date('Y-m-d', strtotime('+6 months')); ?>"/>
             <div class="date-validity1">Date Validity</div>
           </div>
           <div class="date-issued">
@@ -229,6 +245,7 @@
           <div class="header-child"></div>
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
         </div>
+        <input type="hidden" name="appointNo" id="appointNum"/>
       </div>
   </form>
 </div>
@@ -245,11 +262,12 @@
       function transactPage(){
         window.location.href = 'transaction.php';
       }
-      function transactForm(){
+      function transactForm(appointNum){
         var element = document.getElementById("id01");
           if (element) {
             element.style.display = "block";
           }
+          document.getElementById('appointNum').value = appointNum;
       }
     </script>
   </body>

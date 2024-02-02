@@ -308,7 +308,7 @@
             element.style.display = "block";
           }
           document.getElementById('appointNum').value = appointNo;
-          document.getElementById('name').value = name;
+          document.getElementById('name').value = fname;
           document.getElementById('age').value = age;
           document.getElementById('sex').value = sex;
           document.getElementById('contactNo').value = contactNo;

@@ -34,8 +34,8 @@
         }
         include '../dbconfig.php';
         $patientId = $_SESSION['patientId'];
-        $query = "SELECT transaction_No, form_Type, date_Issued, place_Issued, date_Validity, transact_Status, claimed, patient_Rel
-        FROM transaction tr JOIN appointment app ON tr.appoint_No = app.appoint_No
+        $query = "SELECT form_Type, date_Issued, place_Issued, date_Validity, transact_Status, claimed, patient_Rel, pers_Name
+        FROM transaction tr JOIN appointment app ON tr.appoint_No = app.appoint_No JOIN personnel pers ON app.pers_Id = pers.pers_Id
         WHERE app.patient_Id = '$patientId'
         ORDER BY tr.appoint_No DESC";
         $result = mysqli_query($conn, $query);
@@ -113,19 +113,16 @@
       <table class="table">
           <tr>
             <th class="th">
-              <div class="transactions5">Transaction No.</div>
-            </th>
-            <th class="th">
               <div class="transactions5">Form Type</div>
-            </th>
-            <th class="th">
-              <div class="transactions5">Form Validity</div>
             </th>
             <th class="th">
               <div class="transactions5">Date Issued</div>
             </th>
             <th class="th">
               <div class="transactions5">Place Issued</div>
+            </th>
+            <th class="th">
+              <div class="transactions5">Form Validity</div>
             </th>
             <th class="th">
               <div class="transactions5">Status</div>
@@ -136,24 +133,21 @@
             <th class="th">
               <div class="transactions5">Relationship</div>
             </th>
+            <th class="th">
+              <div class="transactions5">Remarked By</div>
+            </th>
           </tr>
           <?php 
             while($rows = mysqli_fetch_assoc($result)){
-              $formType = $rows['form_Type'];
-              $formValidity = $rows['date_Validity'];
-              $dateIssued = $rows['date_Issued'];
-              $placeIssued = $rows['place_Issued'];
-              $claimed = $rows['claimed'];
-              $rel = $rows['patient_Rel'];
               echo '<tr>';
-              echo '<td class="th1">' . $rows['transaction_No'] . '</td>';
-              echo '<td class="th1">' . $formType . '</td>';
-              echo '<td class="th1">' . $formValidity . '</td>';
-              echo '<td class="th1">' . $dateIssued . '</td>';
-              echo '<td class="th1">' . $placeIssued . '</td>';
+              echo '<td class="th1">' . $rows['form_Type'] . '</td>';
+              echo '<td class="th1">' . $rows['date_Issued'] . '</td>';
+              echo '<td class="th1">' . $rows['place_Issued'] . '</td>';
+              echo '<td class="th1">' . $rows['date_Validity'] . '</td>';
               echo '<td class="th1">' . $rows['transact_Status'] . '</td>';
-              echo '<td class="th1">' . $claimed . '</td>';
-              echo '<td class="th1">' . $rel . '</td>';
+              echo '<td class="th1">' . $rows['claimed'] . '</td>';
+              echo '<td class="th1">' . $rows['patient_Rel'] . '</td>';
+              echo '<td class="th1">' . $rows['pers_Name'] . '</td>';
               echo '</tr>';
             }
           ?>
