@@ -90,8 +90,16 @@
         }else if(mysqli_num_rows($res3) == 1){
           $sql = "SELECT * FROM admin WHERE admin_Email = '$email' and admin_Password = '$password'";
           $inner = mysqli_query($conn, $sql);
-          if(mysqli_num_rows($inner) == 1){
-            header("location: adminpage.php");
+          $rows = mysqli_fetch_assoc($inner);
+          $dbemail = isset($rows['admin_Email']) ? $rows['admin_Email'] : null;
+          $dbpassword = isset($rows['admin_Password']) ? $rows['admin_Password'] : null;
+          if($email === $dbemail && $password === $dbpassword){
+            $_SESSION['adminId'] = $rows['admin_Id'];
+            $_SESSION['adminName'] = $rows['admin_Name'];
+            $_SESSION['adminEmail'] = $rows['admin_Email'];
+            $_SESSION['adminPass'] = $rows['admin_Password'];
+            $_SESSION['loginVisit'] = true;
+            header("location: admin/index.php");
           }else{
             echo '<script>alert("Incorrect Password!")</script>';
           }
