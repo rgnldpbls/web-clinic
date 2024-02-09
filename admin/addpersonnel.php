@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
+    <title>Add Personnel</title>
     <link rel="stylesheet" href="style/global.css" />
     <link rel="stylesheet" href="style/addpersonnel.css" />
     <link
@@ -32,6 +32,38 @@
             session_destroy();
             header("Location: ../login.php");
             exit();
+        }
+        if(isset($_POST['confirm'])){
+          checkEmail();
+        }
+        function checkEmail(){
+          include '../dbconfig.php';
+          $email = $_POST['email'];
+          $sql = "SELECT * FROM personnel WHERE pers_Email = '$email'";
+          $result = mysqli_query($conn, $sql);
+          if(mysqli_num_rows($result)!=0){
+            session_destroy();
+            echo '<script>alert("Email already exists! Redirected to Login page.");
+            window.location.href = "../login.php";</script>';
+          }else{
+            $persName = $_POST['fullName'];
+            $bDate = $_POST['birthDate'];
+            $sex = $_POST['sex'];
+            $contactNo = $_POST['contactNumber'];
+            $type = $_POST['persType'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $dateCreated = date("Y-m-d");
+            $id = $_SESSION['adminId'];
+            $sql = "INSERT INTO personnel(pers_Name, pers_Sex, pers_ContactNo, pers_Birthdate, pers_Type, pers_Email, pers_Password, pers_DateCreated, admin_Id) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssisssssi", $persName, $sex, $contactNo, $bDate, $type, $email, $password, $dateCreated, $id);
+            $stmt->execute();
+            $stmt->close();
+            session_destroy();
+            echo '<script>alert("Personnel record added successfully"); 
+            window.location.href = "login.php";</script>';
+          }
         }
     ?>
     <div class="admin-dashboard-personnel-add">
@@ -88,49 +120,53 @@
         <div class="add-new-personnel">Add New Personnel</div>
         <div class="header-child"></div>
       </div>
-      <button class="confirmbtn">
-        <div class="confirmbtn-child"></div>
-        <div class="confirm">Confirm</div>
-      </button>
       <div class="admin-dashboard-title2">
         <div class="admin-dashboard1">Admin Dashboard</div>
         <div class="admin-dashboard-title-inner"></div>
       </div>
+    <form action="addpersonnel.php" method="post">
+      <button class="confirmbtn" type="submit" name="confirm">
+        <div class="confirmbtn-child"></div>
+        <div class="confirm">Confirm</div>
+      </button>
       <div class="admin-dashboard-personnel-add-child"></div>
-      <div class="patient-email">
-        <div class="personnel-email">Personnel Email</div>
-        <input class="patient-email-child" type="email" />
-      </div>
-      <div class="patient-password">
-        <div class="personnel-email">Personnel Password</div>
-        <input class="patient-email-child" type="text" />
-      </div>
       <div class="full-name-parent">
         <div class="full-name1">
           <div class="full-name2">Full Name</div>
-          <input class="patient-email-child" type="text" />
+          <input class="patient-email-child" type="text" name="fullName" required/>
         </div>
-        <div class="contact-number">
-          <div class="personnel-email">Contact Number</div>
-          <input class="contact-number-child" type="number" />
+        <div class="birthdate">
+          <div class="birthdate-mmddyyyy">Birthdate (MM/DD/YYYY)</div>
+          <input class="contact-number-child" type="date" name="birthDate" required/>
         </div>
         <div class="sex">
           <div class="sex1">Sex</div>
           <div class="male">Male</div>
-          <input class="sex-child" type="radio" />
-
+          <input class="sex-child" type="radio" name="sex" value="male" checked/>
           <div class="female">Female</div>
-          <input class="sex-item" type="radio" />
+          <input class="sex-item" type="radio" name="sex" value="female"/>
         </div>
-        <div class="birthdate">
-          <div class="birthdate-mmddyyyy">Birthdate (MM/DD/YYYY)</div>
-          <input class="contact-number-child" type="date" />
+        <div class="contact-number">
+          <div class="personnel-email">Contact Number</div>
+          <input class="contact-number-child" type="number" name="contactNumber" required/>
         </div>
         <div class="patient-type1">
           <div class="personnel-type">Personnel Type</div>
-          <input class="patient-type-item" type="text" />
+          <select class="patient-type-item" name="persType" required>
+            <option value="Doctor">Doctor</option>
+            <option value="Nurse">Nurse</option>
+          </select>
         </div>
       </div>
+      <div class="patient-email">
+        <div class="personnel-email">Personnel Email</div>
+        <input class="patient-email-child" type="email" name="email" required/>
+      </div>
+      <div class="patient-password">
+        <div class="personnel-email">Personnel Password</div>
+        <input class="patient-email-child" type="text" name="password" required/>
+      </div>
+    <form>
     </div>
     <script>
         function dbPage(){

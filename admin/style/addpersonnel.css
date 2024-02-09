@@ -401,6 +401,9 @@ body {
   box-sizing: border-box;
   width: 533px;
   height: 53px;
+  color: black;
+  font-family: var(--font-kanit);
+  font-size: 20px;
 }
 .patient-email,
 .patient-password {
@@ -441,6 +444,9 @@ body {
   box-sizing: border-box;
   width: 274px;
   height: 53px;
+  color: black;
+  font-family: var(--font-kanit);
+  font-size: 20px;
 }
 .contact-number,
 .male,
@@ -471,7 +477,6 @@ body {
   top: 50px;
   left: 0;
   border-radius: 50%;
-  box-shadow: 0 1px 4px #000;
   border: 1px solid var(--color-darkgray);
   box-sizing: border-box;
   width: 17px;
@@ -496,7 +501,6 @@ body {
   top: 50px;
   left: 122px;
   border-radius: 50%;
-  box-shadow: 0 1px 4px #000;
   border: 1px solid var(--color-darkgray);
   box-sizing: border-box;
   width: 17px;
@@ -544,6 +548,9 @@ body {
   box-sizing: border-box;
   width: 249px;
   height: 53px;
+  color: black;
+  font-family: var(--font-kanit);
+  font-size: 20px;
 }
 .patient-type1 {
   position: absolute;
