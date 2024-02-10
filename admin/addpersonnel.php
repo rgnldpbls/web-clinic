@@ -176,7 +176,7 @@
             window.location.href = 'addpersonnel.php';
         }
         function sqlprobPage(){
-            window.location.href = '#';
+            window.location.href = 'probindx.php';
         }
     </script>
   </body>

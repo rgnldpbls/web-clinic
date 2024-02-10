@@ -12,9 +12,12 @@ body {
   /* font sizes */
   --font-size-5xl: 24px;
   --font-size-3xl: 22px;
+  --font-size-xl: 20px;
+  --font-size-6xl: 25px;
   --font-size-11xl: 30px;
   --font-size-base: 16px;
   --font-size-smi: 13px;
+  --font-size-9xl: 28px;
 
   /* Colors */
   --color-white: #fff;
@@ -26,7 +29,9 @@ body {
   --color-maroon: #760001;
   --color-dimgray: #5d5858;
   --color-black: #000;
+  --color-whitesmoke-100: #f8f1f1;
   --color-whitesmoke: #eaeaea;
+  --color-gainsboro: #ddd;
 
   /* Border radiuses */
   --br-6xs: 7px;
