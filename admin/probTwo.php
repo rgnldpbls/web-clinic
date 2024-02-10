@@ -33,6 +33,8 @@
             header("Location: ../login.php");
             exit();
         }
+        $query = "SELECT pers_Name, pers_ContactNo FROM personnel WHERE pers_Type = 'Doctor'";
+        $result = mysqli_query($conn, $query);
     ?>
     <div class="admin-dashboard-sql-problems1">
       <div class="base1"></div>
@@ -63,6 +65,16 @@
                 <div class="transactions5">Contact Number</div>
             </th>
           </tr>
+          <?php 
+            if(isset($_POST['run'])){
+              while($rows = mysqli_fetch_assoc($result)){
+                echo '<tr>';
+                echo '<td class="th1">' . $rows['pers_Name'] . '</td>';
+                echo '<td class="th1">' . $rows['pers_ContactNo'] . '</td>';
+                echo '</tr>';
+              }
+            }
+          ?>
       </table>
       <div class="basic1">Basic</div>
       <div class="sidebar-container1">
@@ -105,10 +117,12 @@
         <div class="admin-dashboard-title-item"></div>
       </div>
       <div class="admin-dashboard-sql-problems-child1"></div>
-      <button class="confirm1">
+    <form action="probTwo.php" method="post">
+      <button class="confirm1" type="submit" name="run">
         <div class="confirm-item"></div>
         <div class="run1">Run</div>
       </button>
+    </form>
       <button class="nextbtn1" type="button" onclick="nextPage()">
         <div class="nextbtn-item"></div>
         <div class="next1">Next</div>
