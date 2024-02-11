@@ -1,0 +1,545 @@
+body {
+  zoom: 0.71;
+}
+.base7 {
+  position: absolute;
+  top: 0;
+  left: 355px;
+  background-color: var(--color-whitesmoke-200);
+  box-shadow: 0 4px 100px rgba(20, 20, 20, 0.5);
+  width: 1920px;
+  height: 1080px;
+}
+.admin-dashboard-sql-problems-child12,
+.base-main-header7 {
+  position: absolute;
+  top: 108px;
+  left: 355px;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  width: 1566px;
+  height: 1297px;
+}
+.base-main-header7 {
+  top: 0;
+  width: 1565px;
+  height: 76px;
+}
+.table-body-child17 {
+  position: absolute;
+  top: 67px;
+  left: 0;
+  background-color: var(--color-whitesmoke-100);
+  width: 1474px;
+  height: 113px;
+}
+.table-body-child18 {
+  position: absolute;
+  top: 66.5px;
+  left: -1.5px;
+  border-top: 3px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 1477px;
+  height: 3px;
+}
+.table-body-child19 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 3px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 1474px;
+  height: 729px;
+}
+.table-body7,
+.welcome-fn-mi7 {
+  position: absolute;
+  top: 220px;
+  left: 401px;
+  width: 1474px;
+  height: 729px;
+}
+.welcome-fn-mi7 {
+  border: 0;
+  outline: 0;
+  font-family: var(--font-kanit);
+  font-size: var(--font-size-5xl);
+  background-color: transparent;
+  top: 13px;
+  left: 383px;
+  color: var(--color-gray-200);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 501px;
+  height: 49px;
+}
+.logout-child5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  box-shadow: 0 4px 7px 1px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-maroon);
+  box-sizing: border-box;
+  width: 75px;
+  height: 45px;
+}
+.logout15 {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  font-size: var(--font-size-base);
+  font-family: var(--font-karla);
+  color: var(--color-maroon);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 27px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.logout14 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 13px;
+  left: 1812px;
+  width: 75px;
+  height: 45px;
+}
+.sql-problems14 {
+  position: absolute;
+  top: 0;
+  left: 27px;
+  display: flex;
+  align-items: center;
+  width: 301px;
+  height: 49px;
+}
+.header-child5 {
+  position: absolute;
+  top: 57.5px;
+  left: -1.5px;
+  border-top: 3px solid var(--color-deepskyblue);
+  box-sizing: border-box;
+  width: 1568px;
+  height: 3px;
+}
+.header21 {
+  position: absolute;
+  top: 115px;
+  left: 355px;
+  width: 1565px;
+  height: 59px;
+}
+.th6 {
+  position: relative;
+  padding-bottom: 0;
+}
+.header22 {
+  position: absolute;
+  top: 419px;
+  left: 437px;
+  width: 253px;
+  height: 49px;
+}
+.multiple-tables1 {
+  position: absolute;
+  top: 224px;
+  left: 427px;
+  font-size: var(--font-size-9xl);
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  width: 224px;
+  height: 58px;
+}
+.sidebar7 {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  background: linear-gradient(
+    180deg,
+    rgba(152, 152, 152, 0.16) 30.5%,
+    rgba(239, 11, 11, 0.3)
+  );
+  width: 355px;
+  height: 1274px;
+}
+.bg-pic-icon7 {
+  position: absolute;
+  top: 168px;
+  left: 0;
+  width: 360.7px;
+  height: 1080px;
+  object-fit: cover;
+}
+.book-an-appointment7 {
+  position: absolute;
+  top: 0;
+  left: 38px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-karla);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 250px;
+  height: 26px;
+}
+.icon-qmark7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+}
+.sql-problems15 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 530px;
+  left: 39px;
+  width: 288px;
+  height: 28px;
+}
+.appointments7 {
+  position: absolute;
+  top: 3px;
+  left: 41px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-karla);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 180px;
+  height: 26px;
+}
+.icons-8-17,
+.personnel7 {
+  position: absolute;
+  height: 34px;
+}
+.icons-8-17 {
+  top: 0;
+  left: 0;
+  width: 34px;
+  object-fit: cover;
+}
+.personnel7 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 479px;
+  left: 36px;
+  width: 221px;
+}
+.dashboard-icon7,
+.dashboard15 {
+  position: absolute;
+  top: 0;
+  height: 26px;
+}
+.dashboard15 {
+  left: 37px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-karla);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 180px;
+}
+.dashboard-icon7 {
+  left: 0;
+  width: 26px;
+  object-fit: contain;
+}
+.dashboard14 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 432px;
+  left: 40px;
+  width: 217px;
+  height: 26px;
+}
+.logo-icon7,
+.sidebar-container7 {
+  position: absolute;
+  top: -188px;
+  left: -5px;
+  width: 360.7px;
+  height: 1274px;
+}
+.logo-icon7 {
+  top: 0;
+  left: 0;
+  width: 58.3px;
+  height: 58.3px;
+  object-fit: cover;
+}
+.pup-clinic-appointment7,
+.sta-mesa-manila7 {
+  position: absolute;
+  top: 8.5px;
+  left: 74.6px;
+  display: inline-block;
+  width: 352.4px;
+  height: 33.9px;
+}
+.sta-mesa-manila7 {
+  top: 34.9px;
+  font-size: var(--font-size-smi);
+  font-family: var(--font-karla);
+  color: var(--color-gray-300);
+  width: 135.6px;
+  height: 13.6px;
+}
+.header23 {
+  position: absolute;
+  top: 21px;
+  left: 22px;
+  width: 427px;
+  height: 58.3px;
+  font-size: var(--font-size-base);
+  color: var(--color-maroon);
+}
+.footer-child5 {
+  position: absolute;
+  top: 2.2px;
+  left: 0;
+  background-color: var(--color-gray-100);
+  width: 1932px;
+  height: 77.7px;
+}
+.bsit-3-2n-group7 {
+  position: absolute;
+  top: 19.4px;
+  left: 32.2px;
+  display: flex;
+  align-items: center;
+  width: 588.7px;
+  height: 43.2px;
+}
+.contact-us-at7,
+.footer7 {
+  position: absolute;
+  height: 82px;
+}
+.contact-us-at7 {
+  top: 0;
+  left: 1365.2px;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  width: 891.5px;
+}
+.footer7 {
+  top: 1002px;
+  left: -3px;
+  width: 1932px;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  font-family: var(--font-questrial);
+}
+.admin-dashboard7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 301px;
+  height: 49px;
+}
+.admin-dashboard-title-child5 {
+  position: absolute;
+  top: 54.5px;
+  left: -1.5px;
+  border-top: 3px solid var(--color-deepskyblue);
+  box-sizing: border-box;
+  width: 46px;
+  height: 3px;
+}
+.admin-dashboard-title7 {
+  position: absolute;
+  top: 140px;
+  left: 29px;
+  width: 301px;
+  height: 56px;
+}
+.admin-dashboard-sql-problems-child13 {
+  position: absolute;
+  top: 106.5px;
+  left: -0.5px;
+  border-top: 1px solid var(--color-dimgray);
+  box-sizing: border-box;
+  width: 356px;
+  height: 1px;
+}
+.confirm-child5 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-deepskyblue);
+  width: 169px;
+  height: 60px;
+}
+.confirm-child5,
+.confirm7,
+.run7 {
+  position: absolute;
+}
+.run7 {
+  top: 17px;
+  left: 22px;
+  font-size: var(--font-size-6xl);
+  font-family: var(--font-kanit);
+  color: var(--color-white);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  height: 25px;
+}
+.confirm7 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 314px;
+  left: 1669px;
+  width: 169px;
+  height: 60px;
+}
+.display-the-patient {
+  position: absolute;
+  top: 303px;
+  left: 432px;
+  font-size: var(--font-size-7xl);
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  width: 1226px;
+}
+.nextbtn-child5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-deepskyblue);
+  width: 117px;
+  height: 41.5px;
+}
+.next7 {
+  position: absolute;
+  top: 10.8px;
+  left: 25.2px;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-kanit);
+  color: var(--color-white);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 86.5px;
+  height: 17.3px;
+}
+.arrow-icon7 {
+  position: absolute;
+  top: 4px;
+  left: 71px;
+  width: 25px;
+  height: 34px;
+  object-fit: cover;
+}
+.nextbtn7 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 234px;
+  left: 1733px;
+  width: 117px;
+  height: 41.5px;
+}
+.back6 {
+  position: absolute;
+  top: 11px;
+  left: 48px;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-kanit);
+  color: var(--color-white);
+  text-align: right;
+  display: flex;
+  align-items: center;
+  width: 86.5px;
+  height: 17.3px;
+}
+.left-icon6 {
+  position: absolute;
+  top: 4px;
+  left: 19px;
+  width: 25px;
+  height: 34px;
+  object-fit: cover;
+}
+.backbtn6 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 234px;
+  left: 1586px;
+  width: 117px;
+  height: 41.5px;
+}
+.admin-dashboard-sql-problems7 {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 1080px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-gray-200);
+  font-family: var(--font-kanit);
+}
+.transactions5 {
+  position: relative;
+  align-items: center;
+}
+.transactions5,
+.transactions5:hover {
+  font-family: var(--font-kanit);
+  font-size: 24px;
+  text-align: left;
+  color: var(--color-gray-100);
+  display: flex;
+  width: 230px;
+  height: 49px;
+}
+table {
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid black;
+}
+.th1 {
+  position: relative;
+  padding-bottom: 0;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}

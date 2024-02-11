@@ -73,7 +73,7 @@
                     echo '<td class="th1">' . $rows['appoint_Status'] . '</td>';
                     echo '<td class="th1">' . $rows['Number_Of_Appointment'] . '</td>';
                     echo '</tr>';
-                  }
+                }
             }
         ?>
       </table>
