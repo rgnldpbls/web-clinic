@@ -152,7 +152,7 @@
             window.location.href = 'probindx.php';
         }
         function nextPage(){
-            window.location.href = '#';
+            window.location.href = 'probThree.php';
         }
     </script>
   </body>

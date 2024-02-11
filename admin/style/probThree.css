@@ -1,7 +1,7 @@
 body {
   zoom: 0.71;
 }
-.base1 {
+.base2 {
   position: absolute;
   top: 0;
   left: 355px;
@@ -10,8 +10,8 @@ body {
   width: 1920px;
   height: 1080px;
 }
-.admin-dashboard-sql-problems-inner,
-.base-main-header1 {
+.admin-dashboard-sql-problems-child2,
+.base-main-header2 {
   position: absolute;
   top: 108px;
   left: 355px;
@@ -20,12 +20,12 @@ body {
   width: 1566px;
   height: 1297px;
 }
-.base-main-header1 {
+.base-main-header2 {
   top: 0;
   width: 1565px;
   height: 76px;
 }
-.rectangle-div {
+.table-body-child2 {
   position: absolute;
   top: 67px;
   left: 0;
@@ -33,34 +33,34 @@ body {
   width: 1474px;
   height: 113px;
 }
-.line-div,
-.table-body-child1 {
+.table-body-child3,
+.table-body-child4 {
   position: absolute;
   box-sizing: border-box;
 }
-.line-div {
+.table-body-child3 {
   top: 66.5px;
   left: -1.5px;
   border-top: 3px solid var(--color-darkgray);
   width: 1477px;
   height: 3px;
 }
-.table-body-child1 {
+.table-body-child4 {
   top: 0;
   left: 0;
   border: 3px solid var(--color-darkgray);
   width: 1474px;
   height: 729px;
 }
-.table-body1,
-.welcome-fn-mi1 {
+.table-body2,
+.welcome-fn-mi2 {
   position: absolute;
   top: 220px;
   left: 401px;
   width: 1474px;
   height: 729px;
 }
-.welcome-fn-mi1 {
+.welcome-fn-mi2 {
   border: 0;
   outline: 0;
   font-family: var(--font-kanit);
@@ -75,7 +75,7 @@ body {
   width: 501px;
   height: 49px;
 }
-.logout-item {
+.logout-inner {
   position: absolute;
   top: 0;
   left: 0;
@@ -86,7 +86,7 @@ body {
   width: 75px;
   height: 45px;
 }
-.logout3 {
+.logout5 {
   position: absolute;
   top: 9px;
   left: 10px;
@@ -101,7 +101,7 @@ body {
   height: 27px;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-.logout2 {
+.logout4 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -112,7 +112,7 @@ body {
   width: 75px;
   height: 45px;
 }
-.sql-problems2 {
+.sql-problems4 {
   position: absolute;
   top: 0;
   left: 27px;
@@ -121,7 +121,7 @@ body {
   width: 301px;
   height: 49px;
 }
-.header-item {
+.header-inner {
   position: absolute;
   top: 57.5px;
   left: -1.5px;
@@ -130,7 +130,7 @@ body {
   width: 1568px;
   height: 3px;
 }
-.header3 {
+.header6 {
   position: absolute;
   top: 115px;
   left: 355px;
@@ -141,17 +141,16 @@ body {
   position: relative;
   padding-bottom: 0;
 }
-.basic1,
-.header4 {
+.basic2,
+.header7 {
   position: absolute;
   top: 419px;
-  left: 437px;
-  width: 253px;
-  height: 49px;
-}
-.basic1 {
-  top: 224px;
   left: 427px;
+  width: 263px;
+  height: 59px;
+}
+.basic2 {
+  top: 224px;
   font-size: var(--font-size-9xl);
   color: var(--color-black);
   display: flex;
@@ -159,7 +158,7 @@ body {
   width: 174px;
   height: 58px;
 }
-.sidebar1 {
+.sidebar2 {
   position: absolute;
   top: 0;
   left: 5px;
@@ -171,7 +170,7 @@ body {
   width: 355px;
   height: 1274px;
 }
-.bg-pic-icon1 {
+.bg-pic-icon2 {
   position: absolute;
   top: 168px;
   left: 0;
@@ -179,7 +178,7 @@ body {
   height: 1080px;
   object-fit: cover;
 }
-.book-an-appointment1 {
+.book-an-appointment2 {
   position: absolute;
   top: 0;
   left: 38px;
@@ -191,18 +190,18 @@ body {
   width: 250px;
   height: 26px;
 }
-.icon-qmark1,
-.sql-problems3 {
+.icon-qmark2,
+.sql-problems5 {
   position: absolute;
   height: 28px;
 }
-.icon-qmark1 {
+.icon-qmark2 {
   top: 0;
   left: 0;
   width: 28px;
   object-fit: cover;
 }
-.sql-problems3 {
+.sql-problems5 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -211,7 +210,7 @@ body {
   left: 39px;
   width: 288px;
 }
-.appointments1 {
+.appointments2 {
   position: absolute;
   top: 3px;
   left: 41px;
@@ -223,18 +222,18 @@ body {
   width: 180px;
   height: 26px;
 }
-.icons-8-11,
-.personnel1 {
+.icons-8-12,
+.personnel2 {
   position: absolute;
   height: 34px;
 }
-.icons-8-11 {
+.icons-8-12 {
   top: 0;
   left: 0;
   width: 34px;
   object-fit: cover;
 }
-.personnel1 {
+.personnel2 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -243,13 +242,13 @@ body {
   left: 36px;
   width: 221px;
 }
-.dashboard-icon1,
-.dashboard3 {
+.dashboard-icon2,
+.dashboard5 {
   position: absolute;
   top: 0;
   height: 26px;
 }
-.dashboard3 {
+.dashboard5 {
   left: 37px;
   font-size: var(--font-size-5xl);
   font-family: var(--font-karla);
@@ -258,12 +257,12 @@ body {
   display: inline-block;
   width: 180px;
 }
-.dashboard-icon1 {
+.dashboard-icon2 {
   left: 0;
   width: 26px;
   object-fit: contain;
 }
-.dashboard2 {
+.dashboard4 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -274,23 +273,23 @@ body {
   width: 217px;
   height: 26px;
 }
-.logo-icon1,
-.sidebar-container1 {
+.logo-icon2,
+.sidebar-container2 {
   position: absolute;
   top: -188px;
   left: -5px;
   width: 360.7px;
   height: 1274px;
 }
-.logo-icon1 {
+.logo-icon2 {
   top: 0;
   left: 0;
   width: 58.3px;
   height: 58.3px;
   object-fit: cover;
 }
-.pup-clinic-appointment1,
-.sta-mesa-manila1 {
+.pup-clinic-appointment2,
+.sta-mesa-manila2 {
   position: absolute;
   top: 8.5px;
   left: 74.6px;
@@ -298,7 +297,7 @@ body {
   width: 352.4px;
   height: 33.9px;
 }
-.sta-mesa-manila1 {
+.sta-mesa-manila2 {
   top: 34.9px;
   font-size: var(--font-size-smi);
   font-family: var(--font-karla);
@@ -306,7 +305,7 @@ body {
   width: 135.6px;
   height: 13.6px;
 }
-.header5 {
+.header8 {
   position: absolute;
   top: 21px;
   left: 22px;
@@ -315,7 +314,7 @@ body {
   font-size: var(--font-size-base);
   color: var(--color-maroon);
 }
-.footer-item {
+.footer-inner {
   position: absolute;
   top: 2.2px;
   left: 0;
@@ -323,7 +322,7 @@ body {
   width: 1932px;
   height: 77.7px;
 }
-.bsit-3-2n-group1 {
+.bsit-3-2n-group2 {
   position: absolute;
   top: 19.4px;
   left: 32.2px;
@@ -332,12 +331,12 @@ body {
   width: 588.7px;
   height: 43.2px;
 }
-.contact-us-at1,
-.footer1 {
+.contact-us-at2,
+.footer2 {
   position: absolute;
   height: 82px;
 }
-.contact-us-at1 {
+.contact-us-at2 {
   top: 0;
   left: 1365.2px;
   text-align: right;
@@ -345,7 +344,7 @@ body {
   align-items: center;
   width: 891.5px;
 }
-.footer1 {
+.footer2 {
   top: 1002px;
   left: -3px;
   width: 1932px;
@@ -353,7 +352,7 @@ body {
   color: var(--color-white);
   font-family: var(--font-questrial);
 }
-.admin-dashboard1 {
+.admin-dashboard2 {
   position: absolute;
   top: 0;
   left: 0;
@@ -362,7 +361,7 @@ body {
   width: 301px;
   height: 49px;
 }
-.admin-dashboard-title-item {
+.admin-dashboard-title-inner {
   position: absolute;
   top: 54.5px;
   left: -1.5px;
@@ -371,14 +370,14 @@ body {
   width: 46px;
   height: 3px;
 }
-.admin-dashboard-title1 {
+.admin-dashboard-title2 {
   position: absolute;
   top: 140px;
   left: 29px;
   width: 301px;
   height: 56px;
 }
-.admin-dashboard-sql-problems-child1 {
+.admin-dashboard-sql-problems-child3 {
   position: absolute;
   top: 106.5px;
   left: -0.5px;
@@ -387,7 +386,7 @@ body {
   width: 356px;
   height: 1px;
 }
-.confirm-item {
+.confirm-inner {
   top: 0;
   left: 0;
   border-radius: var(--br-6xs);
@@ -395,12 +394,12 @@ body {
   width: 169px;
   height: 60px;
 }
-.confirm-item,
-.confirm1,
-.run1 {
+.confirm-inner,
+.confirm2,
+.run2 {
   position: absolute;
 }
-.run1 {
+.run2 {
   top: 17px;
   left: 22px;
   font-size: var(--font-size-6xl);
@@ -413,7 +412,7 @@ body {
   width: 125px;
   height: 25px;
 }
-.confirm1 {
+.confirm2 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -423,7 +422,17 @@ body {
   width: 169px;
   height: 60px;
 }
-.nextbtn-item {
+.list-all-the2 {
+  position: absolute;
+  top: 318px;
+  left: 432px;
+  font-size: var(--font-size-13xl);
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  width: 1226px;
+}
+.nextbtn-inner {
   position: absolute;
   top: 0;
   left: 0;
@@ -432,7 +441,7 @@ body {
   width: 117px;
   height: 41.5px;
 }
-.next1 {
+.next2 {
   position: absolute;
   top: 10.8px;
   left: 25.2px;
@@ -445,29 +454,27 @@ body {
   width: 86.5px;
   height: 17.3px;
 }
-.arrow-icon1 {
+.arrow-icon2 {
+  position: absolute;
   top: 4px;
   left: 71px;
   width: 25px;
   height: 34px;
   object-fit: cover;
 }
-.arrow-icon1,
-.back,
-.nextbtn1 {
-  position: absolute;
-}
-.nextbtn1 {
+.nextbtn2 {
   cursor: pointer;
   border: 0;
   padding: 0;
   background-color: transparent;
+  position: absolute;
   top: 234px;
   left: 1733px;
   width: 117px;
   height: 41.5px;
 }
-.back {
+.back1 {
+  position: absolute;
   top: 11px;
   left: 48px;
   font-size: var(--font-size-xl);
@@ -479,7 +486,7 @@ body {
   width: 86.5px;
   height: 17.3px;
 }
-.left-icon {
+.left-icon1 {
   position: absolute;
   top: 4px;
   left: 19px;
@@ -487,7 +494,7 @@ body {
   height: 34px;
   object-fit: cover;
 }
-.backbtn {
+.backbtn1 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -498,17 +505,7 @@ body {
   width: 117px;
   height: 41.5px;
 }
-.list-all-the1 {
-  position: absolute;
-  top: 318px;
-  left: 432px;
-  font-size: 32px;
-  color: var(--color-black);
-  display: flex;
-  align-items: center;
-  width: 1226px;
-}
-.admin-dashboard-sql-problems1 {
+.admin-dashboard-sql-problems2 {
   width: 100%;
   position: relative;
   background-color: var(--color-white);
@@ -530,7 +527,7 @@ body {
   text-align: left;
   color: var(--color-gray-100);
   display: flex;
-  width: 230px;
+  width: 250px;
   height: 49px;
 }
 table {
