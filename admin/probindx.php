@@ -57,19 +57,19 @@
         <div class="header-child"></div>
       </div>
       <table class="header1">
-          <tr class="tr">
-            <th class="th">
-              <div class="transactions5">Patient Name</div>
-            </th>
-            <th class="th">
-              <div class="transactions5">Patient Type</div>
-            </th>
-            <th class="th">
-              <div class="transactions5">Department</div>
-            </th>
-          </tr>
           <?php 
             if(isset($_POST['run'])){
+              echo '<tr class="tr">';
+              echo '<th class="th">';
+              echo '<div class="transactions5">Patient Name</div>';
+              echo '</th>';
+              echo '<th class="th">';
+              echo '<div class="transactions5">Patient Type</div>';
+              echo '</th>';
+              echo '<th class="th">';
+              echo '<div class="transactions5">Department</div>';
+              echo '</th>';
+              echo '</tr>';
               while($rows = mysqli_fetch_assoc($result)){
                 echo '<tr>';
                 echo '<td class="th1">' . $rows['patient_Name'] . '</td>';

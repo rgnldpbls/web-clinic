@@ -57,16 +57,16 @@
         <div class="header-item"></div>
       </div>
       <table class="header4">
-          <tr class="tr2">
-            <th class="th">
-                <div class="transactions5">Personnel Name</div>
-            </th>
-            <th class="th">
-                <div class="transactions5">Contact Number</div>
-            </th>
-          </tr>
           <?php 
             if(isset($_POST['run'])){
+              echo '<tr class="tr2">';
+              echo '<th class="th">';
+              echo '<div class="transactions5">Personnel Name</div>';
+              echo '</th>';
+              echo '<th class="th">';
+              echo '<div class="transactions5">Contact Number</div>';
+              echo '</th>';
+              echo '</tr>';
               while($rows = mysqli_fetch_assoc($result)){
                 echo '<tr>';
                 echo '<td class="th1">' . $rows['pers_Name'] . '</td>';

@@ -58,20 +58,20 @@
         <div class="header-child1"></div>
       </div>
       <table class="header10">
-          <tr class="tr4">
-            <th class="th">
-                <div class="transactions5">Department</div>
-            </th>
-            <th class="th">
-                <div class="transactions5">Number of Female Patients</div>
-            </th>
-          </tr>
           <?php 
             if(isset($_POST['run'])){
+                echo '<tr class="tr4">';
+                echo '<th class="th">';
+                echo '<div class="transactions5">Department</div>';
+                echo '</th>';
+                echo '<th class="th">';
+                echo '<div class="transactions5">Number of Female Patients</div>';
+                echo '</th>';
+                echo '</tr>';
                 while($rows = mysqli_fetch_assoc($result)){
                   echo '<tr>';
-                  echo '<td class="th1">' . $rows['admin_Id'] . '</td>';
-                  echo '<td class="th1">' . $rows['admin_Name'] . '</td>';
+                  echo '<td class="th1">' . $rows['department'] . '</td>';
+                  echo '<td class="th1">' . $rows['Number_Of_Female_Patients'] . '</td>';
                   echo '</tr>';
                 }
               }
