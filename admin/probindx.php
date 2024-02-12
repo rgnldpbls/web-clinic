@@ -33,7 +33,7 @@
             header("Location: ../login.php");
             exit();
         }
-        $query = "SELECT patient_Name, patient_Type, department FROM patient WHERE blood_Type = 'O-'";
+        $query = "SELECT * FROM ominus_patient";
         $result = mysqli_query($conn, $query);
     ?>
     <div class="admin-dashboard-sql-problems">

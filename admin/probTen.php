@@ -33,6 +33,14 @@
             header("Location: ../login.php");
             exit();
         }
+        // $del = "CALL sproc_del(3)";
+        // $stmt = $conn->prepare($del);
+        // $stmt->execute();
+        // $stmt->close();
+        // $query = "CALL sproc_checkDel(3)";
+        $query = "SELECT pers_Id, pers_Name, a.admin_Id, admin_Name 
+        FROM personnel pe LEFT JOIN admin a ON pe.admin_Id = a.admin_Id";
+        $result = mysqli_query($conn, $query);
     ?>
     <div class="admin-dashboard-sql-problems9">
       <div class="base9"></div>
@@ -55,9 +63,28 @@
         <div class="header-child7"></div>
       </div>
       <table class="header28">
-          <tr class="tr16">
-            <th class="th8"></th>
-          </tr>
+        <?php 
+          if(isset($_POST['run'])){
+            echo '<tr class="tr16">';
+            echo '<th class="th8">';
+            echo '<div class="transactions5">Personnel Id</div>';
+            echo '</th>';
+            echo '<th class="th8">';
+            echo '<div class="transactions5">Personnel Name</div>';
+            echo '</th>';
+            echo '<th class="th8">';
+            echo '<div class="transactions5">Admin Id</div>';
+            echo '</th>';
+            echo '</tr>';
+            while($rows = mysqli_fetch_assoc($result)){
+              echo '<tr>';
+              echo '<td class="th1">' . $rows['pers_Id'] . '</td>';
+              echo '<td class="th1">' . $rows['pers_Name'] . '</td>';
+              echo '<td class="th1">' . $rows['admin_Id'] . '</td>';
+              echo '</tr>';
+            }
+          }
+        ?>
       </table>
       <div class="foreign-key-constraints1">Foreign Key Constraints</div>
       <div class="sidebar-container9">

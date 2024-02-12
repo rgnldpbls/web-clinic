@@ -483,3 +483,31 @@ body {
   color: var(--color-gray-200);
   font-family: var(--font-kanit);
 }
+.transactions5 {
+  position: relative;
+  align-items: center;
+}
+.transactions5,
+.transactions5:hover {
+  font-family: var(--font-kanit);
+  font-size: 24px;
+  text-align: left;
+  color: var(--color-gray-100);
+  display: flex;
+  width: 270px;
+  height: 49px;
+}
+table {
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid black;
+}
+.th1 {
+  position: relative;
+  padding-bottom: 0;
+  font-family: var(--font-kanit);
+  font-size: 20px;
+  color: black;
+}

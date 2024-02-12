@@ -33,7 +33,7 @@
             header("Location: ../login.php");
             exit();
         }
-        $query = "SELECT pers_Name, pers_ContactNo FROM personnel WHERE pers_Type = 'Doctor'";
+        $query = "SELECT * FROM doctor_type";
         $result = mysqli_query($conn, $query);
     ?>
     <div class="admin-dashboard-sql-problems1">

@@ -33,6 +33,12 @@
             header("Location: ../login.php");
             exit();
         }
+        // $upd = "CALL sproc_upd(10, 3)";
+        // $stmt = $conn->prepare($upd);
+        // $stmt->execute();
+        // $stmt->close(); 
+        $query = "CALL sproc_checkUpd(10)";
+        $result = mysqli_query($conn, $query);
     ?>
     <div class="admin-dashboard-sql-problems8">
       <div class="base8"></div>
@@ -55,9 +61,32 @@
         <div class="header-child6"></div>
       </div>
       <table class="header25">
-          <tr class="tr14">
-            <th class="th7"></th>
-          </tr>
+        <?php
+          if(isset($_POST['run'])){
+            echo '<tr class="tr14">';
+            echo '<th class="th7">';
+            echo '<div class="transactions5">Patient Id</div>';
+            echo '</th>';
+            echo '<th class="th7">';
+            echo '<div class="transactions5">Patient Name</div>';
+            echo '</th>';
+            echo '<th class="th7">';
+            echo '<div class="transactions5">Appoint No.</div>';
+            echo '</th>';
+            echo '<th class="th7">';
+            echo '<div class="transactions5">Appointment Patient Id</div>';
+            echo '</th>';
+            echo '</tr>';
+            while($rows = mysqli_fetch_assoc($result)){
+              echo '<tr>';
+              echo '<td class="th1">' . $rows['patientId'] . '</td>';
+              echo '<td class="th1">' . $rows['patient_Name'] . '</td>';
+              echo '<td class="th1">' . $rows['appoint_No'] . '</td>';
+              echo '<td class="th1">' . $rows['fpatientId'] . '</td>';
+              echo '</tr>';
+          }
+          }
+        ?>
       </table>
       <div class="foreign-key-constraints">Foreign Key Constraints</div>
       <div class="sidebar-container8">
