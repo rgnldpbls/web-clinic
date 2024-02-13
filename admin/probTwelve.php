@@ -124,7 +124,7 @@
       </button>
     </form>
       <div class="if-an-admin">
-        12. Select the name of the patient that accumulated the highest number of requested appointments.
+        12. Select the name of the patient who accumulated the highest number of requested appointments.
       </div>
       <button class="backbtn8" type="button" onclick="prevPage()">
         <div class="backbtn-child6"></div>
