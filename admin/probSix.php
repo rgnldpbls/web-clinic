@@ -33,8 +33,7 @@
             header("Location: ../login.php");
             exit();
         }
-        $query = "SELECT appoint_Status, COUNT(*) AS Number_Of_Appointment FROM appointment WHERE appoint_Info LIKE '%Medical Clearance%'
-        GROUP BY appoint_Status ORDER BY 2 DESC";
+        $query = "SELECT * FROM count_appStatus";
         $result = mysqli_query($conn, $query);
     ?>
     <div class="admin-dashboard-sql-problems5">

@@ -20,7 +20,7 @@
     />
   </head>
   <body>
-    <?php 
+    <?php
         include '../dbconfig.php';
         session_start();
         if (!isset($_SESSION['loginVisit']) || $_SESSION['loginVisit'] !== true) {
@@ -33,7 +33,7 @@
             header("Location: ../login.php");
             exit();
         }
-        // $del = "CALL sproc_del(3)";
+         // $del = "CALL sproc_del(3)";
         // $stmt = $conn->prepare($del);
         // $stmt->execute();
         // $stmt->close();
@@ -42,28 +42,28 @@
         FROM personnel pe LEFT JOIN admin a ON pe.admin_Id = a.admin_Id";
         $result = mysqli_query($conn, $query);
     ?>
-    <div class="admin-dashboard-sql-problems9">
-      <div class="base9"></div>
-      <div class="admin-dashboard-sql-problems-child16"></div>
-      <div class="base-main-header9"></div>
-      <div class="table-body9">
-        <div class="table-body-child23"></div>
-        <div class="table-body-child24"></div>
-        <div class="table-body-child25"></div>
+    <div class="admin-dashboard-sql-problems8">
+      <div class="base8"></div>
+      <div class="admin-dashboard-sql-problems-child14"></div>
+      <div class="base-main-header8"></div>
+      <div class="table-body8">
+        <div class="table-body-child20"></div>
+        <div class="table-body-child21"></div>
+        <div class="table-body-child22"></div>
       </div>
-      <input class="welcome-fn-mi9" type="text" value="<?php echo "Welcome, $name";?>" disabled/>
+      <input class="welcome-fn-mi8" type="text" value="<?php echo "Welcome, $name";?>" disabled/>
     <form method="post">
-      <button class="logout18" type="submit" name="logoutBTN">
-        <div class="logout-child7"></div>
-        <div class="logout19">Logout</div>
+      <button class="logout16" type="submit" name="logoutBTN">
+        <div class="logout-child6"></div>
+        <div class="logout17">Logout</div>
       </button>
     </form>
-      <div class="header27">
-        <div class="sql-problems18">SQL Problems</div>
-        <div class="header-child7"></div>
+      <div class="header24">
+        <div class="sql-problems16">SQL Problems</div>
+        <div class="header-child6"></div>
       </div>
-      <table class="header28">
-        <?php 
+      <table class="header25">
+        <?php
           if(isset($_POST['run'])){
             echo '<tr class="tr16">';
             echo '<th class="th8">';
@@ -86,62 +86,67 @@
           }
         ?>
       </table>
-      <div class="foreign-key-constraints1">Foreign Key Constraints</div>
-      <div class="sidebar-container9">
-        <div class="sidebar9"></div>
-        <img class="bg-pic-icon9" alt="" src="public/bg-pic@2x.png" />
-        <button class="sql-problems19" type="button" onclick="selfPage()">
-          <div class="book-an-appointment9">SQL Problems</div>
-          <img class="icon-qmark9" alt="" src="public/iconqmark@2x.png" />
+      <div class="foreign-key-constraints">Foreign Key Constraints</div>
+      <div class="sidebar-container8">
+        <div class="sidebar8"></div>
+        <img class="bg-pic-icon8" alt="" src="public/bg-pic@2x.png" />
+        <button class="sql-problems17" type="button" onclick="selfPage()">
+          <div class="book-an-appointment8">SQL Problems</div>
+          <img class="icon-qmark8" alt="" src="public/iconqmark@2x.png" />
         </button>
-        <button class="personnel9" type="button" onclick="addPersonnelPage()">
-          <div class="appointments9">Personnel</div>
-          <img class="icons-8-19" alt="" src="public/icons-8-1@2x.png" />
+        <button class="personnel8" type="button" onclick="addPersonnelPage()">
+          <div class="appointments8">Personnel</div>
+          <img class="icons-8-18" alt="" src="public/icons-8-1@2x.png" />
         </button>
-        <button class="dashboard18" type="button" onclick="dbPage()">
-          <div class="dashboard19">Dashboard</div>
+        <button class="dashboard16" type="button" onclick="dbPage()">
+          <div class="dashboard17">Dashboard</div>
           <img
-            class="dashboard-icon9"
+            class="dashboard-icon8"
             alt=""
             src="public/dashboardicon@2x.png"
           />
         </button>
       </div>
-      <div class="header29">
-        <img class="logo-icon9" alt="" src="public/logo@2x.png" />
-        <div class="pup-clinic-appointment9">PUP Clinic Appointment System</div>
-        <div class="sta-mesa-manila9">Sta. Mesa, Manila</div>
+      <div class="header26">
+        <img class="logo-icon8" alt="" src="public/logo@2x.png" />
+        <div class="pup-clinic-appointment8">PUP Clinic Appointment System</div>
+        <div class="sta-mesa-manila8">Sta. Mesa, Manila</div>
       </div>
-      <div class="footer9">
-        <div class="footer-child7"></div>
-        <div class="bsit-3-2n-group9">
+      <div class="footer8">
+        <div class="footer-child6"></div>
+        <div class="bsit-3-2n-group8">
           © 2024 BSIT 3-2N Group 7 | All Rights Reserved
         </div>
-        <div class="contact-us-at9">
+        <div class="contact-us-at8">
           Contact us at: 1234-5678 local 123 | Email us at:
           group7email@gmail.com
         </div>
       </div>
-      <div class="admin-dashboard-title9">
-        <div class="admin-dashboard9">Admin Dashboard</div>
-        <div class="admin-dashboard-title-child7"></div>
+      <div class="admin-dashboard-title8">
+        <div class="admin-dashboard8">Admin Dashboard</div>
+        <div class="admin-dashboard-title-child6"></div>
       </div>
-      <div class="admin-dashboard-sql-problems-child17"></div>
+      <div class="admin-dashboard-sql-problems-child15"></div>
     <form action="probTen.php" method="post">
-      <button class="confirm9" type="submit" name="run">
-        <div class="confirm-child7"></div>
-        <div class="run9">Run</div>
+      <button class="confirm8" type="submit" name="run">
+        <div class="confirm-child6"></div>
+        <div class="run8">Run</div>
       </button>
     </form>
-      <div class="if-an-admin">
-        10. If an admin is deleted from the admin table, the admin field of the
+      <div class="if-patient-id-is">
+      10. If an admin is deleted from the admin table, the admin field of the
         corresponding records in the patient table and personnel table must be
         set to null.
       </div>
-      <button class="backbtn8" type="button" onclick="prevPage()">
-        <div class="backbtn-child6"></div>
-        <div class="back8">Back</div>
-        <img class="left-icon8" alt="" src="public/left@2x.png" />
+      <button class="nextbtn8" type="button" onclick="nextPage()">
+        <div class="nextbtn-child6"></div>
+        <div class="next8">Next</div>
+        <img class="arrow-icon8" alt="" src="public/arrow@2x.png" />
+      </button>
+      <button class="backbtn7" type="button" onclick="prevPage()">
+        <div class="nextbtn-child6"></div>
+        <div class="back7">Back</div>
+        <img class="left-icon7" alt="" src="public/left@2x.png" />
       </button>
     </div>
     <script>
@@ -156,6 +161,9 @@
         }
         function prevPage(){
             window.location.href = 'probNine.php';
+        }
+        function nextPage(){
+            window.location.href = 'probEleven.php';
         }
     </script>
   </body>

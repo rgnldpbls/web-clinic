@@ -33,9 +33,7 @@
             header("Location: ../login.php");
             exit();
         }
-        $query = "SELECT appoint_No, patient_Name, pers_Name 
-        FROM appointment a JOIN personnel pe ON a.pers_Id = pe.pers_Id JOIN patient pa ON a.patient_Id = pa.patient_Id
-        WHERE appoint_Status = 'Nonattendance' ORDER BY 3";
+        $query = "SELECT * FROM nonattendance_type";
         $result = mysqli_query($conn, $query);
     ?>
     <div class="admin-dashboard-sql-problems6">

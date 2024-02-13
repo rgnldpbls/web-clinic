@@ -33,8 +33,7 @@
             header("Location: ../login.php");
             exit();
         }
-        $query = "SELECT pers_Type, pers_Sex, COUNT(*) AS Number_Of_Personnel FROM personnel 
-        GROUP BY pers_Type, pers_Sex ORDER BY 2, 1";
+        $query = "SELECT * FROM pers_type_sex";
         $result = mysqli_query($conn, $query);
     ?>
     <div class="admin-dashboard-sql-problems4">

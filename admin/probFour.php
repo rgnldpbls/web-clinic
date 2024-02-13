@@ -33,8 +33,7 @@
             header("Location: ../login.php");
             exit();
         }
-        $query = "SELECT department, COUNT(*) AS Number_Of_Female_Patients FROM patient WHERE patient_Sex = 'female' 
-        GROUP BY department HAVING COUNT(*)>1";
+        $query = "SELECT * FROM female_patient_dept";
         $result = mysqli_query($conn, $query);
     ?>
     <div class="admin-dashboard-sql-problems3">

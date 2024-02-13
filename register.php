@@ -97,19 +97,44 @@
         </div>
         <div class="blood-type">
           <div class="patient-email1">Blood Type<span style="color:red">*</span></div>
-          <input class="blood-type-child" type="text" name="bloodType" required/>
+          <select class="blood-type-child" type="text" name="bloodType" required>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="N/A">N/A</option>
+          </select>
         </div>
         <div class="patient-type">
           <div class="patient-type1">Patient Type<span style="color:red">*</span></div>
-          <div class="patient-type-child"></div>
+          <select class="patient-type-child" id="patientType" name="patientType" required>
+            <option value="Student">Student</option>
+            <option value="Faculty">Faculty</option>
+          </select>
         </div>
-        <select class="patient-type2" id="patientType" name="patientType" required>
-          <option value="Student">Student</option>
-          <option value="Faculty">Faculty</option>
-        </select>
         <div class="department">
           <div class="patient-type1">Department<span style="color:red">*</span></div>
-          <input class="department-child" type="text" name="department" required/>
+          <select class="department-child" type="text" name="department" required>
+            <option value="CADBE">CADBE</option>
+            <option value="CAF">CAF</option>
+            <option value="CAL">CAL</option>
+            <option value="CBA">CBA</option>
+            <option value="COC">COC</option>
+            <option value="CCIS">CCIS</option>
+            <option value="COED">COED</option>
+            <option value="CE">CE</option>
+            <option value="CHK">CHK</option>
+            <option value="CPSPA">CPSPA</option>
+            <option value="CS">CS</option>
+            <option value="CSSD">CSSD</option>
+            <option value="CTHTM">CTHTM</option>
+            <option value="ITECH">ITECH</option>
+            <option value="OUS">OUS</option>
+          </select>
         </div>
         <div class="emergency-contact-name">
           <div class="emergency-contact-name1">Emergency Contact Name<span style="color:red">*</span></div>

@@ -50,7 +50,7 @@
             echo '<script>alert("You have duplicate appointment!")
             window.location.href="viewappointment.php"</script>';
           }else{
-            $query = "INSERT INTO appointment(appoint_Info, appoint_Date, appoint_Time, appoint_Status, patient_Id) VALUES (?, ?, ?, ?, ?)";
+            $query = "CALL sproc_insertAppointment(?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($query);
             $stmt->bind_param("ssssi", $appointInfo, $appointDate, $appointTime, $appointStatus, $patientId);
             $stmt->execute();

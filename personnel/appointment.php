@@ -37,22 +37,24 @@
         $query = "SELECT patient_Name, patient_Age, patient_Sex, patient_ContactNo, patient_Type, department, appoint_No, appoint_Info, appoint_Date, appoint_Time, md_Attention, md_Illness, md_AllergiesFoods, md_AllergiesMeds, ph_Smoking, ph_Alcohol
         FROM appointment app JOIN patient p ON app.patient_Id = p.patient_Id JOIN medhistory md ON p.mdHist_Id = md.mdHist_Id
         WHERE appoint_Status = 'Pending'
-        ORDER BY appoint_Date";
+        ORDER BY appoint_Date, appoint_Time";
         $result = mysqli_query($conn, $query);
         if(isset($_POST['confirmBTN'])) {
           $personnelId = $_SESSION['persId'];
           $userData = $_POST['appointNo'];
           $status = $_POST['appointStatus'];
           if($status === 'Approved'){
-              $sql = "UPDATE appointment SET appoint_Status = '$status', pers_Id = '$personnelId' WHERE appoint_No = '$userData'";
+              $sql = "CALL sproc_updAppointment(?, ?, ?)";
               $stmt = $conn->prepare($sql);
+              $stmt->bind_param("sii", $status, $personnelId, $userData);
               $stmt->execute();
               $stmt->close();
               header("location: viewpatient.php");
               exit();
           }else if($status === 'Rejected'){
-              $sql = "UPDATE appointment SET appoint_Status = '$status', pers_Id = '$personnelId' WHERE appoint_No = '$userData'";
+              $sql = "CALL sproc_updAppointment(?, ?, ?)";
               $stmt = $conn->prepare($sql);
+              $stmt->bind_param("sii", $status, $personnelId, $userData);
               $stmt->execute();
               $stmt->close();
               header("location: viewpatient.php");

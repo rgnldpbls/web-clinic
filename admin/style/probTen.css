@@ -1,7 +1,7 @@
 body {
   zoom: 0.71;
 }
-.base9 {
+.base8 {
   position: absolute;
   top: 0;
   left: 355px;
@@ -10,8 +10,8 @@ body {
   width: 1920px;
   height: 1080px;
 }
-.admin-dashboard-sql-problems-child16,
-.base-main-header9 {
+.admin-dashboard-sql-problems-child14,
+.base-main-header8 {
   position: absolute;
   top: 108px;
   left: 355px;
@@ -20,12 +20,12 @@ body {
   width: 1566px;
   height: 1297px;
 }
-.base-main-header9 {
+.base-main-header8 {
   top: 0;
   width: 1565px;
   height: 76px;
 }
-.table-body-child23 {
+.table-body-child20 {
   position: absolute;
   top: 67px;
   left: 0;
@@ -33,7 +33,7 @@ body {
   width: 1474px;
   height: 113px;
 }
-.table-body-child24 {
+.table-body-child21 {
   position: absolute;
   top: 66.5px;
   left: -1.5px;
@@ -42,7 +42,7 @@ body {
   width: 1477px;
   height: 3px;
 }
-.table-body-child25 {
+.table-body-child22 {
   position: absolute;
   top: 0;
   left: 0;
@@ -51,15 +51,15 @@ body {
   width: 1474px;
   height: 729px;
 }
-.table-body9,
-.welcome-fn-mi9 {
+.table-body8,
+.welcome-fn-mi8 {
   position: absolute;
   top: 220px;
   left: 401px;
   width: 1474px;
   height: 729px;
 }
-.welcome-fn-mi9 {
+.welcome-fn-mi8 {
   border: 0;
   outline: 0;
   font-family: var(--font-kanit);
@@ -74,7 +74,7 @@ body {
   width: 501px;
   height: 49px;
 }
-.logout-child7 {
+.logout-child6 {
   position: absolute;
   top: 0;
   left: 0;
@@ -85,7 +85,7 @@ body {
   width: 75px;
   height: 45px;
 }
-.logout19 {
+.logout17 {
   position: absolute;
   top: 9px;
   left: 10px;
@@ -100,7 +100,7 @@ body {
   height: 27px;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-.logout18 {
+.logout16 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -111,7 +111,7 @@ body {
   width: 75px;
   height: 45px;
 }
-.sql-problems18 {
+.sql-problems16 {
   position: absolute;
   top: 0;
   left: 27px;
@@ -120,7 +120,7 @@ body {
   width: 301px;
   height: 49px;
 }
-.header-child7 {
+.header-child6 {
   position: absolute;
   top: 57.5px;
   left: -1.5px;
@@ -129,25 +129,25 @@ body {
   width: 1568px;
   height: 3px;
 }
-.header27 {
+.header24 {
   position: absolute;
   top: 115px;
   left: 355px;
   width: 1565px;
   height: 59px;
 }
-.th8 {
+.th7 {
   position: relative;
   padding-bottom: 0;
 }
-.header28 {
+.header25 {
   position: absolute;
   top: 419px;
   left: 437px;
   width: 253px;
   height: 49px;
 }
-.foreign-key-constraints1 {
+.foreign-key-constraints {
   position: absolute;
   top: 224px;
   left: 427px;
@@ -158,7 +158,7 @@ body {
   width: 330px;
   height: 58px;
 }
-.sidebar9 {
+.sidebar8 {
   position: absolute;
   top: 0;
   left: 5px;
@@ -170,7 +170,7 @@ body {
   width: 355px;
   height: 1274px;
 }
-.bg-pic-icon9 {
+.bg-pic-icon8 {
   position: absolute;
   top: 168px;
   left: 0;
@@ -178,7 +178,7 @@ body {
   height: 1080px;
   object-fit: cover;
 }
-.book-an-appointment9 {
+.book-an-appointment8 {
   position: absolute;
   top: 0;
   left: 38px;
@@ -190,7 +190,7 @@ body {
   width: 250px;
   height: 26px;
 }
-.icon-qmark9 {
+.icon-qmark8 {
   position: absolute;
   top: 0;
   left: 0;
@@ -198,7 +198,7 @@ body {
   height: 28px;
   object-fit: cover;
 }
-.sql-problems19 {
+.sql-problems17 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -209,7 +209,7 @@ body {
   width: 288px;
   height: 28px;
 }
-.appointments9 {
+.appointments8 {
   position: absolute;
   top: 3px;
   left: 41px;
@@ -221,18 +221,18 @@ body {
   width: 180px;
   height: 26px;
 }
-.icons-8-19,
-.personnel9 {
+.icons-8-18,
+.personnel8 {
   position: absolute;
   height: 34px;
 }
-.icons-8-19 {
+.icons-8-18 {
   top: 0;
   left: 0;
   width: 34px;
   object-fit: cover;
 }
-.personnel9 {
+.personnel8 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -241,13 +241,13 @@ body {
   left: 36px;
   width: 221px;
 }
-.dashboard-icon9,
-.dashboard19 {
+.dashboard-icon8,
+.dashboard17 {
   position: absolute;
   top: 0;
   height: 26px;
 }
-.dashboard19 {
+.dashboard17 {
   left: 37px;
   font-size: var(--font-size-5xl);
   font-family: var(--font-karla);
@@ -256,12 +256,12 @@ body {
   display: inline-block;
   width: 180px;
 }
-.dashboard-icon9 {
+.dashboard-icon8 {
   left: 0;
   width: 26px;
   object-fit: contain;
 }
-.dashboard18 {
+.dashboard16 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -272,23 +272,23 @@ body {
   width: 217px;
   height: 26px;
 }
-.logo-icon9,
-.sidebar-container9 {
+.logo-icon8,
+.sidebar-container8 {
   position: absolute;
   top: -188px;
   left: -5px;
   width: 360.7px;
   height: 1274px;
 }
-.logo-icon9 {
+.logo-icon8 {
   top: 0;
   left: 0;
   width: 58.3px;
   height: 58.3px;
   object-fit: cover;
 }
-.pup-clinic-appointment9,
-.sta-mesa-manila9 {
+.pup-clinic-appointment8,
+.sta-mesa-manila8 {
   position: absolute;
   top: 8.5px;
   left: 74.6px;
@@ -296,7 +296,7 @@ body {
   width: 352.4px;
   height: 33.9px;
 }
-.sta-mesa-manila9 {
+.sta-mesa-manila8 {
   top: 34.9px;
   font-size: var(--font-size-smi);
   font-family: var(--font-karla);
@@ -304,7 +304,7 @@ body {
   width: 135.6px;
   height: 13.6px;
 }
-.header29 {
+.header26 {
   position: absolute;
   top: 21px;
   left: 22px;
@@ -313,7 +313,7 @@ body {
   font-size: var(--font-size-base);
   color: var(--color-maroon);
 }
-.footer-child7 {
+.footer-child6 {
   position: absolute;
   top: 2.2px;
   left: 0;
@@ -321,7 +321,7 @@ body {
   width: 1932px;
   height: 77.7px;
 }
-.bsit-3-2n-group9 {
+.bsit-3-2n-group8 {
   position: absolute;
   top: 19.4px;
   left: 32.2px;
@@ -330,12 +330,12 @@ body {
   width: 588.7px;
   height: 43.2px;
 }
-.contact-us-at9,
-.footer9 {
+.contact-us-at8,
+.footer8 {
   position: absolute;
   height: 82px;
 }
-.contact-us-at9 {
+.contact-us-at8 {
   top: 0;
   left: 1365.2px;
   text-align: right;
@@ -343,7 +343,7 @@ body {
   align-items: center;
   width: 891.5px;
 }
-.footer9 {
+.footer8 {
   top: 1002px;
   left: -3px;
   width: 1932px;
@@ -351,7 +351,7 @@ body {
   color: var(--color-white);
   font-family: var(--font-questrial);
 }
-.admin-dashboard9 {
+.admin-dashboard8 {
   position: absolute;
   top: 0;
   left: 0;
@@ -360,7 +360,7 @@ body {
   width: 301px;
   height: 49px;
 }
-.admin-dashboard-title-child7 {
+.admin-dashboard-title-child6 {
   position: absolute;
   top: 54.5px;
   left: -1.5px;
@@ -369,14 +369,14 @@ body {
   width: 46px;
   height: 3px;
 }
-.admin-dashboard-title9 {
+.admin-dashboard-title8 {
   position: absolute;
   top: 140px;
   left: 29px;
   width: 301px;
   height: 56px;
 }
-.admin-dashboard-sql-problems-child17 {
+.admin-dashboard-sql-problems-child15 {
   position: absolute;
   top: 106.5px;
   left: -0.5px;
@@ -385,7 +385,7 @@ body {
   width: 356px;
   height: 1px;
 }
-.confirm-child7 {
+.confirm-child6 {
   top: 0;
   left: 0;
   border-radius: var(--br-6xs);
@@ -393,12 +393,12 @@ body {
   width: 169px;
   height: 60px;
 }
-.confirm-child7,
-.confirm9,
-.run9 {
+.confirm-child6,
+.confirm8,
+.run8 {
   position: absolute;
 }
-.run9 {
+.run8 {
   top: 17px;
   left: 22px;
   font-size: var(--font-size-6xl);
@@ -411,7 +411,7 @@ body {
   width: 125px;
   height: 25px;
 }
-.confirm9 {
+.confirm8 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -421,7 +421,7 @@ body {
   width: 169px;
   height: 60px;
 }
-.if-an-admin {
+.if-patient-id-is {
   position: absolute;
   top: 303px;
   left: 432px;
@@ -431,7 +431,7 @@ body {
   align-items: center;
   width: 1205px;
 }
-.backbtn-child6 {
+.nextbtn-child6 {
   position: absolute;
   top: 0;
   left: 0;
@@ -440,7 +440,39 @@ body {
   width: 117px;
   height: 41.5px;
 }
-.back8 {
+.next8 {
+  position: absolute;
+  top: 10.8px;
+  left: 25.2px;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-kanit);
+  color: var(--color-white);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 86.5px;
+  height: 17.3px;
+}
+.arrow-icon8 {
+  position: absolute;
+  top: 4px;
+  left: 71px;
+  width: 25px;
+  height: 34px;
+  object-fit: cover;
+}
+.nextbtn8 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 234px;
+  left: 1733px;
+  width: 117px;
+  height: 41.5px;
+}
+.back7 {
   position: absolute;
   top: 11px;
   left: 48px;
@@ -453,7 +485,7 @@ body {
   width: 86.5px;
   height: 17.3px;
 }
-.left-icon8 {
+.left-icon7 {
   position: absolute;
   top: 4px;
   left: 19px;
@@ -461,18 +493,18 @@ body {
   height: 34px;
   object-fit: cover;
 }
-.backbtn8 {
+.backbtn7 {
   cursor: pointer;
   border: 0;
   padding: 0;
   background-color: transparent;
   position: absolute;
   top: 234px;
-  left: 1733px;
+  left: 1586px;
   width: 117px;
   height: 41.5px;
 }
-.admin-dashboard-sql-problems9 {
+.admin-dashboard-sql-problems8 {
   width: 100%;
   position: relative;
   background-color: var(--color-white);

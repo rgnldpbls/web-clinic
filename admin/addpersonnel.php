@@ -55,14 +55,14 @@
             $password = $_POST['password'];
             $dateCreated = date("Y-m-d");
             $id = $_SESSION['adminId'];
-            $sql = "INSERT INTO personnel(pers_Name, pers_Sex, pers_ContactNo, pers_Birthdate, pers_Type, pers_Email, pers_Password, pers_DateCreated, admin_Id) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "CALL sproc_insertPersonnel(?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("ssisssssi", $persName, $sex, $contactNo, $bDate, $type, $email, $password, $dateCreated, $id);
             $stmt->execute();
             $stmt->close();
             session_destroy();
             echo '<script>alert("Personnel record added successfully"); 
-            window.location.href = "login.php";</script>';
+            window.location.href = "../login.php";</script>';
           }
         }
     ?>

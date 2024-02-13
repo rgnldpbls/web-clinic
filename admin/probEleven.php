@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>SQL Problem #9</title>
+    <title>SQL Problem #11</title>
     <link rel="stylesheet" href="style/global.css" />
-    <link rel="stylesheet" href="style/probNine.css" />
+    <link rel="stylesheet" href="style/probEleven.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap"
@@ -33,11 +33,7 @@
             header("Location: ../login.php");
             exit();
         }
-        // $upd = "CALL sproc_upd(10, 3)";
-        // $stmt = $conn->prepare($upd);
-        // $stmt->execute();
-        // $stmt->close(); 
-        $query = "CALL sproc_checkUpd(10)";
+        $query = "SELECT * FROM bdate_union";
         $result = mysqli_query($conn, $query);
     ?>
     <div class="admin-dashboard-sql-problems8">
@@ -63,32 +59,24 @@
       <table class="header25">
         <?php
           if(isset($_POST['run'])){
-            echo '<tr class="tr14">';
-            echo '<th class="th7">';
-            echo '<div class="transactions5">Patient Id</div>';
-            echo '</th>';
-            echo '<th class="th7">';
+            echo '<tr class="tr12">';
+            echo '<th class="th6">';
             echo '<div class="transactions5">Patient Name</div>';
             echo '</th>';
-            echo '<th class="th7">';
-            echo '<div class="transactions5">Appoint No.</div>';
-            echo '</th>';
-            echo '<th class="th7">';
-            echo '<div class="transactions5">Appointment Patient Id</div>';
+            echo '<th class="th6">';
+            echo '<div class="transactions5">Patient Sex</div>';
             echo '</th>';
             echo '</tr>';
             while($rows = mysqli_fetch_assoc($result)){
-              echo '<tr>';
-              echo '<td class="th1">' . $rows['patientId'] . '</td>';
-              echo '<td class="th1">' . $rows['patient_Name'] . '</td>';
-              echo '<td class="th1">' . $rows['appoint_No'] . '</td>';
-              echo '<td class="th1">' . $rows['fpatientId'] . '</td>';
-              echo '</tr>';
+                echo '<tr>';
+                echo '<td class="th1">' . $rows['name'] . '</td>';
+                echo '<td class="th1">' . $rows['sex'] . '</td>';
+                echo '</tr>';
             }
-          }
+        }
         ?>
       </table>
-      <div class="foreign-key-constraints">Foreign Key Constraints</div>
+      <div class="foreign-key-constraints">Union Intercept Except</div>
       <div class="sidebar-container8">
         <div class="sidebar8"></div>
         <img class="bg-pic-icon8" alt="" src="public/bg-pic@2x.png" />
@@ -129,15 +117,14 @@
         <div class="admin-dashboard-title-child6"></div>
       </div>
       <div class="admin-dashboard-sql-problems-child15"></div>
-    <form action="probNine.php" method="post">
+    <form action="probEleven.php" method="post">
       <button class="confirm8" type="submit" name="run">
         <div class="confirm-child6"></div>
         <div class="run8">Run</div>
       </button>
     </form>
       <div class="if-patient-id-is">
-        9. If patient_id is updated from the patient table, the corresponding
-        patient_id must be updated as well in the appointment table
+      11. Combine patient and personnel name and sex that share the same August birth month. 
       </div>
       <button class="nextbtn8" type="button" onclick="nextPage()">
         <div class="nextbtn-child6"></div>
@@ -161,10 +148,10 @@
             window.location.href = 'probindx.php';
         }
         function prevPage(){
-            window.location.href = 'probEight.php';
+            window.location.href = 'probTen.php';
         }
         function nextPage(){
-            window.location.href = 'probTen.php';
+            window.location.href = 'probTwelve.php';
         }
     </script>
   </body>

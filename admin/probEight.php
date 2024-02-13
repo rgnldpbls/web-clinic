@@ -33,9 +33,7 @@
             header("Location: ../login.php");
             exit();
         }
-        $query = "SELECT patient_Name, md.mdHist_Id
-        FROM patient pa JOIN medhistory md ON pa.mdHist_Id = md.mdHist_Id
-        WHERE md_Attention = 'Yes' OR md_AllergiesFoods IS NOT NULL OR md_AllergiesMeds IS NOT NULL";
+        $query = "SELECT * FROM patient_medprob";
         $result = mysqli_query($conn, $query);
     ?>
     <div class="admin-dashboard-sql-problems7">

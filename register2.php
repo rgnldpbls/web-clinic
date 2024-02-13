@@ -39,7 +39,7 @@
         $emerContactName=$_SESSION['register']['emerContactName'];
         $emerContactNum=$_SESSION['register']['emerContactNum'];
         $dateCreated = date("Y-m-d");
-        $sql = "INSERT INTO patient(patient_Name, patient_Address, patient_City, patient_Age, patient_Birthdate, patient_Sex, patient_ContactNo, blood_Type, patient_Type, department, patient_Email, patient_Password, emer_ContactName, emer_ContactNo, pat_DateCreated) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "CALL sproc_insertPatient(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sssississssssis", $name, $address, $city, $age, $birthDate, $sex, $contactNumber, $bloodType, $patientType, $department, $email, $password, $emerContactName, $emerContactNum, $dateCreated);
         $stmt->execute();
@@ -51,15 +51,9 @@
         $medAllergies = isset($_POST['medAllergies']) ? $_POST['medAllergies'] : NULL;
         $phSmoking = $_POST['r2'];
         $phDrinking = $_POST['r3'];
-        $sql2 = "INSERT INTO medhistory(md_Attention, md_Illness, md_AllergiesFoods, md_AllergiesMeds, ph_Smoking, ph_Alcohol) VALUES (?, ?, ?, ?, ?, ?)";
+        $sql2 = "CALL sproc_insertMed(?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql2);
         $stmt->bind_param("ssssss", $medAttention, $medIllness, $foodAllergies, $medAllergies, $phSmoking, $phDrinking);
-        $stmt->execute();
-        $stmt->close(); 
-
-        $last_inserted_id = $conn->insert_id;
-        $sql3 = "UPDATE patient SET mdHist_Id = '$last_inserted_id' WHERE patient_Email = '$email'";
-        $stmt = $conn->prepare($sql3);
         $stmt->execute();
         $stmt->close(); 
         session_destroy();

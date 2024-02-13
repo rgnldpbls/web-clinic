@@ -50,13 +50,9 @@
           $rel = $_POST['patientRel'];
           if(!empty($dateIssued) && !empty($placeIssued) && !empty($validDate) && !empty($formType) && 
           !empty($claimed) && !empty($rel) && $transactStatus === 'Completed'){
-            $sql = "INSERT INTO transaction(form_Type, date_Issued, place_Issued, date_Validity, transact_Status, claimed, patient_Rel, appoint_No) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "CALL sproc_insertTransac(?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("sssssssi", $formType, $dateIssued, $placeIssued, $validDate, $transactStatus, $claimed, $rel, $appNum);
-            $stmt->execute();
-            $stmt->close();
-            $sql2 = "UPDATE appointment SET appoint_Status = '$transactStatus' WHERE appoint_No = '$appNum'";
-            $stmt = $conn->prepare($sql2);
             $stmt->execute();
             $stmt->close();
             echo '<script>alert("Transaction added successfully"); 

@@ -33,7 +33,7 @@
             header("Location: ../login.php");
             exit();
         }
-        $query = "SELECT admin_Id, admin_Name FROM admin WHERE admin_Name LIKE '%Z%'";
+        $query = "SELECT * FROM zname_admin";
         $result = mysqli_query($conn, $query);
     ?>
     <div class="admin-dashboard-sql-problems2">
