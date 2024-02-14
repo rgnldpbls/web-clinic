@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Feb 13, 2024 at 07:13 AM
+-- Generation Time: Feb 13, 2024 at 01:40 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -107,7 +107,8 @@ INSERT INTO `appointment` (`appoint_No`, `appoint_Info`, `appoint_Date`, `appoin
 (6, 'Internship - Medical Clearance', '2024-02-14', '10:30:00', 'Pending', 10, NULL),
 (7, 'I want to request Medical Clearance as per requirement in Internship,', '2024-02-14', '09:30:00', 'Pending', 5, NULL),
 (8, 'Medical Certificate for Sportfest', '2024-02-14', '13:00:00', 'Pending', 7, NULL),
-(9, 'I want to request for Medical Clearance for my requirement in event in the department', '2024-02-14', '15:00:00', 'Pending', 9, NULL);
+(9, 'I want to request for Medical Clearance for my requirement in event in the department', '2024-02-14', '15:00:00', 'Pending', 9, NULL),
+(10, 'Request Medical Certificate', '2024-02-15', '10:00:00', 'Completed', 3, 3);
 
 -- --------------------------------------------------------
 
@@ -244,7 +245,8 @@ CREATE TABLE `transaction` (
 --
 
 INSERT INTO `transaction` (`transaction_No`, `form_Type`, `date_Issued`, `place_Issued`, `date_Validity`, `transact_Status`, `claimed`, `patient_Rel`, `appoint_No`) VALUES
-(1, 'Medical Clearance', '2024-01-15', 'PUP Clinic', '2024-07-14', 'Completed', 'Hyunjin Hwang', 'Self', 3);
+(1, 'Medical Clearance', '2024-01-15', 'PUP Clinic', '2024-07-14', 'Completed', 'Hyunjin Hwang', 'Self', 3),
+(2, 'Medical Certificate', '2024-02-15', 'PUP Clinic', '2024-08-15', 'Completed', 'Christopher Bang', 'Self', 10);
 
 --
 -- Triggers `transaction`
@@ -310,7 +312,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `appoint_No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `appoint_No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `medhistory`
@@ -334,7 +336,7 @@ ALTER TABLE `personnel`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `transaction_No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `transaction_No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
