@@ -188,7 +188,7 @@
         <div class="contents">
           <div class="form-type">
             <div class="form-type-child"></div>
-            <div class="relation-to-the">Form Type</div>
+            <div class="relation-to-the" style="font-family: 'Kanit'">Form Type</div>
             <div class="form-type-item"></div>
             <input class="form-type-inner" type="text" name="formType"/>
           </div>
@@ -196,11 +196,11 @@
             <div class="relation-child"></div>
             <div class="relation-item"></div>
             <input class="relation-inner" type="text" name="patientRel"/>
-            <div class="relation-to-the">Relation to the Patient</div>
+            <div class="relation-to-the" style="font-family: 'Kanit'">Relation to the Patient</div>
           </div>
           <div class="claimed-by">
             <div class="claimed-by-child"></div>
-            <div class="claimed-by1">Claimed By</div>
+            <div class="claimed-by1" style="font-family: 'Kanit'">Claimed By</div>
             <div class="claimed-by-item"></div>
             <input class="claimed-by-inner" type="text" name="claimed"/>
           </div>
@@ -208,36 +208,36 @@
             <div class="date-validity-child"></div>
             <div class="date-validity-item"></div>
             <input class="date-validity-inner" type="date" name="validDate" min="<?php echo date('Y-m-d', strtotime('+6 months')); ?>"/>
-            <div class="date-validity1">Date Validity</div>
+            <div class="date-validity1" style="font-family: 'Kanit'">Date Validity</div>
           </div>
           <div class="date-issued">
             <div class="date-issued-child"></div>
-            <div class="date-issued1">Date Issued</div>
+            <div class="date-issued1" style="font-family: 'Kanit'">Date Issued</div>
             <div class="date-validity-item"></div>
             <input class="date-issued-inner" type="date" name="dateIssued" min="<?php echo date('Y-m-d'); ?>"/>
           </div>
           <div class="place-issued">
             <div class="date-issued-child"></div>
-            <div class="date-issued1">Place Issued</div>
+            <div class="date-issued1" style="font-family: 'Kanit'">Place Issued</div>
             <div class="date-validity-item"></div>
             <input class="date-issued-inner" type="text" name="placeIssued"/>
           </div>
         </div>
-        <div class="transaction-details">Transaction Details</div>
+        <div class="transaction-details" style="font-family: 'Kanit'">Transaction Details</div>
         <button class="confirmbtn" type="submit" name="confirmBTN">
           <div class="confirmbtn-child"></div>
           <div class="confirm">Confirm</div>
         </button>
         <div class="transaction-status">
           <div class="transaction-status-child"></div>
-          <div class="appointment-status">Transaction Status</div>
+          <div class="appointment-status" style="font-family: 'Kanit'">Transaction Status</div>
           <select class="transaction-status-item" name="transactStatus" required>
             <option value="Completed">Completed</option>
             <option value="Nonattendance">Nonattendance</option>
           </select>
         </div>
         <div class="header2">
-          <div class="personnel-dashboard1">Add Transaction</div>
+          <div class="personnel-dashboard1" style="font-family: 'Kanit'">Add Transaction</div>
           <div class="header-child"></div>
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
         </div>

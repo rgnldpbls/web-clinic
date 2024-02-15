@@ -190,8 +190,8 @@
             <div class="any-history-of-drinking-child"></div>
             <div class="any-history-of-container">
               <span class="any-history-of-container1">
-                <p class="any-history">Any history</p>
-                <p class="any-history">of Drinking?</p>
+                <p class="any-history" style="font-family: 'Kanit'">Any history</p>
+                <p class="any-history" style="font-family: 'Kanit'">of Drinking?</p>
               </span>
             </div>
             <input class="any-history-of-drinking-item" type="text" id="alc" disabled/>
@@ -201,8 +201,8 @@
             <div class="any-history-of-drinking-child"></div>
             <div class="any-history-of-container">
               <span class="any-history-of-container1">
-                <p class="any-history">Any history</p>
-                <p class="any-history">of Smoking?</p>
+                <p class="any-history" style="font-family: 'Kanit'">Any history</p>
+                <p class="any-history" style="font-family: 'Kanit'">of Smoking?</p>
               </span>
             </div>
             <input class="any-history-of-drinking-item" type="text" id="smk" disabled/>
@@ -210,25 +210,25 @@
           </div>
           <div class="allergies-in-medicine2">
             <div class="allergies-in-medicine-item"></div>
-            <div class="allergies-in-medicine3">Allergies in Medicine</div>
+            <div class="allergies-in-medicine3" style="font-family: 'Kanit'">Allergies in Medicine</div>
             <input class="allergies-in-medicine-inner" type="text" id="medAl" disabled/>
             <div class="rectangle-div"></div>
           </div>
           <div class="allergies-in-food2">
             <div class="allergies-in-food-item"></div>
-            <div class="allergies-in-medicine3">Allergies in Food</div>
+            <div class="allergies-in-medicine3" style="font-family: 'Kanit'">Allergies in Food</div>
             <input class="allergies-in-food-inner" type="text" id="foodAl" disabled/>
             <div class="rectangle-div"></div>
           </div>
           <div class="medical-illness1">
             <div class="medical-illness-child"></div>
-            <div class="allergies-in-medicine3">Medical Illness</div>
+            <div class="allergies-in-medicine3" style="font-family: 'Kanit'">Medical Illness</div>
             <input class="medical-illness-item" type="text" id="medIll" disabled/>
             <div class="rectangle-div"></div>
           </div>
           <div class="needs-medical-attention4">
             <div class="needs-medical-attention-child3"></div>
-            <div class="allergies-in-medicine3">Needs Medical Attention?</div>
+            <div class="allergies-in-medicine3" style="font-family: 'Kanit'">Needs Medical Attention?</div>
             <input class="rectangle-input" type="text" id="medAtt" disabled/>
             <div class="rectangle-div"></div>
           </div>
@@ -236,29 +236,29 @@
             <div class="contact-no-child"></div>
             <input class="contact-no-item" type="text" id="contactNo" disabled/>
             <div class="rectangle-div"></div>
-            <div class="contact-no1">Contact No.</div>
+            <div class="contact-no1" style="font-family: 'Kanit'">Contact No.</div>
           </div>
           <div class="department2">
             <div class="any-history-of-drinking-child"></div>
-            <div class="department3">Department</div>
+            <div class="department3" style="font-family: 'Kanit'">Department</div>
             <input class="department-inner" type="text" id="dept" disabled/>
             <div class="department-child1"></div>
           </div>
           <div class="patient-type2">
             <div class="any-history-of-drinking-child"></div>
-            <div class="patient-type3">Patient Type</div>
+            <div class="patient-type3" style="font-family: 'Kanit'">Patient Type</div>
             <input class="department-inner" type="text" id="type" disabled/>
             <div class="department-child1"></div>
           </div>
           <div class="sex2">
             <div class="sex-inner"></div>
-            <div class="sex3">Sex</div>
+            <div class="sex3" style="font-family: 'Kanit'">Sex</div>
             <input class="age-inner" type="text" id="sex" disabled/>
             <div class="sex-child2"></div>
           </div>
           <div class="age2">
             <div class="age-item"></div>
-            <div class="sex3">Age</div>
+            <div class="sex3" style="font-family: 'Kanit'">Age</div>
             <input class="age-inner" type="text" id="age" disabled/>
             <div class="sex-child2"></div>
           </div>
@@ -266,24 +266,24 @@
             <div class="full-name-item"></div>
             <input class="full-name-inner" type="text" id="name" disabled/>
             <div class="rectangle-div"></div>
-            <div class="contact-no1">Full Name</div>
+            <div class="contact-no1" style="font-family: 'Kanit'">Full Name</div>
           </div>
         </div>
-        <div class="patient-details">Patient Details</div>
+        <div class="patient-details" style="font-family: 'Kanit'">Patient Details</div>
         <button class="confirmbtn" type="submit" name="confirmBTN">
           <div class="confirmbtn-child"></div>
           <div class="confirm">Confirm</div>
         </button>
         <div class="appointment-status">
           <div class="appointment-status-child"></div>
-          <div class="appointment-status1">Appointment Status</div>
+          <div class="appointment-status1" style="font-family: 'Kanit'">Appointment Status</div>
           <select class="appointment-status-item" name="appointStatus" required>
             <option value="Approved">Approved</option>
             <option value="Rejected">Rejected</option>
           </select>
         </div>
         <div class="header3">
-          <div class="view-patient">View Patient</div>
+          <div class="view-patient" style="font-family: 'Kanit'">View Patient</div>
           <div class="header-child"></div>
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
         </div>
